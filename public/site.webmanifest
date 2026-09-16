@@ -1,0 +1,17 @@
+{
+  "name": "Mantiva360",
+  "short_name": "Mantiva360",
+  "description": "Connected project controls for SAP programmes and complex delivery.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F9FB",
+  "theme_color": "#0B2239",
+  "icons": [
+    {
+      "src": "/assets/brand/mantiva360-compact-light.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

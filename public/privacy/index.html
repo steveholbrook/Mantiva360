@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy | Mantiva360</title>
+  <meta name="description" content="How the Mantiva360 marketing website handles enquiries, video embeds and technical website data.">
+  <meta name="theme-color" content="#0B2239">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://mantiva360.com/privacy/">
+  <link rel="icon" href="/assets/brand/mantiva360-compact-light.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#privacy-content">Skip to privacy information</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Mantiva360 home"><img src="/assets/brand/mantiva360-full-light.svg" width="330" height="64" alt="Mantiva360"></a>
+      <nav class="legal-header-nav" aria-label="Privacy navigation"><a href="/">Back to website</a><a href="https://mantiva360.app" target="_blank" rel="noopener noreferrer">Open Mantiva360</a></nav>
+    </div>
+  </header>
+
+  <main id="privacy-content">
+    <section class="legal-hero">
+      <div class="container">
+        <p class="eyebrow">Website information</p>
+        <h1>Privacy, in plain language.</h1>
+        <p>This page describes the marketing website review build. It distinguishes what is implemented now from the controls that must be completed before public launch.</p>
+        <p class="legal-meta">Last reviewed: 16 September 2026</p>
+      </div>
+    </section>
+
+    <div class="container legal-layout">
+      <nav class="legal-nav" aria-label="On this page">
+        <a href="#current-state">Current state</a>
+        <a href="#enquiries">Guided-review enquiries</a>
+        <a href="#videos">YouTube videos</a>
+        <a href="#technical">Technical data</a>
+        <a href="#retention">Retention and access</a>
+        <a href="#contact">Privacy contact</a>
+      </nav>
+
+      <article class="legal-content">
+        <section id="current-state">
+          <h2>Current website state</h2>
+          <div class="legal-callout"><strong>The guided-review form is not connected in this review build.</strong> If you test it now, the page will tell you that your details were not sent. No success message is shown without a confirmed storage response.</div>
+          <p>The website is designed for Firebase Hosting. Firestore is not used to serve the web pages. A separate, protected server-side endpoint is required before enquiries can be accepted.</p>
+        </section>
+
+        <section id="enquiries">
+          <h2>Guided-review enquiries</h2>
+          <p>When the enquiry service is connected, the form is intended to collect:</p>
+          <ul>
+            <li>name and business email address;</li>
+            <li>organisation and optional role;</li>
+            <li>the project-control topic selected;</li>
+            <li>optional context supplied by the person submitting the request; and</li>
+            <li>consent to use those details to respond to that request.</li>
+          </ul>
+          <p>Submitting an enquiry is not intended to subscribe a person to marketing, confirm a meeting or create a purchase. The launch implementation must confirm storage before the website displays success.</p>
+        </section>
+
+        <section id="videos">
+          <h2>YouTube videos</h2>
+          <p>The website uses YouTube’s privacy-enhanced embed domain. The video frame is not loaded until a visitor actively chooses to play a video. When a video is loaded, Google and YouTube may receive technical information and apply their own privacy terms.</p>
+          <p>Visitors can choose to open the same content directly on YouTube.</p>
+        </section>
+
+        <section id="technical">
+          <h2>Technical website data</h2>
+          <p>Firebase Hosting and its infrastructure may process standard request information needed to deliver and secure the website, such as IP address, time, requested page, browser information and response status.</p>
+          <p>This review build does not include marketing analytics, advertising pixels, behavioural profiling or a cookie banner. If analytics or additional third-party services are introduced, this notice and the consent approach must be reviewed before they are enabled.</p>
+        </section>
+
+        <section id="retention">
+          <h2>Retention, access and deletion</h2>
+          <p>The public launch must define the enquiry retention period, authorised viewers, deletion process and owner retrieval workflow. These controls are not inferred from generic policy wording.</p>
+          <p>Enquiry records must not be stored in the public GitHub repository. Administrative access must remain separate from the public marketing pages and be enforced by Firebase or Google Cloud identity and access controls.</p>
+        </section>
+
+        <section id="contact">
+          <h2>Privacy contact</h2>
+          <p>A verified business privacy contact must be added before public launch. No personal email address has been published as a substitute.</p>
+          <p>Until then, use the guided-review process only after Mantiva360 confirms that the enquiry service and owner retrieval workflow are operating.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© 2026 Mantiva360. All rights reserved.</p>
+      <p>Mantiva360 is an independent product. SAP and SAP Activate are trademarks or registered trademarks of SAP SE or its affiliates. No SAP endorsement, certification or partnership is claimed.</p>
+    </div>
+  </footer>
+</body>
+</html>
