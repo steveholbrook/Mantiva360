@@ -26,7 +26,7 @@ function activateConcept(conceptId, { updateHash = true, moveFocus = false } = {
   document.title = `Mantiva360 design review | ${conceptName}`;
   if (updateHash) history.replaceState(null, "", `#${conceptId}`);
   if (moveFocus) nextButton.focus();
-  window.scrollTo({ top: 0, behavior: "auto" });
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 }
 
 conceptButtons.forEach((button, index) => {
@@ -91,4 +91,7 @@ document.querySelectorAll("[data-product-switcher]").forEach(initialiseProductSw
 const requestedConcept = window.location.hash.replace(/^#/, "");
 if (concepts.some((concept) => concept.id === requestedConcept)) {
   activateConcept(requestedConcept, { updateHash: false });
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: "auto" }));
+  });
 }

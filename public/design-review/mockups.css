@@ -21,6 +21,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background: var(--white);
   font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -55,7 +56,7 @@ p, h1, h2, h3, ul, figure { margin-top: 0; }
   z-index: 1000;
   top: 0;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 240px);
   align-items: center;
   gap: 24px;
   min-height: 72px;
@@ -92,7 +93,7 @@ p, h1, h2, h3, ul, figure { margin-top: 0; }
 .review-tabs button:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
 .review-tabs button[aria-selected="true"] { color: var(--navy); border-color: #fff; background: #fff; }
 .review-tabs button[aria-selected="true"] span { color: var(--teal-dark); }
-.review-toolbar__note { margin: 0; color: #aebdc9; font-size: 0.68rem; white-space: nowrap; }
+.review-toolbar__note { min-width: 0; margin: 0; overflow: hidden; color: #aebdc9; font-size: 0.68rem; text-overflow: ellipsis; white-space: nowrap; }
 .review-toolbar__note span { color: #69dfc9; }
 
 .concept { min-height: calc(100vh - 72px); overflow: clip; background: #fff; }
@@ -439,11 +440,14 @@ p, h1, h2, h3, ul, figure { margin-top: 0; }
 .c5-footer-rail p { margin: 0; color: var(--muted); font-size: 0.84rem; }
 .c5-footer-rail a { color: var(--blue); font-weight: 780; text-decoration: none; }
 
-@media (max-width: 1180px) {
+@media (max-width: 1500px) {
   .review-toolbar { grid-template-columns: auto 1fr; }
   .review-toolbar__note { display: none; }
   .review-tabs { justify-content: flex-end; overflow-x: auto; scrollbar-width: none; }
   .review-tabs::-webkit-scrollbar { display: none; }
+}
+
+@media (max-width: 1180px) {
   .review-tabs button { padding-inline: 10px; }
   .prototype-header nav { display: none; }
   .prototype-header .prototype-cta { margin-left: auto; }
