@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1040" viewBox="0 0 720 1040" role="img" aria-labelledby="title desc">
+  <title id="title">Mantiva360 Governed Response mobile promotional interface</title>
+  <desc id="desc">A mobile corrective action form with an owner, target date, required outcome and recalculation verification.</desc>
+  <defs>
+    <linearGradient id="nav" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071a2c"/><stop offset="1" stop-color="#0b304b"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9f7f3"/><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#eaf2f8"/></linearGradient>
+    <linearGradient id="button" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1268b3"/><stop offset="1" stop-color="#0c7373"/></linearGradient>
+    <style>text{font-family:Inter,Arial,sans-serif;fill:#233f55}.small{font-size:18px}.tiny{font-size:15px}.body{font-size:20px}.muted{fill:#718396}.strong{font-weight:800}.white{fill:#fff}.caps{font-size:14px;font-weight:900;letter-spacing:1px}</style>
+  </defs>
+  <rect width="720" height="1040" rx="28" fill="#eef4f6"/>
+  <rect width="720" height="72" rx="28" fill="url(#nav)"/><rect y="44" width="720" height="28" fill="url(#nav)"/>
+  <circle cx="38" cy="36" r="14" fill="none" stroke="#46c7b3" stroke-width="6"/><path d="M38 22a14 14 0 0 1 13 8" fill="none" stroke="#8db7c8" stroke-width="6" stroke-linecap="round"/><text x="66" y="45" class="white strong" font-size="24">Mantiva360</text><circle cx="675" cy="36" r="18" fill="#fff" opacity=".14"/><text x="675" y="42" class="white tiny strong" text-anchor="middle">GR</text>
+  <text x="30" y="117" class="strong" font-size="30">Governed response</text><text x="30" y="147" class="small muted">What should we do?</text>
+  <rect x="30" y="174" width="660" height="820" rx="20" fill="url(#glow)" stroke="#c9dae2"/>
+  <g transform="translate(58 208)">
+    <rect width="604" height="754" rx="18" fill="#fff" stroke="#2ab7a7" stroke-width="3"/>
+    <circle cx="0" cy="0" r="23" fill="#0c7373"/><text x="0" y="7" class="white strong" font-size="20" text-anchor="middle">3</text>
+    <rect x="28" y="32" width="205" height="36" rx="8" fill="#e2f4ed"/><circle cx="50" cy="50" r="6" fill="#3c8c46"/><text x="66" y="56" class="caps" fill="#377f40">GOVERNED RESPONSE</text>
+    <text x="28" y="118" class="strong" font-size="31">Make the next step accountable.</text>
+    <text x="28" y="154" class="small muted">Confirm the action, owner, date and outcome.</text>
+    <line x1="28" y1="182" x2="576" y2="182" stroke="#dbe4ea"/>
+    <text x="28" y="216" class="caps muted">CORRECTIVE ACTION</text>
+    <g transform="translate(28 238)"><text class="tiny strong" y="16">Owner</text><rect y="27" width="262" height="55" rx="10" fill="#fff" stroke="#c9d6df"/><text x="16" y="62" class="body">Alex Morgan</text></g>
+    <g transform="translate(314 238)"><text class="tiny strong" y="16">Target date</text><rect y="27" width="262" height="55" rx="10" fill="#fff" stroke="#c9d6df"/><text x="16" y="62" class="body">22 Sep 2026</text></g>
+    <g transform="translate(28 344)"><text class="tiny strong" y="16">Required outcome</text><rect y="27" width="548" height="77" rx="10" fill="#fff" stroke="#c9d6df"/><text x="16" y="59" class="body">Forecast date agreed and published</text><text x="16" y="84" class="tiny muted">for Solution Design.</text></g>
+    <rect x="28" y="472" width="548" height="54" rx="11" fill="url(#button)"/><text x="302" y="506" class="white body strong" text-anchor="middle">Record accountable action</text>
+    <text x="28" y="570" class="caps muted">VERIFICATION PATH</text>
+    <g transform="translate(28 594)"><circle cx="21" cy="21" r="21" fill="#e4f2f8"/><text x="21" y="28" class="strong" fill="#1268b3" font-size="18" text-anchor="middle">1</text><text x="56" y="18" class="strong tiny">Source updated</text><text x="56" y="39" class="tiny muted">by an authorised user</text></g>
+    <path d="M49 636v26" stroke="#8fb7c7" stroke-width="3" stroke-dasharray="5 5"/>
+    <g transform="translate(28 662)"><circle cx="21" cy="21" r="21" fill="#e4f2f8"/><text x="21" y="28" class="strong" fill="#1268b3" font-size="18" text-anchor="middle">2</text><text x="56" y="18" class="strong tiny">Controls recalculate</text><text x="56" y="39" class="tiny muted">using configured rules</text></g>
+    <path d="M327 636v26" stroke="#8fb7c7" stroke-width="3" stroke-dasharray="5 5"/>
+    <g transform="translate(306 662)"><circle cx="21" cy="21" r="21" fill="#e2f4ed"/><path d="m13 21 6 6 12-15" fill="none" stroke="#3c8c46" stroke-width="3.5" stroke-linecap="round"/><text x="56" y="18" class="strong tiny">Resolution verified</text><text x="56" y="39" class="tiny muted">after recalculation</text></g>
+    <g transform="translate(28 712)"><rect width="548" height="28" rx="14" fill="#e6f5f1"/><text x="274" y="20" class="tiny strong" fill="#0b675f" text-anchor="middle">The action is recorded. Control still decides status.</text></g>
+  </g>
+</svg>

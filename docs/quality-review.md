@@ -2,37 +2,37 @@
 
 Review date: 17 September 2026
 
-Implementation base: `c47ad1967f887830ee7f88247ee6320872951956`
+Implementation base: `4b085af`
 
-Review branch: `review/product-led-design-mockups`
+Review branch: `main`
 
-This branch is deployed only to an isolated Firebase preview channel. Scores are an internal prioritisation aid, not a certification. Release blockers override the total.
+Scores are an internal prioritisation aid, not a certification. The Option 02 visual update is assessed separately from broader application-access, enquiry and video-accessibility work.
 
 ## Evidence-based quality gates
 
 | Area | Score | Evidence | Limitation |
 |---|---:|---|---|
-| Comprehension | 22/25 | The 1,092-word homepage leads with a centered product proposition and four direct management questions: Attention, Cause, Action and Impact. Product and SAP detail remain available below and on dedicated routes. | No representative-user comprehension test was available. Do not mark unfamiliar-buyer comprehension as passed without actual feedback. |
-| Product proof | 21/25 | Seven genuine, lossless desktop and mobile crops are recorded with provenance and exact coordinates. The product repository supports the published Cockpit, deterministic control, progress, actual-allocation, reporting, SAP-phase and read-only-assistance boundaries. | Approved captures do not cover every described capability. Capture date and product version metadata were not supplied. |
-| Brand coherence | 18/20 | Approved Option 7 SVGs, exact palette tokens, a single sans-serif stack, restrained borders and one editorial panorama system are implemented. The 1,363-pixel Firebase render passed optical review. | Final mobile, Safari and platform-font review remain open. |
+| Comprehension | 22/25 | The 1,059-word homepage leads with three plain-language questions: where delivery is moving off plan, why it is off track and what to do. Product and SAP detail remain available below and on dedicated routes. | No representative-user comprehension test was available. Do not mark unfamiliar-buyer comprehension as passed without actual feedback. |
+| Product proof | 21/25 | Six SVG renderings reconstruct inspected live Delivery Plan, signal-detail and corrective-action structures. Captions disclose the promotional treatment and all visuals use one fictional scenario. | The renderings are not exact product captures and do not cover every described capability. |
+| Brand coherence | 18/20 | Approved Option 7 SVGs, exact palette tokens, a single sans-serif stack, restrained borders and one Guided Spotlight system are implemented. Desktop and mobile assets passed optical review. | Final Safari and platform-font review remain open. |
 | Evaluation journey | 9/15 | Get started, Watch overview and guided review remain distinct. Every Get started action resolves to the separately configured Mantiva360 application. | The application destination and enquiry endpoint are not yet production-ready, and captions and transcripts are unapproved. |
-| Technical quality | 11/15 | Semantic static HTML, four keyboard-operable ARIA tabs, native dialog focus restoration, reduced-motion support, clean routes, security headers, responsive sources, intrinsic dimensions and privacy-safe event hooks are implemented. Twelve automated tests pass. | Screen-reader, Safari, physical-device, slow-network and field Core Web Vitals tests remain open. |
+| Technical quality | 11/15 | Semantic static HTML, three keyboard-operable ARIA tabs, native dialog focus restoration, reduced-motion support, clean routes, security headers, responsive sources, intrinsic dimensions and privacy-safe event hooks are implemented. Twelve automated tests pass. | Screen-reader, Safari, physical-device, slow-network and field Core Web Vitals tests remain open. |
 | **Provisional total** | **81/100** | Strong selected implementation with disciplined claims and genuine product proof. | Below the 90/100 internal target and blocked from release. |
 
 ## Completed checks
 
 - `npm test`: 12 tests passed, 0 failed.
-- `npm run validate`: 24 public files and 6 HTML pages validated; homepage main copy counted at 1,092 words.
+- `npm run validate`: 30 public files and 6 HTML pages validated; homepage main copy counted at 1,059 words.
 - `node --check`: shared JavaScript and configuration parsed successfully.
 - `git diff --check`: no whitespace errors.
 - Local HTTP smoke test: `/`, `/product`, `/sap-delivery`, `/resources` and `/privacy` returned 200; an unknown route returned the custom 404 response.
 - All initial HTML is iframe-free. YouTube is created only after an explicit play action and removed when the dialog closes.
 - The deployable directory contains no uncropped source screenshots or retired demonstration-company filenames.
-- OCR, visual review and string inspection found no retired demonstration identity in the seven published product crops.
-- Published captures are lossless WebP with intrinsic dimensions. CSS width caps prevent upscaling, and narrow layouts select art-directed detail crops.
+- Visual review and string inspection found no source-account identity or legacy application branding in the six published product renderings.
+- Desktop and mobile SVGs use explicit intrinsic dimensions and separate responsive compositions.
 - Key text contrast pairs range from 5.15:1 to 16.13:1. The focus outline ranges from 3.49:1 to 4.62:1 against tested light and navy surfaces.
 - Interactive controls are designed around a 44-pixel minimum target, including navigation, question tabs, modal close and footer actions.
-- The isolated Firebase preview rendered successfully at 1,363 by 936 pixels. Attention and Cause were visually checked, all four tabs switched to the correct panel, and ArrowRight moved focus and selection from Cause to Action.
+- The six SVG assets were rendered and visually checked at their intrinsic desktop and mobile sizes. Live browser verification remains required after deployment.
 - Rendered inspection found and corrected an inherited homepage navigation-state error that incorrectly marked an in-page anchor as the current page.
 - Canonical URLs and sitemap routes match Firebase clean URLs with `trailingSlash: false`.
 - Only privacy-safe event names are exposed. Name, email, organisation and free-text question values are not sent to analytics hooks.

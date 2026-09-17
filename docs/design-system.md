@@ -15,7 +15,7 @@ Internal implementation summary, 17 September 2026.
 | Body text | `#172536` | Primary copy |
 | White | `#FFFFFF` | Dominant surface |
 
-The approved Option 7 segmented circular symbol, Mantiva360 wordmark and `Data to Progress.` tagline are reused from the repository SVGs. Product status colours remain inside genuine captures and are not recoloured to match the marketing palette.
+The approved Option 7 segmented circular symbol, Mantiva360 wordmark and `Data to Progress.` tagline are reused from the repository SVGs. The Option 02 product renderings use the product's status semantics while simplifying application chrome for marketing legibility.
 
 Typography uses one highly legible sans-serif stack, led by Inter where installed and followed by native system sans-serif faces. Body text starts at 18 pixels with 1.55 line height. Major desktop headings use fluid sizes up to approximately 72 pixels. Mobile hero headings resolve to approximately 42 pixels at the narrow breakpoint. Prose measures are generally capped at 60 to 68 characters.
 
@@ -27,9 +27,9 @@ The layout uses a 1,280-pixel maximum container, a 12-column desktop grid, 32-pi
 |---|---|---|
 | Site header | Four-item primary navigation plus one prioritised commercial action | Sticky without covering focused anchors; Get started opens the separate Mantiva360 application; Escape closes the mobile menu and restores focus. |
 | Action hierarchy | Application, video and guided-review paths | Get started is the primary action, Watch overview is secondary and the lower guided-review route remains clearly separate. |
-| Focus Lens frame | Contextual or focused genuine product evidence | One substantial capture, at most two callouts, no perspective distortion or invented overlay metrics. |
+| Guided Spotlight frame | Question-led promotional product explanation | One substantial interface rendering, one numbered focus point and no perspective distortion. |
 | Product panorama | Four management-question views | Attention, Cause, Action and Impact use native ARIA tabs at every breakpoint. The narrow layout uses a touch-scrollable tab rail. No auto-rotation. Arrow, Home and End keys are supported. |
-| Art-directed capture | Legible product proof on narrow screens | Responsive `<picture>` sources use exact mobile crops and explicit dimensions. CSS prevents upscaling. |
+| Art-directed rendering | Legible product proof on narrow screens | Responsive `<picture>` sources use separate mobile SVG compositions and explicit dimensions. |
 | Video poster | One simple invitation per film | Approved logo, one headline, one play action and verified runtime. No iframe until activation. |
 | Video dialog | Privacy-enhanced playback | Native modal focus handling, explicit close, Escape, outside-click close, focus restoration and direct YouTube fallback. |
 | Controlled-action story | Four-step product workflow | Identifies exception, source, authorised correction and recalculated result without implying dashboard edits or automatic recovery. |
@@ -49,4 +49,4 @@ The layout uses a 1,280-pixel maximum container, a 12-column desktop grid, 32-pi
 
 ## Media integrity
 
-Desktop contextual captures are displayed at approximately half their native width where practical. Narrow layouts receive focused lossless crops rather than a scaled-down desktop interface. Every capture is labelled as genuine product evidence using representative fictional data. Exact provenance and crop coordinates are maintained in `docs/media-manifest.md`.
+Desktop promotional renderings use a 1440 by 900 canvas. Narrow layouts receive purpose-built 720-pixel compositions rather than a scaled-down desktop interface. Every public caption states that the visuals are promotional renderings based on the live interface and use representative fictional data. Asset hashes and product basis are maintained in `docs/media-manifest.md`.

@@ -2,7 +2,7 @@
 
 Public marketing website source for **Mantiva360**, designed for `https://mantiva360.com` and Firebase Hosting. The separate product and demonstration destination is `https://mantiva360.app`.
 
-The site uses the approved Mantiva360 Option 7 production identity, a white-led product panorama, focused product captures with fictional project data, three supplied YouTube videos and evidence-led SAP Activate positioning. The homepage implements the selected Option 01 direction with Option 03's question-led product navigation.
+The site uses the approved Mantiva360 Option 7 production identity, a white-led product panorama, Option 02 promotional product renderings with fictional project data, three supplied YouTube videos and evidence-led SAP Activate positioning. The homepage follows the selected question-led path from Delivery Plan, to Signal and Source, to Governed Response.
 
 ## Important architecture correction
 
@@ -14,10 +14,10 @@ The repository intentionally contains no Firebase credentials, customer data, en
 
 | Area | Status |
 |---|---|
-| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented; the homepage uses a product-led panorama with Attention, Cause, Action and Impact navigation |
+| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented; the homepage uses the three-step Option 02 Plan, Signal and Action navigation |
 | Responsive CSS and art direction | Breakpoints cover 320, 390, 720, 768, 900, 1120 and 1440 pixel contexts; managed rendered, Safari and physical-device checks remain |
 | Supplied YouTube content | Click-to-load privacy-enhanced embeds; all three currently report captions unavailable |
-| Product captures | Lossless Focus Lens crops retain genuine interface content; mobile views use separate exact detail crops and the deployable directory excludes identifying source pixels |
+| Product visuals | Separate desktop and mobile SVG renderings reflect inspected live interface structures, disclose their promotional treatment and exclude identifying source-account detail |
 | Firebase Hosting configuration | Ready for a selected Firebase project |
 | Guided-review form | Hidden until a protected endpoint and owner retrieval process are verified |
 | `mantiva360.com` live behaviour | Returned HTTP 200 with TLS during inspection; this review branch is not deployed there |
@@ -145,7 +145,7 @@ See `docs/enquiry-service-decision.md` for the smallest suitable service design,
 - SAP Cloud ALM, Jira, Microsoft Project, finance and document platforms are referenced as toolchain categories. Native integrations are not claimed.
 - AI assists interpretation and navigation. Deterministic services calculate status and reconciliation.
 - Actual effort and cost do not automatically create earned progress.
-- Published product captures use fictional project data and exclude identifying demonstration detail.
+- Published product visuals are disclosed promotional renderings based on inspected live screens, use fictional project data and exclude identifying source-account detail.
 - The four-step exception story does not promise one-click remediation; status changes only when the underlying governed records change and controls recalculate.
 
 See `docs/change-summary.md` for the implementation handoff, `docs/design-system.md` for tokens and components, `docs/content-and-claims-register.md` for the maintained claim register and `docs/media-manifest.md` for product-image and video provenance.

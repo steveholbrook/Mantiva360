@@ -69,6 +69,6 @@ These statements are narrower than a general claim that every module, integratio
 1. A verified guided-review endpoint or approved alternative business contact is required before the primary commercial route can work publicly.
 2. The demonstration destination must be restored and its signed-out, isolation, reset and mobile behaviour verified.
 3. Accurate captions or verified transcripts and a complete footage, audio and end-card review are required for each published video.
-4. New neutral, high-resolution product captures are still required for complete feature coverage. The current approved sources support only the Cockpit, a focused finding/recovery view and Delivery Plan.
-5. The original screenshot sources contain a retired internal demonstration identity. This revision removes them from the deployable directory and publishes only exact crops that exclude it. The owner must archive the originals in an approved private location before any public-history cleanup.
+4. Additional inspected screens are still required before Planning & Forecasts, Actuals, RAID, Reporting, detailed reconciliation or read-only assistance can be shown as product UI.
+5. The published Option 02 SVGs reconstruct the inspected Delivery Plan, exception-detail and corrective-action structures with fictional data. They exclude source-account identity and legacy application branding; prior exact crops remain only for rollback and provenance.
 6. Physical-device, Safari and deployed field-performance evidence remain outstanding.

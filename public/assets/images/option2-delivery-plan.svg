@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mantiva360 Delivery Plan promotional interface</title>
+  <desc id="desc">A delivery plan with six workstreams, a week timeline, progress and today markers, and an overdue Solution Design activity highlighted.</desc>
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef4f7"/><stop offset="1" stop-color="#f8fbfc"/></linearGradient>
+    <linearGradient id="nav" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071a2c"/><stop offset="1" stop-color="#0b304b"/></linearGradient>
+    <linearGradient id="selected" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1268b3"/><stop offset="1" stop-color="#188989"/></linearGradient>
+    <style>
+      text{font-family:Inter,Arial,sans-serif;fill:#233f55}.small{font-size:14px}.tiny{font-size:12px}.label{font-size:12px;font-weight:800;letter-spacing:1.2px}.muted{fill:#718396}.strong{font-weight:800}.navText{fill:#a9bfcd;font-size:14px}.navStrong{fill:#fff;font-size:17px;font-weight:800}.axis{fill:#607486;font-size:12px;font-weight:700}.barText{fill:#203b50;font-size:12px;font-weight:750}.white{fill:#fff}.caps{font-size:11px;font-weight:900;letter-spacing:1.1px}
+    </style>
+  </defs>
+  <rect width="1440" height="900" rx="24" fill="url(#page)"/>
+  <rect width="1440" height="64" rx="24" fill="url(#nav)"/>
+  <rect y="40" width="1440" height="24" fill="url(#nav)"/>
+  <g transform="translate(28 19)">
+    <circle cx="13" cy="13" r="11" fill="none" stroke="#46c7b3" stroke-width="5"/>
+    <path d="M13 2a11 11 0 0 1 10 6" fill="none" stroke="#8db7c8" stroke-width="5" stroke-linecap="round"/>
+    <text x="35" y="19" class="white" font-size="20" font-weight="850">Mantiva360</text>
+  </g>
+  <text x="1220" y="39" class="navText">Golden Reference SAP Programme</text>
+  <circle cx="1394" cy="32" r="16" fill="#fff" opacity=".14"/><text x="1385" y="37" class="white small strong">GR</text>
+
+  <rect x="0" y="64" width="212" height="836" fill="#fbfcfd"/>
+  <line x1="212" y1="64" x2="212" y2="900" stroke="#d7e1e8"/>
+  <text x="28" y="105" class="label muted">PLAN</text>
+  <g class="navText">
+    <text x="38" y="143" fill="#526779">Overview</text>
+    <rect x="16" y="160" width="180" height="44" rx="9" fill="#e2f3f0"/>
+    <rect x="16" y="160" width="4" height="44" rx="2" fill="#0c7373"/>
+    <circle cx="38" cy="182" r="6" fill="#0c7373"/><text x="55" y="188" fill="#0c7373" font-weight="800">Delivery Plan</text>
+    <text x="38" y="232" fill="#526779">Activities</text>
+    <text x="38" y="270" fill="#526779">Deliverables</text>
+    <text x="28" y="323" class="label muted">CONTROL</text>
+    <text x="38" y="361" fill="#526779">Project Health</text>
+    <text x="38" y="399" fill="#526779">Controls</text>
+    <text x="38" y="437" fill="#526779">Evidence</text>
+    <text x="28" y="490" class="label muted">REVIEW</text>
+    <text x="38" y="528" fill="#526779">360 Cockpit</text>
+    <text x="38" y="566" fill="#526779">Reporting</text>
+  </g>
+
+  <g transform="translate(244 92)">
+    <text class="strong" fill="#0b2239" font-size="29">Delivery Plan (POAP)</text>
+    <text y="28" class="small muted">A visual route from baseline commitment to current delivery position.</text>
+    <g transform="translate(930 -8)">
+      <rect width="92" height="40" rx="9" fill="#fff" stroke="#cfdbe3"/><text x="26" y="25" class="small strong">Weeks</text>
+      <rect x="104" width="112" height="40" rx="9" fill="#fff" stroke="#cfdbe3"/><text x="132" y="25" class="small strong">Fit plan</text>
+    </g>
+  </g>
+
+  <g transform="translate(244 162)">
+    <rect width="1160" height="686" rx="18" fill="#fff"/>
+    <rect width="1160" height="82" rx="18" fill="#fbfcfd"/>
+    <rect y="64" width="1160" height="18" fill="#fbfcfd"/>
+    <text x="28" y="31" class="strong" font-size="16">Approved baseline and current working plan</text>
+    <text x="28" y="55" class="small muted">POAP v1 · 16 activities · 6 workstreams</text>
+    <rect x="1019" y="21" width="112" height="40" rx="20" fill="#ddf3ee"/>
+    <circle cx="1045" cy="41" r="6" fill="#0c7b74"/><text x="1059" y="46" class="small strong" fill="#0c7373">Week 12</text>
+    <line x1="0" y1="82" x2="1160" y2="82" stroke="#d9e3ea"/>
+
+    <g transform="translate(0 82)">
+      <rect width="258" height="604" fill="#fbfcfd"/>
+      <line x1="258" y1="0" x2="258" y2="604" stroke="#d4dfe7"/>
+      <text x="26" y="36" class="small strong">Workstreams</text>
+      <text x="230" y="36" class="tiny muted" text-anchor="end">Progress</text>
+      <g transform="translate(0 56)">
+        <g><rect width="258" height="83" fill="#fff"/><rect x="18" y="17" width="5" height="48" rx="2.5" fill="#2878bd"/><text x="36" y="35" class="strong small">Governance</text><text x="36" y="58" class="tiny muted">11% · On track</text><text x="226" y="45" class="strong" fill="#2878bd" text-anchor="end">11%</text></g>
+        <g transform="translate(0 83)"><rect width="258" height="83" fill="#f8fafb"/><rect x="18" y="17" width="5" height="48" rx="2.5" fill="#7f62c5"/><text x="36" y="35" class="strong small">Design</text><text x="36" y="58" class="tiny" fill="#a91f35">63% · At risk</text><text x="226" y="45" class="strong" fill="#7f62c5" text-anchor="end">63%</text></g>
+        <g transform="translate(0 166)"><rect width="258" height="83" fill="#fff"/><rect x="18" y="17" width="5" height="48" rx="2.5" fill="#14946e"/><text x="36" y="35" class="strong small">Platform</text><text x="36" y="58" class="tiny muted">14% · On track</text><text x="226" y="45" class="strong" fill="#14946e" text-anchor="end">14%</text></g>
+        <g transform="translate(0 249)"><rect width="258" height="83" fill="#f8fafb"/><rect x="18" y="17" width="5" height="48" rx="2.5" fill="#d38b19"/><text x="36" y="35" class="strong small">Data</text><text x="36" y="58" class="tiny" fill="#a91f35">25% · At risk</text><text x="226" y="45" class="strong" fill="#d38b19" text-anchor="end">25%</text></g>
+        <g transform="translate(0 332)"><rect width="258" height="83" fill="#fff"/><rect x="18" y="17" width="5" height="48" rx="2.5" fill="#1696a7"/><text x="36" y="35" class="strong small">Integration</text><text x="36" y="58" class="tiny muted">18% · On track</text><text x="226" y="45" class="strong" fill="#1696a7" text-anchor="end">18%</text></g>
+        <g transform="translate(0 415)"><rect width="258" height="83" fill="#f8fafb"/><rect x="18" y="17" width="5" height="48" rx="2.5" fill="#789447"/><text x="36" y="35" class="strong small">Adoption</text><text x="36" y="58" class="tiny" fill="#a91f35">4% · At risk</text><text x="226" y="45" class="strong" fill="#789447" text-anchor="end">4%</text></g>
+      </g>
+    </g>
+
+    <g transform="translate(258 82)">
+      <rect width="902" height="56" fill="#fff"/>
+      <g class="axis" text-anchor="middle">
+        <text x="38" y="34">W7</text><text x="113" y="34">W8</text><text x="188" y="34">W9</text><text x="263" y="34">W10</text><text x="338" y="34">W11</text><text x="413" y="34">W12</text><text x="488" y="34">W13</text><text x="563" y="34">W14</text><text x="638" y="34">W15</text><text x="713" y="34">W16</text><text x="788" y="34">W17</text><text x="863" y="34">W18</text>
+      </g>
+      <g stroke="#e1e8ed"><line x1="0" y1="56" x2="902" y2="56"/><path d="M75 0v554M150 0v554M225 0v554M300 0v554M375 0v554M450 0v554M525 0v554M600 0v554M675 0v554M750 0v554M825 0v554"/></g>
+      <g transform="translate(0 56)">
+        <rect width="902" height="83" fill="#fbfcfd"/><rect y="83" width="902" height="83" fill="#f6f9fa"/><rect y="166" width="902" height="83" fill="#fbfcfd"/><rect y="249" width="902" height="83" fill="#f6f9fa"/><rect y="332" width="902" height="83" fill="#fbfcfd"/><rect y="415" width="902" height="83" fill="#f6f9fa"/>
+        <g stroke="#dfe7ec"><path d="M0 83h902M0 166h902M0 249h902M0 332h902M0 415h902M0 498h902"/></g>
+        <rect x="18" y="20" width="720" height="38" rx="8" fill="#9fc9e9" stroke="#4385b5"/><rect x="18" y="20" width="150" height="38" rx="8" fill="#2878bd"/><text x="34" y="44" class="white barText">Project management · 21%</text>
+        <rect x="36" y="103" width="92" height="38" rx="8" fill="#7f62c5"/><text x="50" y="127" class="white barText">Discovery · 100%</text>
+        <g><rect x="132" y="112" width="356" height="42" rx="9" fill="url(#selected)" stroke="#b51f38" stroke-width="4"/><rect x="150" y="94" width="78" height="23" rx="5" fill="#a91f35"/><text x="189" y="110" class="white caps" text-anchor="middle">OVERDUE</text><text x="153" y="138" class="white barText">Solution Design · 90%</text></g>
+        <rect x="224" y="186" width="522" height="38" rx="8" fill="#c9bfaa" stroke="#a59a83"/><rect x="224" y="186" width="168" height="38" rx="8" fill="#9a8c70"/><text x="241" y="210" class="white barText">Cloud platform foundation · 32%</text>
+        <rect x="274" y="269" width="404" height="38" rx="8" fill="#bdccd5" stroke="#8da2af"/><rect x="274" y="269" width="202" height="38" rx="8" fill="#78909d"/><text x="291" y="293" class="white barText">Data mapping and quality · 50%</text>
+        <rect x="386" y="352" width="342" height="38" rx="8" fill="#b4d0ce" stroke="#7ea6a2"/><rect x="386" y="352" width="38" height="38" rx="8" fill="#4e8d88"/><text x="402" y="376" class="barText">API integration · 11%</text>
+        <rect x="515" y="435" width="232" height="38" rx="8" fill="#cad6ae" stroke="#9db272"/><rect x="515" y="435" width="14" height="38" rx="7" fill="#789447"/><text x="543" y="459" class="barText">Business readiness · 4%</text>
+        <g><line x1="455" y1="0" x2="455" y2="498" stroke="#1775bd" stroke-width="3"/><rect x="414" y="8" width="84" height="24" rx="5" fill="#1775bd"/><text x="456" y="25" class="white tiny strong" text-anchor="middle">Mantiva360</text></g>
+        <g><line x1="486" y1="0" x2="486" y2="498" stroke="#db3748" stroke-width="3"/><rect x="500" y="8" width="54" height="24" rx="5" fill="#db3748"/><text x="527" y="25" class="white tiny strong" text-anchor="middle">Today</text></g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(920 696)">
+    <rect width="438" height="126" rx="16" fill="#fff" stroke="#62cbbd" stroke-width="2"/>
+    <circle cx="0" cy="0" r="21" fill="#0c7373"/><text x="0" y="7" class="white strong" font-size="19" text-anchor="middle">1</text>
+    <text x="30" y="36" class="strong" font-size="19" fill="#0b2239">Solution Design crossed Today.</text>
+    <text x="30" y="64" class="small muted">The plan makes the condition visible before</text>
+    <text x="30" y="86" class="small muted">the detailed control explanation.</text>
+    <rect x="295" y="95" width="112" height="22" rx="11" fill="#e0f3ef"/><text x="351" y="110" class="tiny strong" fill="#0c7373" text-anchor="middle">Inspect signal →</text>
+  </g>
+</svg>

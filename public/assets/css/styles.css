@@ -224,6 +224,7 @@ p, h1, h2, h3, h4, ul, ol, figure { margin-top: 0; }
 .capture-finding { max-width: 505px; }
 .capture-recovery { max-width: 335px; }
 .capture-delivery { max-width: 525px; }
+.capture-option2 { max-width: none; }
 .proof-callouts { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; margin: 0; border-top: 1px solid var(--line); list-style: none; }
 .proof-callouts li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 18px 20px; }
 .proof-callouts li + li { border-left: 1px solid var(--line); }
@@ -300,11 +301,12 @@ p, h1, h2, h3, h4, ul, ol, figure { margin-top: 0; }
 .workflow-section { color: #d8e6ef; background: linear-gradient(145deg, var(--brand-navy-deep), var(--brand-navy)); }
 .workflow-heading { max-width: 970px; }
 .workflow-heading > p:last-child { max-width: 73ch; color: #b6cad7; font-size: 1.03rem; }
-.scenario-media { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 18px; margin-top: 52px; }
+.scenario-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 52px; }
 .scenario-media figure { padding: 16px; margin: 0; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-media); background: rgba(255, 255, 255, 0.055); }
 .scenario-media img { width: 100%; border-radius: 10px; background: #fff; }
 .scenario-media figure:first-child img { max-width: 750px; }
 .scenario-media figure:last-child img { max-width: 430px; margin-inline: auto; }
+.scenario-media figure .option2-picture img { max-width: none; margin-inline: 0; }
 .scenario-label { display: inline-block; margin: 0 2px 12px; color: #7ee4d2; font-size: 0.72rem; font-weight: 850; letter-spacing: 0.1em; text-transform: uppercase; }
 .scenario-media figcaption { padding: 12px 3px 0; color: #a9bfcd; font-size: 0.76rem; }
 .workflow-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 0; margin: 48px 0 0; border-top: 1px solid rgba(255, 255, 255, 0.16); list-style: none; }
@@ -580,6 +582,7 @@ p, h1, h2, h3, h4, ul, ol, figure { margin-top: 0; }
   .panel-media .capture-delivery, .feature-story-media .capture-delivery { width: min(100%, 420px); }
   .scenario-media figure:first-child picture { max-width: 330px; }
   .scenario-media figure:last-child picture { max-width: 295px; }
+  .scenario-media figure .option2-picture { max-width: none; }
   .video-poster { padding: 30px 27px; }
   .video-poster > img { top: 25px; left: 27px; width: 160px; }
   .video-runtime { top: 27px; right: 27px; }
@@ -704,7 +707,7 @@ p, h1, h2, h3, h4, ul, ol, figure { margin-top: 0; }
   position: relative;
   z-index: 4;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 7px;
   width: min(1120px, calc(100% - 48px));
   padding: 8px;
@@ -842,6 +845,7 @@ p, h1, h2, h3, h4, ul, ol, figure { margin-top: 0; }
 .panorama-shell-narrow .panorama-canvas picture { max-width: 670px; }
 .panorama-stage-finding .panorama-canvas picture { max-width: 1010px; }
 .panorama-stage-delivery .panorama-canvas img { width: auto; max-height: 560px; }
+.panorama-stage-delivery .panorama-canvas img.capture-option2 { width: 100%; max-height: none; }
 .question-card {
   position: absolute;
   z-index: 3;
@@ -925,7 +929,7 @@ p, h1, h2, h3, h4, ul, ol, figure { margin-top: 0; }
 @media (max-width: 900px) {
   .hero.hero-panorama { padding-top: 4.5rem; background: linear-gradient(180deg, #fff 0%, #fff 48%, #f3f8fa 100%); }
   .hero-panorama-copy h1 { font-size: clamp(3.7rem, 10vw, 5.3rem); }
-  .question-tabs { grid-template-columns: 1fr 1fr; width: calc(100% - 24px); margin-bottom: -16px; }
+  .question-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); width: calc(100% - 24px); margin-bottom: -16px; }
   .question-tabs button { min-height: 75px; }
   .panorama-stage {
     display: grid;

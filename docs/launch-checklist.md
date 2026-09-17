@@ -5,7 +5,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 ## 1. Brand and claim accuracy
 
 - [ ] Canonical Option 7 symbol and Mantiva360 wordmark are used on every website surface.
-- [ ] Product captures are labelled as fictional and no internal demo-project identity is visible in a published crop.
+- [ ] Product visuals are labelled as promotional renderings with fictional data, and no source-account identity or legacy application branding is visible.
 - [ ] Desktop and mobile art-directed crops have been reviewed at their actual CSS display sizes.
 - [ ] No personal email, customer name or confidential project record appears in a public asset.
 - [ ] No SAP endorsement, certification, partnership or unverified integration is claimed.

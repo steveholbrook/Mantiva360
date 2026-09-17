@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="980" viewBox="0 0 720 980" role="img" aria-labelledby="title desc">
+  <title id="title">Mantiva360 Signal and Source mobile promotional interface</title>
+  <desc id="desc">A mobile schedule signal connected to the overdue Solution Design source record and deterministic trace.</desc>
+  <defs>
+    <linearGradient id="nav" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071a2c"/><stop offset="1" stop-color="#0b304b"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4f4f2"/><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#eaf2f8"/></linearGradient>
+    <style>text{font-family:Inter,Arial,sans-serif;fill:#233f55}.small{font-size:18px}.tiny{font-size:15px}.body{font-size:20px}.muted{fill:#718396}.strong{font-weight:800}.white{fill:#fff}.caps{font-size:14px;font-weight:900;letter-spacing:1px}</style>
+  </defs>
+  <rect width="720" height="980" rx="28" fill="#eef4f6"/>
+  <rect width="720" height="72" rx="28" fill="url(#nav)"/><rect y="44" width="720" height="28" fill="url(#nav)"/>
+  <circle cx="38" cy="36" r="14" fill="none" stroke="#46c7b3" stroke-width="6"/><path d="M38 22a14 14 0 0 1 13 8" fill="none" stroke="#8db7c8" stroke-width="6" stroke-linecap="round"/><text x="66" y="45" class="white strong" font-size="24">Mantiva360</text><circle cx="675" cy="36" r="18" fill="#fff" opacity=".14"/><text x="675" y="42" class="white tiny strong" text-anchor="middle">GR</text>
+  <text x="30" y="117" class="strong" font-size="30">Signal and source</text><text x="30" y="147" class="small muted">Why is delivery off track?</text>
+  <rect x="30" y="174" width="660" height="758" rx="20" fill="url(#glow)" stroke="#c9dae2"/>
+  <g opacity=".28"><rect x="58" y="203" width="604" height="76" rx="12" fill="#fff" stroke="#cbd7df"/><rect x="80" y="226" width="220" height="14" rx="7" fill="#b6c4ce"/><rect x="80" y="251" width="356" height="10" rx="5" fill="#ccd7df"/></g>
+  <g transform="translate(58 242)">
+    <rect width="604" height="658" rx="18" fill="#fff" stroke="#2ab7a7" stroke-width="3"/>
+    <circle cx="0" cy="0" r="23" fill="#0c7373"/><text x="0" y="7" class="white strong" font-size="20" text-anchor="middle">2</text>
+    <rect x="28" y="36" width="154" height="36" rx="8" fill="#fbe4e7"/><circle cx="50" cy="54" r="6" fill="#b72e40"/><text x="66" y="60" class="caps" fill="#9d2435">HIGH · SCHEDULE</text>
+    <rect x="399" y="36" width="176" height="36" rx="18" fill="#eef4f7"/><text x="487" y="60" class="tiny strong" text-anchor="middle">Project Health</text>
+    <text x="28" y="125" class="strong" font-size="34">Activities overdue</text>
+    <text x="28" y="165" class="body muted">1 of 4 active activities are overdue.</text>
+    <text x="28" y="198" class="tiny muted">Dependent work or a milestone may be delayed.</text>
+    <line x1="28" y1="228" x2="576" y2="228" stroke="#dbe4ea"/>
+    <g transform="translate(28 256)">
+      <rect width="548" height="126" rx="14" fill="#f5f8fa" stroke="#d4dfe6"/>
+      <text x="20" y="30" class="caps muted">AFFECTED RECORD</text><text x="20" y="70" class="strong" font-size="24">Solution Design</text><text x="20" y="100" class="tiny muted">Delivery Plan activity</text>
+      <rect x="389" y="71" width="133" height="38" rx="9" fill="#e6f1f8"/><text x="455" y="96" class="tiny strong" fill="#1268b3" text-anchor="middle">Open source ↗</text>
+    </g>
+    <g transform="translate(28 400)">
+      <rect width="548" height="126" rx="14" fill="#f5f8fa" stroke="#d4dfe6"/>
+      <text x="20" y="30" class="caps muted">DETERMINISTIC TRACE</text><circle cx="29" cy="60" r="8" fill="#b72e40"/><text x="48" y="67" class="strong body">Open</text><text x="156" y="67" class="small muted">Priority 400</text><text x="20" y="101" class="tiny muted">Detected 14 Sep 2026 · 4:18 pm</text>
+    </g>
+    <g transform="translate(28 550)">
+      <rect width="548" height="82" rx="12" fill="#e6f5f1"/><circle cx="28" cy="27" r="10" fill="#0c7b74"/><path d="m23 27 4 4 7-9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="48" y="31" class="strong tiny" fill="#0b675f">Source and reason stay beside the signal.</text><text x="48" y="57" class="tiny" fill="#3c756f">The governed record remains inspectable.</text>
+    </g>
+  </g>
+</svg>

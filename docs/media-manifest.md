@@ -2,35 +2,31 @@
 
 Internal review record, 17 September 2026. Public media must use only approved fictional data and must not expose the retired internal demonstration identity.
 
-The repository does not record the original capture date or a product build/version identifier for the supplied screenshots. Their scenario is an approved representative fictional project state. Capture date and product version therefore remain owner-supplied metadata blockers and are not inferred from file timestamps.
+The published Option 02 screens are promotional SVG renderings, not exact screenshots. They were designed from the inspected live Delivery Plan, exception-detail and corrective-action structures, with simplified application chrome and one consistent fictional scenario. Separate desktop and mobile compositions preserve legibility. The prior exact WebP crops remain in the repository for rollback but are not referenced by public HTML.
 
-## Product captures
+## Promotional product renderings
 
-| Published asset | Source evidence | Exact crop | Native dimensions | Intended use | Alt-text intent | Approval state |
-|---|---|---|---:|---|---|---|
-| `cockpit-context-v2.webp` | Cockpit source SHA-256 `d93b3eaf...a972` | `1040x550+275+300` | 1040 × 550 | Homepage contextual hero | Project Health, control filters, attention queue and controlled-recovery context | Review candidate. Pixel inspection and OCR found no retired demo identity. |
-| `cockpit-finding-v2.webp` | Cockpit source SHA-256 `d93b3eaf...a972` | `1010x350+285+500` | 1010 × 350 | Product showcase and corrective-action signal | Critical deliverable finding, impact and recommended correction | Review candidate. Pixel inspection and OCR found no retired demo identity. |
-| `cockpit-recovery-v2.webp` | Cockpit source SHA-256 `d93b3eaf...a972` | `670x330+620+515` | 670 × 330 | Focused recovery explanation | Controlled-recovery guidance and source-engine verification boundary | Review candidate. Pixel inspection and OCR found no retired demo identity. |
-| `delivery-context-v2.webp` | Delivery source SHA-256 `35f2bed...028` | `1050x740+270+100` | 1050 × 740 | Product showcase and Product page | Execution timeline with selected activity, evidence and next-action context | Review candidate. Pixel inspection and OCR found no retired demo identity. |
-| `cockpit-mobile-v2.webp` | Cockpit source SHA-256 `d93b3eaf...a972`; derived through the approved recovery crop | Original-source coordinates `295x330+995+515` | 295 × 330 | Mobile hero and controlled-response detail | Controlled-recovery action, source correction and recalculation boundary | Review candidate. Exact lossless crop; visual inspection and OCR found no retired demo identity. |
-| `cockpit-finding-mobile-v2.webp` | Cockpit source SHA-256 `d93b3eaf...a972`; derived through the approved finding crop | Original-source coordinates `330x270+290+575` | 330 × 270 | Mobile exception detail | Critical deliverable condition, impact and owner | Review candidate. Exact lossless crop; visual inspection and OCR found no retired demo identity. |
-| `delivery-mobile-v2.webp` | Delivery source SHA-256 `35f2bed...028`; derived through the approved contextual crop | Original-source coordinates `420x740+900+100` | 420 × 740 | Mobile Delivery Plan detail | Selected activity, progress, schedule, action and evidence context | Review candidate. Exact lossless crop; visual inspection and OCR found no retired demo identity. |
+| Published asset | Product basis | Native dimensions | Intended use | Alt-text intent | Approval state |
+|---|---|---:|---|---|---|
+| `option2-delivery-plan.svg` | Live Delivery Plan and POAP structure | 1440 × 900 | Homepage, Product and SAP Delivery | Six workstreams with Solution Design crossing Today | Selected Option 02 |
+| `option2-delivery-plan-mobile.svg` | Responsive reconstruction of the same plan | 720 × 980 | Narrow-screen art direction | Legible plan summary, workstreams, timeline and highlighted activity | Selected Option 02 |
+| `option2-signal-source.svg` | Live exception-detail structure | 1440 × 900 | Homepage and corrective-action story | Schedule severity, affected record, detection and deterministic trace | Selected Option 02 |
+| `option2-signal-source-mobile.svg` | Responsive reconstruction of the same signal | 720 × 980 | Narrow-screen art direction | Signal and governed source in a stacked view | Selected Option 02 |
+| `option2-governed-response.svg` | Live corrective-action fields and control boundary | 1440 × 900 | Homepage and corrective-action story | Owner, target, required outcome and recalculation verification | Selected Option 02 |
+| `option2-governed-response-mobile.svg` | Responsive reconstruction of the same response | 720 × 1040 | Narrow-screen art direction | Accountable action and verification path in a stacked view | Selected Option 02 |
 
-The crops are deterministic pixel crops. No content, value, status, person, label or control was generated, removed, retouched or recoloured. Lossless WebP was selected to protect interface text. The mobile images are art-directed detail crops selected with responsive `<picture>` sources, with CSS widths capped to prevent upscaling.
-
-The source screenshots are excluded from the Firebase `public/` payload because their uncropped pixels contain a retired internal demonstration identity. Their complete SHA-256 fingerprints are recorded in repository history. A private owner-controlled source archive remains required.
+Public captions identify these as promotional renderings based on the live interface. The assets exclude source-account identity and legacy application branding. `Golden Reference SAP Programme`, `Solution Design` and `Alex Morgan` are representative fictional data.
 
 ### Published-file integrity
 
 | Asset | SHA-256 |
 |---|---|
-| `cockpit-context-v2.webp` | `a3e4bdd6d85fa540fcd6af5157798e19e8b0ef29cd56b174b42d277cbfe8a307` |
-| `cockpit-finding-v2.webp` | `3e1718b2eedad8fbf4d9339c9bfcf36f3b51857648dcc4175afe1452f3751dca` |
-| `cockpit-recovery-v2.webp` | `18e7f8982cd80ae28d282f0e4373d6a46edd73c3c2571eb76da54c0b95f5e5a8` |
-| `delivery-context-v2.webp` | `ad15162a9410809dec5bf8092e7916b26c53b0a1a343aca93ded0d208dbe4cd5` |
-| `cockpit-mobile-v2.webp` | `33f6fd2e9ca95d10372b84ed9241e3d09c5dfc8f091c5fcfb7ab9214b9b86c95` |
-| `cockpit-finding-mobile-v2.webp` | `59869a742de364c31567df0b2e94452e9d8925d3509e3d513188ac062e4b019f` |
-| `delivery-mobile-v2.webp` | `0b56405f73141ba0ab397d643d605cbf3b4d9f9e39e15b971bb027d87e1a6b49` |
+| `option2-delivery-plan.svg` | `911bb18d4590159c6b03b5d4c80663beee534514200d19296a167d63f3b56f30` |
+| `option2-delivery-plan-mobile.svg` | `782113a243979313bbb79575da5e509179f6a175e824f9118d532f39b6e38938` |
+| `option2-signal-source.svg` | `da00cc16c284683de0b2fce6403d66aa6d1b7b4a6445b156a8cd9b6b55c9c4e7` |
+| `option2-signal-source-mobile.svg` | `430e897c814cec21666e040efb6a981ae1b1e89c57786d5ce02182b2177208a7` |
+| `option2-governed-response.svg` | `392da9cab18145cdd39027135ecf025c9b891db052cb658dce4fa9ba0759775e` |
+| `option2-governed-response-mobile.svg` | `93c8600ad65af345844011fb6876c3368be6798a2ffbe5c39e984b343ad9afed` |
 
 ## Brand and social media
 
@@ -54,4 +50,4 @@ Posters are HTML and CSS surfaces with the approved logo, one headline, one play
 
 ## Missing media
 
-Current approved captures do not provide a neutral, high-resolution view of Planning & Forecasts, Actuals and allocation, RAID, Reporting, Health detail, Reconciliation detail or read-only assistance. Those capabilities may be described only from verified implementation evidence and must not be presented as captured UI until approved media is supplied.
+Current approved renderings do not cover Planning & Forecasts, Actuals and allocation, RAID, Reporting, detailed reconciliation or read-only assistance. Those capabilities may be described from verified implementation evidence but must not be presented as product UI until suitable source screens are inspected and approved.

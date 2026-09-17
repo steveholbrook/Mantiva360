@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mantiva360 Governed Response promotional interface</title>
+  <desc id="desc">A controlled corrective action with owner, target date, required outcome and a verification path through recalculation.</desc>
+  <defs>
+    <linearGradient id="nav" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071a2c"/><stop offset="1" stop-color="#0b304b"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9f7f3"/><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#eaf2f8"/></linearGradient>
+    <linearGradient id="button" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1268b3"/><stop offset="1" stop-color="#0c7373"/></linearGradient>
+    <style>text{font-family:Inter,Arial,sans-serif;fill:#233f55}.small{font-size:15px}.body{font-size:18px}.muted{fill:#718396}.strong{font-weight:800}.white{fill:#fff}.caps{font-size:12px;font-weight:900;letter-spacing:1.2px}.navText{fill:#a9bfcd;font-size:14px}</style>
+  </defs>
+  <rect width="1440" height="900" rx="24" fill="#edf3f6"/>
+  <rect width="1440" height="64" rx="24" fill="url(#nav)"/><rect y="40" width="1440" height="24" fill="url(#nav)"/>
+  <g transform="translate(28 19)"><circle cx="13" cy="13" r="11" fill="none" stroke="#46c7b3" stroke-width="5"/><path d="M13 2a11 11 0 0 1 10 6" fill="none" stroke="#8db7c8" stroke-width="5" stroke-linecap="round"/><text x="35" y="19" class="white" font-size="20" font-weight="850">Mantiva360</text></g>
+  <text x="1175" y="39" class="navText">360 Cockpit · Corrective action</text><circle cx="1394" cy="32" r="16" fill="#fff" opacity=".14"/><text x="1394" y="37" class="white small strong" text-anchor="middle">GR</text>
+  <rect y="64" width="212" height="836" fill="#fbfcfd"/><line x1="212" y1="64" x2="212" y2="900" stroke="#d7e1e8"/>
+  <text x="28" y="105" class="caps muted">PLAN</text><text x="38" y="143" class="small">Delivery Plan</text><text x="38" y="181" class="small">Activities</text>
+  <text x="28" y="234" class="caps muted">CONTROL</text><text x="38" y="272" class="small">Project Health</text><text x="38" y="310" class="small">Controls</text>
+  <text x="28" y="363" class="caps muted">REVIEW</text>
+  <rect x="16" y="381" width="180" height="44" rx="9" fill="#e2f3f0"/><rect x="16" y="381" width="4" height="44" rx="2" fill="#0c7373"/><circle cx="38" cy="403" r="6" fill="#0c7373"/><text x="55" y="409" class="small strong" fill="#0c7373">Corrective actions</text>
+  <text x="38" y="458" class="small">360 Cockpit</text><text x="38" y="496" class="small">Reporting</text>
+
+  <g transform="translate(244 92)"><text class="strong" font-size="29">Governed response</text><text y="29" class="small muted">Turn the signal into an accountable next step without bypassing control.</text></g>
+  <g transform="translate(244 156)">
+    <rect width="1160" height="690" rx="22" fill="url(#glow)" stroke="#cbdce3"/>
+    <g opacity=".28"><rect x="38" y="42" width="1084" height="88" rx="14" fill="#fff" stroke="#ccd9e1"/><rect x="63" y="66" width="240" height="14" rx="7" fill="#b7c5cf"/><rect x="63" y="93" width="385" height="10" rx="5" fill="#d0dae1"/><rect x="38" y="158" width="1084" height="468" rx="14" fill="#fff" stroke="#ccd9e1"/></g>
+    <g transform="translate(96 64)">
+      <rect width="968" height="562" rx="20" fill="#fff" stroke="#2ab7a7" stroke-width="3"/>
+      <circle cx="0" cy="0" r="23" fill="#0c7373"/><text x="0" y="7" class="white strong" font-size="20" text-anchor="middle">3</text>
+      <rect x="34" y="34" width="180" height="31" rx="8" fill="#e2f4ed"/><circle cx="54" cy="49" r="5" fill="#3c8c46"/><text x="69" y="55" class="caps" fill="#377f40">GOVERNED RESPONSE</text>
+      <text x="34" y="113" class="strong" font-size="32">Make the next step accountable.</text>
+      <text x="34" y="150" class="body muted">Confirm the recovery action, owner, forecast date and observable outcome.</text>
+      <line x1="34" y1="181" x2="934" y2="181" stroke="#dbe4ea"/>
+      <g transform="translate(34 211)">
+        <text class="caps muted">CORRECTIVE ACTION</text>
+        <g transform="translate(0 28)"><text class="small strong" y="17">Owner</text><rect x="0" y="28" width="272" height="54" rx="10" fill="#fff" stroke="#c9d6df"/><text x="18" y="62" class="body">Alex Morgan</text></g>
+        <g transform="translate(292 28)"><text class="small strong" y="17">Target date</text><rect x="0" y="28" width="252" height="54" rx="10" fill="#fff" stroke="#c9d6df"/><text x="18" y="62" class="body">22 Sep 2026</text></g>
+        <g transform="translate(0 135)"><text class="small strong" y="17">Required outcome</text><rect x="0" y="28" width="544" height="72" rx="10" fill="#fff" stroke="#c9d6df"/><text x="18" y="59" class="body">Forecast date agreed and published</text><text x="18" y="82" class="small muted">for Solution Design.</text></g>
+        <rect x="0" y="242" width="544" height="52" rx="11" fill="url(#button)"/><text x="272" y="275" class="white body strong" text-anchor="middle">Record accountable action</text>
+      </g>
+      <g transform="translate(612 211)">
+        <text class="caps muted">VERIFICATION PATH</text>
+        <g transform="translate(0 35)"><circle cx="24" cy="24" r="24" fill="#e4f2f8"/><text x="24" y="31" class="strong" fill="#1268b3" font-size="19" text-anchor="middle">1</text><text x="62" y="20" class="strong body">Source updated</text><text x="62" y="44" class="small muted">by an authorised user</text></g>
+        <line x1="24" y1="83" x2="24" y2="117" stroke="#8fb7c7" stroke-width="3" stroke-dasharray="5 5"/>
+        <g transform="translate(0 117)"><circle cx="24" cy="24" r="24" fill="#e4f2f8"/><text x="24" y="31" class="strong" fill="#1268b3" font-size="19" text-anchor="middle">2</text><text x="62" y="20" class="strong body">Controls recalculate</text><text x="62" y="44" class="small muted">using the configured rules</text></g>
+        <line x1="24" y1="165" x2="24" y2="199" stroke="#8fb7c7" stroke-width="3" stroke-dasharray="5 5"/>
+        <g transform="translate(0 199)"><circle cx="24" cy="24" r="24" fill="#e2f4ed"/><path d="m14 24 7 7 14-17" fill="none" stroke="#3c8c46" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="62" y="20" class="strong body">Resolution verified</text><text x="62" y="44" class="small muted">only when the condition clears</text></g>
+      </g>
+      <g transform="translate(34 512)"><rect width="900" height="38" rx="10" fill="#e6f5f1"/><circle cx="22" cy="19" r="8" fill="#0c7b74"/><path d="m18 19 3 3 6-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><text x="42" y="24" class="small strong" fill="#0b675f">The action is recorded. Resolution is verified after recalculation.</text></g>
+    </g>
+  </g>
+</svg>

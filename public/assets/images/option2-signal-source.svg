@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mantiva360 Signal and Source promotional interface</title>
+  <desc id="desc">A schedule signal explains that one of four active activities is overdue and traces the condition to the Solution Design source record.</desc>
+  <defs>
+    <linearGradient id="nav" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071a2c"/><stop offset="1" stop-color="#0b304b"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4f4f2"/><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#eaf2f8"/></linearGradient>
+    <style>text{font-family:Inter,Arial,sans-serif;fill:#233f55}.small{font-size:15px}.body{font-size:18px}.muted{fill:#718396}.strong{font-weight:800}.white{fill:#fff}.caps{font-size:12px;font-weight:900;letter-spacing:1.2px}.label{font-size:13px;font-weight:850;letter-spacing:1px}.navText{fill:#a9bfcd;font-size:14px}</style>
+  </defs>
+  <rect width="1440" height="900" rx="24" fill="#edf3f6"/>
+  <rect width="1440" height="64" rx="24" fill="url(#nav)"/><rect y="40" width="1440" height="24" fill="url(#nav)"/>
+  <g transform="translate(28 19)"><circle cx="13" cy="13" r="11" fill="none" stroke="#46c7b3" stroke-width="5"/><path d="M13 2a11 11 0 0 1 10 6" fill="none" stroke="#8db7c8" stroke-width="5" stroke-linecap="round"/><text x="35" y="19" class="white" font-size="20" font-weight="850">Mantiva360</text></g>
+  <text x="1184" y="39" class="navText">360 Cockpit · Project Health</text><circle cx="1394" cy="32" r="16" fill="#fff" opacity=".14"/><text x="1394" y="37" class="white small strong" text-anchor="middle">GR</text>
+  <rect y="64" width="212" height="836" fill="#fbfcfd"/><line x1="212" y1="64" x2="212" y2="900" stroke="#d7e1e8"/>
+  <text x="28" y="105" class="caps muted">PLAN</text><text x="38" y="143" class="small">Delivery Plan</text><text x="38" y="181" class="small">Activities</text>
+  <text x="28" y="234" class="caps muted">CONTROL</text>
+  <rect x="16" y="252" width="180" height="44" rx="9" fill="#e2f3f0"/><rect x="16" y="252" width="4" height="44" rx="2" fill="#0c7373"/><circle cx="38" cy="274" r="6" fill="#0c7373"/><text x="55" y="280" class="small strong" fill="#0c7373">Project Health</text>
+  <text x="38" y="329" class="small">Controls</text><text x="38" y="367" class="small">Evidence</text>
+  <text x="28" y="420" class="caps muted">REVIEW</text><text x="38" y="458" class="small">360 Cockpit</text><text x="38" y="496" class="small">Reporting</text>
+
+  <g transform="translate(244 92)"><text class="strong" font-size="29">Signal and source</text><text y="29" class="small muted">See the condition, its impact and the governed record together.</text></g>
+  <g transform="translate(244 156)">
+    <rect width="1160" height="690" rx="22" fill="url(#glow)" stroke="#cbdce3"/>
+    <g opacity=".35">
+      <rect x="38" y="42" width="1084" height="92" rx="14" fill="#fff" stroke="#ccd9e1"/><rect x="63" y="67" width="225" height="15" rx="7" fill="#b7c5cf"/><rect x="63" y="94" width="365" height="10" rx="5" fill="#d0dae1"/>
+      <rect x="38" y="158" width="330" height="468" rx="14" fill="#fff" stroke="#ccd9e1"/><rect x="64" y="190" width="145" height="13" rx="6" fill="#b7c5cf"/><rect x="64" y="224" width="264" height="70" rx="10" fill="#edf1f4"/><rect x="64" y="312" width="264" height="70" rx="10" fill="#edf1f4"/><rect x="64" y="400" width="264" height="70" rx="10" fill="#edf1f4"/>
+      <rect x="390" y="158" width="732" height="468" rx="14" fill="#fff" stroke="#ccd9e1"/><rect x="420" y="190" width="190" height="13" rx="6" fill="#b7c5cf"/><path d="M420 240h620M420 290h620M420 340h620M420 390h620M420 440h620" stroke="#d6e0e6" stroke-width="11" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(128 92)">
+      <rect width="904" height="514" rx="20" fill="#fff" stroke="#2ab7a7" stroke-width="3"/>
+      <circle cx="0" cy="0" r="23" fill="#0c7373"/><text x="0" y="7" class="white strong" font-size="20" text-anchor="middle">2</text>
+      <rect x="34" y="35" width="126" height="30" rx="7" fill="#fbe4e7"/><circle cx="53" cy="50" r="5" fill="#b72e40"/><text x="67" y="56" class="caps" fill="#9d2435">HIGH · SCHEDULE</text>
+      <rect x="690" y="35" width="178" height="30" rx="15" fill="#eef4f7"/><text x="779" y="56" class="small strong" text-anchor="middle">Project Health</text>
+      <text x="34" y="116" class="strong" font-size="34">Activities overdue</text>
+      <text x="34" y="154" class="body muted">1 of 4 active activities are overdue.</text>
+      <text x="34" y="183" class="small muted">The condition may delay dependent work or a project milestone.</text>
+      <line x1="34" y1="215" x2="870" y2="215" stroke="#dbe4ea"/>
+
+      <g transform="translate(34 244)">
+        <rect width="382" height="146" rx="14" fill="#f5f8fa" stroke="#d4dfe6"/>
+        <text x="22" y="31" class="caps muted">AFFECTED RECORD</text>
+        <text x="22" y="71" class="strong" font-size="24">Solution Design</text>
+        <text x="22" y="103" class="small muted">Delivery Plan activity</text>
+        <rect x="235" y="91" width="122" height="36" rx="9" fill="#e6f1f8"/><text x="296" y="114" class="small strong" fill="#1268b3" text-anchor="middle">Open source ↗</text>
+      </g>
+      <g transform="translate(438 244)">
+        <rect width="432" height="146" rx="14" fill="#f5f8fa" stroke="#d4dfe6"/>
+        <text x="22" y="31" class="caps muted">DETERMINISTIC TRACE</text>
+        <g transform="translate(22 53)"><circle cx="8" cy="8" r="8" fill="#b72e40"/><text x="29" y="14" class="strong body">Open</text><text x="122" y="14" class="small muted">Priority 400</text></g>
+        <text x="22" y="104" class="small muted">Detected 14 Sep 2026 · 4:18 pm</text>
+        <text x="22" y="128" class="small muted">Reason remains inspectable and linked.</text>
+      </g>
+      <g transform="translate(34 418)">
+        <rect width="836" height="64" rx="12" fill="#e6f5f1"/>
+        <circle cx="30" cy="32" r="10" fill="#0c7b74"/><path d="m25 32 4 4 7-9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="52" y="28" class="strong small" fill="#0b675f">The source and reason remain visible beside the signal.</text>
+        <text x="52" y="49" class="small" fill="#3c756f">Status is calculated from the governed record, not rewritten by the explanation.</text>
+      </g>
+    </g>
+  </g>
+</svg>

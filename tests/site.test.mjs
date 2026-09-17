@@ -29,10 +29,10 @@ test("static validation reports no structural, safety or route errors", () => {
 test("the product-led buyer journey and evaluation paths are explicit", () => {
   assert.match(index, /Turn project data into\s*<span>decision confidence\.<\/span>/);
   assert.match(index, /Recognise my problem|From reporting effort to decision confidence/);
-  assert.match(index, /What needs attention now\?/);
+  assert.match(index, /Where is delivery moving off plan\?/);
   assert.match(index, /Why is it off track\?/);
-  assert.match(index, /What should we do next\?/);
-  assert.match(index, /What changes downstream\?/);
+  assert.match(index, /What should we do\?/);
+  assert.match(index, /Solution Design crosses Today|Solution Design activity crossing the Today marker/);
   assert.match(index, />Get started\s*<span/);
   assert.match(index, /Watch overview/);
   assert.match(index, /button button-primary button-large button-app/);
@@ -69,23 +69,26 @@ test("key text and focus colours meet their contrast targets", () => {
   assert.ok(contrast("1c827e", "ffffff") >= 3);
 });
 
-test("product proof uses only approved exact crops", () => {
-  for (const asset of ["cockpit-context-v2.webp", "cockpit-finding-v2.webp", "cockpit-recovery-v2.webp", "delivery-context-v2.webp", "cockpit-mobile-v2.webp", "cockpit-finding-mobile-v2.webp", "delivery-mobile-v2.webp"]) {
+test("product proof uses the approved Option 02 promotional renderings", () => {
+  const assets = ["option2-delivery-plan.svg", "option2-signal-source.svg", "option2-governed-response.svg", "option2-delivery-plan-mobile.svg", "option2-signal-source-mobile.svg", "option2-governed-response-mobile.svg"];
+  for (const asset of assets) {
     assert.equal(fs.existsSync(path.join(publicDirectory, "assets/images", asset)), true);
   }
   for (const asset of ["cockpit-red-v1.webp", "delivery-plan-v1.webp"]) {
     assert.equal(fs.existsSync(path.join(publicDirectory, "assets/images", asset)), false);
   }
-  assert.doesNotMatch([index, product, sap, resources].join("\n"), new RegExp(["gold", "\\s*2"].join(""), "i"));
-  assert.match(index, /Genuine product capture using representative fictional data/);
-  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/cockpit-mobile-v2\.webp"/);
-  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/delivery-mobile-v2\.webp"/);
-  assert.match(product, /does not present invented interface artwork|captures are still required/i);
+  const renderedScreens = assets.map((asset) => readPublic(`assets/images/${asset}`)).join("\n");
+  assert.doesNotMatch([index, product, sap, resources, renderedScreens].join("\n"), /ptracker|gold2/i);
+  assert.match(index, /Promotional rendering based on the live Mantiva360 interface/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-delivery-plan-mobile\.svg"/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-signal-source-mobile\.svg"/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-governed-response-mobile\.svg"/);
+  assert.match(product, /Promotional rendering based on the live interface/i);
 });
 
 test("the question-led product panorama is user controlled and keyboard operable", () => {
-  assert.equal((index.match(/role="tab"/g) ?? []).length, 4);
-  assert.equal((index.match(/role="tabpanel"/g) ?? []).length, 4);
+  assert.equal((index.match(/role="tab"/g) ?? []).length, 3);
+  assert.equal((index.match(/role="tabpanel"/g) ?? []).length, 3);
   assert.match(index, /class="question-tabs" role="tablist"/);
   assert.match(index, /id="product-experience"[^>]*data-tabs/);
   assert.match(javascript, /ArrowRight/);
