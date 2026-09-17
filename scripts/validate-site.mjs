@@ -86,11 +86,16 @@ export function validateSite() {
   });
 
   const config = fs.readFileSync(path.join(publicDirectory, "assets/js/site-config.js"), "utf8");
+  const index = fs.readFileSync(path.join(publicDirectory, "index.html"), "utf8");
   ["XMQa-RB5fUU", "QkCRdrASlAg", "wEgHPeHhb7I"].forEach((videoId) => {
     if (!config.includes(videoId)) errors.push(`site config missing video ${videoId}`);
   });
   if (!config.includes('demoUrl: "https://mantiva360.app/"')) errors.push("site config has the wrong demo destination");
   if (!config.includes("enabled: false")) errors.push("enquiry handling must remain disabled until an endpoint is verified");
+  if (!/data-review-form\s+hidden/i.test(index)) errors.push("the inactive enquiry form must remain hidden while submission is disabled");
+  if (!/data-review-unavailable/i.test(index)) errors.push("the disabled enquiry state must be visible and explicit");
+  if (/<iframe\b/i.test(index)) errors.push("video iframes must not be present before a visitor chooses to play");
+  if (/Website source/i.test(index)) errors.push("the source repository must not appear as primary buyer navigation");
 
   return { errors, fileCount: files.length, htmlCount: htmlFiles.length };
 }

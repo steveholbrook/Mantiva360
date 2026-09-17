@@ -22,7 +22,7 @@ menuButton?.addEventListener("click", () => {
   setMenu(menuButton.getAttribute("aria-expanded") !== "true");
 });
 
-qsa("a", navigation).forEach((link) => link.addEventListener("click", () => setMenu(false)));
+if (navigation) qsa("a, button", navigation).forEach((control) => control.addEventListener("click", () => setMenu(false)));
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenu(false);
 });
@@ -65,20 +65,22 @@ const videoEmbed = qs("[data-video-embed]");
 const videoTitle = qs("[data-video-dialog-title]");
 const youtubeLink = qs("[data-video-youtube-link]");
 const videoClose = qs("[data-video-close]");
+let videoOpener = null;
 
 function validVideoId(videoId) {
   return Object.hasOwn(siteConfig.videos, videoId);
 }
 
-function openVideo(videoId, requestedTitle) {
+function openVideo(videoId, requestedTitle, opener) {
   if (!videoDialog || !videoEmbed || !validVideoId(videoId)) return;
   const title = requestedTitle || siteConfig.videos[videoId];
   const iframe = document.createElement("iframe");
   iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
   iframe.title = title;
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.allow = "autoplay; encrypted-media; picture-in-picture";
   iframe.allowFullscreen = true;
   iframe.referrerPolicy = "strict-origin-when-cross-origin";
+  videoOpener = opener || document.activeElement;
   videoEmbed.replaceChildren(iframe);
   if (videoTitle) videoTitle.textContent = title;
   if (youtubeLink) youtubeLink.href = `https://youtu.be/${videoId}`;
@@ -94,7 +96,7 @@ function closeVideo() {
 }
 
 qsa("[data-video-open]").forEach((button) => {
-  button.addEventListener("click", () => openVideo(button.dataset.videoOpen, button.dataset.videoTitle));
+  button.addEventListener("click", () => openVideo(button.dataset.videoOpen, button.dataset.videoTitle, button));
 });
 videoClose?.addEventListener("click", closeVideo);
 videoDialog?.addEventListener("click", (event) => {
@@ -109,6 +111,8 @@ videoDialog?.addEventListener("cancel", (event) => {
 videoDialog?.addEventListener("close", () => {
   videoEmbed?.replaceChildren();
   document.body.classList.remove("dialog-open");
+  if (videoOpener instanceof HTMLElement) videoOpener.focus();
+  videoOpener = null;
 });
 
 const revealItems = qsa(".reveal");
@@ -127,6 +131,7 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 }
 
 const reviewForm = qs("[data-review-form]");
+const reviewUnavailable = qs("[data-review-unavailable]");
 const formAlert = qs("[data-form-alert]");
 const availability = qs("[data-form-availability]");
 
@@ -146,19 +151,14 @@ function validateReviewForm(form) {
   return false;
 }
 
-if (reviewForm) {
-  if (siteConfig.enquiry.enabled && siteConfig.enquiry.endpoint && availability) {
-    availability.textContent = "Your request is stored only after the service confirms submission. A saved request is not a confirmed meeting.";
-  }
+if (reviewForm && siteConfig.enquiry.enabled && siteConfig.enquiry.endpoint) {
+  reviewForm.hidden = false;
+  if (reviewUnavailable) reviewUnavailable.hidden = true;
+  if (availability) availability.textContent = "Your request is stored only after the service confirms submission. A saved request is not a confirmed meeting.";
 
   reviewForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!validateReviewForm(reviewForm)) return;
-
-    if (!siteConfig.enquiry.enabled || !siteConfig.enquiry.endpoint) {
-      showFormMessage("Online requests are not connected yet, so your details were not sent. The demo remains available while guided-review handling is completed for launch.");
-      return;
-    }
 
     const submitButton = qs('button[type="submit"]', reviewForm);
     const data = new FormData(reviewForm);
