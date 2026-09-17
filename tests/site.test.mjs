@@ -80,9 +80,9 @@ test("product proof uses the approved Option 02 promotional renderings", () => {
   const renderedScreens = assets.map((asset) => readPublic(`assets/images/${asset}`)).join("\n");
   assert.doesNotMatch([index, product, sap, resources, renderedScreens].join("\n"), /ptracker|gold2/i);
   assert.match(index, /Promotional rendering based on the live Mantiva360 interface/);
-  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-delivery-plan-mobile\.svg"/);
-  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-signal-source-mobile\.svg"/);
-  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-governed-response-mobile\.svg"/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-delivery-plan-mobile\.svg\?v=20260917-2"/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-signal-source-mobile\.svg\?v=20260917-2"/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/option2-governed-response-mobile\.svg\?v=20260917-2"/);
   assert.match(product, /Promotional rendering based on the live interface/i);
 });
 
