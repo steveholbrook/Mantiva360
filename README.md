@@ -2,9 +2,7 @@
 
 Public marketing website source for **Mantiva360**, designed for `https://mantiva360.com` and Firebase Hosting. The separate product and demonstration destination is `https://mantiva360.app`.
 
-The site uses the approved Mantiva360 Option 7 production identity, the white-led Executive Confidence system, focused product captures with fictional project data, three supplied YouTube videos and evidence-led SAP Activate positioning.
-
-Implementation base: `main` merge commit `c47ad1967f887830ee7f88247ee6320872951956`, inspected on 17 September 2026. The implementation is on `review/world-class-executive-confidence-2026-09-17` and has not been deployed.
+The site uses the approved Mantiva360 Option 7 production identity, a white-led product panorama, focused product captures with fictional project data, three supplied YouTube videos and evidence-led SAP Activate positioning. The homepage implements the selected Option 01 direction with Option 03's question-led product navigation.
 
 ## Important architecture correction
 
@@ -16,7 +14,7 @@ The repository intentionally contains no Firebase credentials, customer data, en
 
 | Area | Status |
 |---|---|
-| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented in the Executive Confidence review build |
+| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented; the homepage uses a product-led panorama with Attention, Cause, Action and Impact navigation |
 | Responsive CSS and art direction | Breakpoints cover 320, 390, 720, 768, 900, 1120 and 1440 pixel contexts; managed rendered, Safari and physical-device checks remain |
 | Supplied YouTube content | Click-to-load privacy-enhanced embeds; all three currently report captions unavailable |
 | Product captures | Lossless Focus Lens crops retain genuine interface content; mobile views use separate exact detail crops and the deployable directory excludes identifying source pixels |
@@ -24,7 +22,7 @@ The repository intentionally contains no Firebase credentials, customer data, en
 | Guided-review form | Hidden until a protected endpoint and owner retrieval process are verified |
 | `mantiva360.com` live behaviour | Returned HTTP 200 with TLS during inspection; this review branch is not deployed there |
 | `www.mantiva360.com` redirect | Must be configured against the exact Firebase domain instructions |
-| `mantiva360.app` demo access | Linked, but returned HTTP 502 in two independent checks on 17 September 2026; user reachability must be verified separately |
+| `mantiva360.app` application access | Every Get started action links to this separate destination; the application will be configured separately |
 
 ## Local preview
 
@@ -81,7 +79,7 @@ Official reference: [Firebase Hosting](https://firebase.google.com/docs/hosting)
 
 ## GitHub deployment workflow
 
-The production workflow is manual by design. It will not publish merely because code was pushed.
+The production workflow is manual by design. Pull requests receive an isolated Firebase preview, but a production publish still requires the production workflow.
 
 Configure these repository settings before running `Deploy Firebase Hosting`:
 

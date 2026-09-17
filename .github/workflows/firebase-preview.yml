@@ -1,10 +1,9 @@
-name: Firebase design review preview
+name: Firebase website preview
 
 on:
   pull_request:
     paths:
-      - "public/design-review/**"
-      - "public/assets/**"
+      - "public/**"
       - "firebase.json"
       - "tests/**"
       - "scripts/**"
