@@ -21,11 +21,11 @@ Public captions identify these as promotional renderings based on the live inter
 
 | Asset | SHA-256 |
 |---|---|
-| `option2-delivery-plan.svg` | `911bb18d4590159c6b03b5d4c80663beee534514200d19296a167d63f3b56f30` |
+| `option2-delivery-plan.svg` | `a6907856d89e1b71f283f2f2f4c59b179e9407e210c65a70e970871aabead682` |
 | `option2-delivery-plan-mobile.svg` | `782113a243979313bbb79575da5e509179f6a175e824f9118d532f39b6e38938` |
-| `option2-signal-source.svg` | `da00cc16c284683de0b2fce6403d66aa6d1b7b4a6445b156a8cd9b6b55c9c4e7` |
+| `option2-signal-source.svg` | `30262a1ecb1eebb4c1dc4d116ee3240949d7e5ff42a5570666413ccf26062202` |
 | `option2-signal-source-mobile.svg` | `430e897c814cec21666e040efb6a981ae1b1e89c57786d5ce02182b2177208a7` |
-| `option2-governed-response.svg` | `392da9cab18145cdd39027135ecf025c9b891db052cb658dce4fa9ba0759775e` |
+| `option2-governed-response.svg` | `e22528fb2b5792654ceeb7bcd6de40a619098705a3b90f340a76746ded549116` |
 | `option2-governed-response-mobile.svg` | `93c8600ad65af345844011fb6876c3368be6798a2ffbe5c39e984b343ad9afed` |
 
 ## Brand and social media
