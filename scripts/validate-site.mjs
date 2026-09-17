@@ -140,12 +140,15 @@ export function validateSite() {
   });
   if (!config.includes('demoUrl: "https://mantiva360.app/"')) errors.push("site config has the wrong demo destination");
   if (!config.includes("enabled: false")) errors.push("enquiry handling must remain disabled until an endpoint is verified");
-  if (!/data-review-form\s+hidden/i.test(index)) errors.push("the inactive enquiry form must remain hidden while submission is disabled");
-  if (!/data-review-unavailable/i.test(index)) errors.push("the disabled enquiry state must be visible and explicit");
+  const reviewFormPresent = /data-review-form/i.test(index);
+  if (reviewFormPresent && !/data-review-form\s+hidden/i.test(index)) errors.push("the inactive enquiry form must remain hidden while submission is disabled");
+  if (reviewFormPresent && !/data-review-unavailable/i.test(index)) errors.push("the disabled enquiry state must be visible and explicit");
+  if (/Request a guided review/i.test(index)) errors.push("the homepage must not promote an unverified guided-review request");
+  if (!/href="\/evaluation-checklist\.txt"/i.test(index)) errors.push("the homepage must provide the one-decision evaluation checklist");
   if (/Website source/i.test(index)) errors.push("the source repository must not appear as buyer navigation");
 
   const homepageWords = visibleWordCount(index);
-  if (homepageWords < 900 || homepageWords > 1200) errors.push(`homepage main copy is ${homepageWords} words; target is 900 to 1200`);
+  if (homepageWords < 1200 || homepageWords > 1500) errors.push(`homepage main copy is ${homepageWords} words; target is 1200 to 1500`);
 
   ["/product", "/sap-delivery", "/resources", "/privacy"].forEach((route) => {
     if (!sitemap.includes(`<loc>https://mantiva360.com${route}</loc>`)) errors.push(`sitemap missing ${route}`);

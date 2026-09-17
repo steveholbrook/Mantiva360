@@ -2,7 +2,7 @@
 
 Public marketing website source for **Mantiva360**, designed for `https://mantiva360.com` and Firebase Hosting. The separate product and demonstration destination is `https://mantiva360.app`.
 
-The site uses the approved Mantiva360 Option 7 production identity, a white-led product panorama, Option 02 promotional product renderings with fictional project data, three supplied YouTube videos and evidence-led SAP Activate positioning. The homepage follows the selected question-led path from Delivery Plan, to Signal and Source, to Governed Response.
+The site uses the approved Mantiva360 Option 7 production identity, a white-led Executive Confidence direction, genuine published product captures, three supplied YouTube videos and evidence-led SAP Activate positioning. The homepage answers five buyer questions: why change, why not keep the current tools, why Mantiva360, why trust it and why act now. The deeper Product and SAP delivery pages retain the approved Option 02 promotional renderings.
 
 ## Important architecture correction
 
@@ -14,12 +14,12 @@ The repository intentionally contains no Firebase credentials, customer data, en
 
 | Area | Status |
 |---|---|
-| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented; the homepage uses the three-step Option 02 Plan, Signal and Action navigation |
-| Responsive CSS and art direction | Breakpoints cover 320, 390, 720, 768, 900, 1120 and 1440 pixel contexts; managed rendered, Safari and physical-device checks remain |
+| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented; the review homepage uses the five-question buyer narrative and keeps the existing deep routes |
+| Responsive CSS and art direction | The homepage adds 540, 820 and 1050 pixel breakpoints and genuine mobile crops; managed preview, Safari and physical-device checks remain |
 | Supplied YouTube content | Click-to-load privacy-enhanced embeds; all three currently report captions unavailable |
-| Product visuals | Separate desktop and mobile SVG renderings reflect inspected live interface structures, disclose their promotional treatment and exclude identifying source-account detail |
+| Product visuals | Homepage uses the existing genuine WebP captures with responsive mobile crops; deeper pages retain the disclosed Option 02 promotional SVGs |
 | Firebase Hosting configuration | Ready for a selected Firebase project |
-| Guided-review form | Hidden until a protected endpoint and owner retrieval process are verified |
+| Guided-review route | Not promoted and no public form is rendered until a protected endpoint, approved owner and retrieval process are verified |
 | `mantiva360.com` live behaviour | Returned HTTP 200 with TLS during inspection; this review branch is not deployed there |
 | `www.mantiva360.com` redirect | Must be configured against the exact Firebase domain instructions |
 | `mantiva360.app` application access | Every Get started action links to this separate destination; the application will be configured separately |
@@ -42,6 +42,7 @@ Edit `public/assets/js/site-config.js` for shared runtime destinations.
 
 ```js
 demoUrl: "https://mantiva360.app/"
+overviewVideoId: "XMQa-RB5fUU"
 ```
 
 The three supplied videos are configured once in the same file:
@@ -118,9 +119,9 @@ After the Firebase review URL passes acceptance:
 
 Do not change nameservers or remove an existing apex service without confirming what it currently hosts.
 
-## Guided-review form
+## Guided-review route
 
-The form is not shown while the endpoint is disabled. Visitors see an explicit status panel explaining that no contact details are collected or sent.
+No public form or booking action is rendered while the endpoint is disabled. The one-decision evaluation checklist is available without collecting contact details, and the homepage states that the guided-review route is not open.
 
 Before enabling it, implement a same-origin, server-side Firebase Function or Cloud Run endpoint with:
 
@@ -145,7 +146,7 @@ See `docs/enquiry-service-decision.md` for the smallest suitable service design,
 - SAP Cloud ALM, Jira, Microsoft Project, finance and document platforms are referenced as toolchain categories. Native integrations are not claimed.
 - AI assists interpretation and navigation. Deterministic services calculate status and reconciliation.
 - Actual effort and cost do not automatically create earned progress.
-- Published product visuals are disclosed promotional renderings based on inspected live screens, use fictional project data and exclude identifying source-account detail.
+- Homepage product visuals are the existing published captures and preserve their recorded values, statuses and controls. Deeper-page Option 02 visuals remain disclosed promotional renderings based on inspected live screens.
 - The four-step exception story does not promise one-click remediation; status changes only when the underlying governed records change and controls recalculate.
 
 See `docs/change-summary.md` for the implementation handoff, `docs/design-system.md` for tokens and components, `docs/content-and-claims-register.md` for the maintained claim register and `docs/media-manifest.md` for product-image and video provenance.

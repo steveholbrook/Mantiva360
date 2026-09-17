@@ -1,0 +1,45 @@
+MANTIVA360 | ONE-DECISION EVALUATION CHECKLIST
+Data to Progress.
+
+Purpose: evaluate one project-control decision before considering a broader rollout.
+This document is a planning aid, not a booked meeting, implementation commitment or promise of results.
+
+1. DEFINE THE DECISION
+What is the question your present status report does not answer?
+What upcoming review, acceptance decision or delivery gate makes it relevant?
+Use fictional or sanitised material first. Do not include confidential project data.
+
+2. ESTABLISH YOUR CURRENT BASELINE
+How do you answer the question today?
+How much preparation and manual reconciliation does that take?
+Can a second authorised reviewer follow the explanation back to the records?
+What is already working well and should be retained?
+
+3. TEST THE MANTIVA360 WORKFLOW
+Identify one material finding in the 360 Cockpit.
+Inspect the reason, affected records, impact and ownership.
+Confirm the configured progress method and the role of supporting evidence.
+Keep actual effort, cost, evidence and earned progress distinct.
+Identify the authorised person and the governed record that needs correction.
+Review the recalculated condition. A completed action is not proof of resolution.
+
+4. TEST THE OPERATING MODEL
+Confirm data entry/import methods and refresh cadence.
+Confirm owner responsibilities and ongoing administration.
+Confirm access boundaries, hosting, retention, audit, support and export needs.
+Check any requested external connector rather than assuming it exists.
+Check SAP phase mapping where relevant; do not infer automated gate approval.
+
+5. AGREE ACCEPTANCE CRITERIA BEFORE THE PILOT
+Traceability: can the reviewer explain the status using the permitted records?
+Actionability: is there a clear owner, next step and verification condition?
+Effort: is the process meaningfully better than the existing baseline?
+Governance: do access and operating responsibilities meet your requirements?
+Fit: is the added system worth its setup and ongoing maintenance?
+Agree your own thresholds. No improvement figure is implied by this checklist.
+
+Outcome: adopt, investigate further or retain the existing process, based on evidence.
+
+Current public product information: https://mantiva360.com/product/
+Separate application destination: https://mantiva360.app/
+Downloading this checklist does not submit an enquiry, create a booking or imply an offer.
