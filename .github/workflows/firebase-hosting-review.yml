@@ -27,14 +27,13 @@ jobs:
       - run: npm run validate
       - name: Verify Firebase review configuration
         run: |
-          test -n "${{ vars.FIREBASE_PROJECT_ID }}"
           test -n "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MANTIVA360 }}"
       - name: Deploy Firebase review channel
         id: deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MANTIVA360 }}"
-          projectId: "${{ vars.FIREBASE_PROJECT_ID }}"
+          projectId: mantiva360-marketing
           channelId: executive-confidence
           expires: 7d
       - name: Record review destination
