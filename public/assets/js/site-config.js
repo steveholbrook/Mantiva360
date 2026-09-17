@@ -1,9 +1,9 @@
 export const siteConfig = Object.freeze({
   demoUrl: "https://mantiva360.app/",
   videos: Object.freeze({
-    "XMQa-RB5fUU": "Mantiva360 short overview",
-    "QkCRdrASlAg": "Mantiva360 full product story",
-    "wEgHPeHhb7I": "Mantiva360 for SAP delivery",
+    "XMQa-RB5fUU": "Mantiva360 30-second overview",
+    "QkCRdrASlAg": "Mantiva360 90-second product story",
+    "wEgHPeHhb7I": "Mantiva360 30-second SAP delivery overview",
   }),
   enquiry: Object.freeze({
     enabled: false,

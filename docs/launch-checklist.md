@@ -8,6 +8,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 - [ ] GOLD2 images are labelled as fictional demonstration captures.
 - [ ] No personal email, customer name or confidential project record appears in a public asset.
 - [ ] No SAP endorsement, certification, partnership or unverified integration is claimed.
+- [ ] Any provisional-patent wording uses the exact approved IP Australia reference and public claim.
 - [ ] Progress wording matches the configured project-control strategies.
 - [ ] The three YouTube films have been watched end to end and their logos, narration, captions and closing links match the live offer.
 
@@ -17,7 +18,8 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 - [ ] The demo CTA opens correctly on a physical phone.
 - [ ] Nearby copy accurately describes sign-in and access requirements.
 - [ ] The video action is distinct from demo access.
-- [ ] The guided-review form stores a test enquiry and only then shows success.
+- [ ] The guided-review form remains hidden while its endpoint is disabled.
+- [ ] Once enabled, the guided-review form stores a test enquiry and only then shows success.
 - [ ] The owner can retrieve and action that test enquiry.
 
 ## 3. Media and accessibility
@@ -25,7 +27,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 - [ ] Keyboard-only navigation reaches and operates the menu, product tabs, video choices, FAQ and form.
 - [ ] Focus remains visible against every background.
 - [ ] Video opens only after a user action and closes with the button, Escape and outside click.
-- [ ] All three videos have reviewed captions and a usable transcript or YouTube caption equivalent.
+- [ ] All three videos have accurate captions and a usable verified transcript or equivalent support.
 - [ ] Content remains usable at 200% browser zoom.
 - [ ] Reduced-motion mode removes non-essential motion.
 - [ ] Colour contrast is reviewed with an automated tool and spot-checked manually.
@@ -46,7 +48,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 ## 5. Performance and maintainability
 
 - [ ] No YouTube iframe or video payload loads before a visitor clicks play.
-- [ ] Page works without horizontal overflow at 390, 768 and 1440 pixels.
+- [ ] Page works without horizontal overflow at 360, 390, 768, 1024, 1440 and 1920 pixels.
 - [ ] Hero image is prioritised; below-fold images are lazy-loaded.
 - [ ] All local images are optimised and have intrinsic dimensions.
 - [ ] Shared demo and video destinations are controlled in one configuration file.

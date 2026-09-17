@@ -5,6 +5,7 @@
   "description": "Mantiva360 public marketing website",
   "type": "module",
   "scripts": {
+    "dev": "node scripts/preview-server.mjs",
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-site.mjs",
     "preview": "python3 -m http.server 4173 --directory public"

@@ -2,7 +2,9 @@
 
 Public marketing website source for **Mantiva360**, designed for `https://mantiva360.com` and Firebase Hosting. The separate product and demonstration destination is `https://mantiva360.app`.
 
-The site uses the approved Mantiva360 Option 7 production identity, a restrained Executive Confidence design, current fictional GOLD2 product captures, three supplied YouTube videos and claim-disciplined SAP Activate positioning.
+The site uses the approved Mantiva360 Option 7 production identity, the white-led Executive Confidence concept, current fictional GOLD2 product captures, three supplied YouTube videos and evidence-led SAP Activate positioning.
+
+Review baseline: repository commit `d68ee959abfa8fdccd75701fcc4cb3de152c93c2`, inspected on 17 September 2026. The deployed homepage, stylesheet, JavaScript, configuration and privacy page matched that baseline after newline normalisation.
 
 ## Important architecture correction
 
@@ -14,15 +16,15 @@ The repository intentionally contains no Firebase credentials, customer data, en
 
 | Area | Status |
 |---|---|
-| Homepage and privacy page | Complete review build |
-| Responsive CSS | Implemented for 390, 768 and 1440 pixel targets; physical-device checks remain |
-| Supplied YouTube content | Configured with click-to-load privacy-enhanced embeds |
-| GOLD2 screenshots | Included after removing signed-in account details |
+| Homepage and privacy page | Revised Executive Confidence review build |
+| Responsive CSS | Implemented for 360, 390, 768, 1024, 1440 and 1920 pixel targets; physical-device checks remain |
+| Supplied YouTube content | Click-to-load privacy-enhanced embeds; all three currently report captions unavailable |
+| GOLD2 screenshots | Included as labelled fictional demonstration evidence; hero crop removes navigation chrome only |
 | Firebase Hosting configuration | Ready for a selected Firebase project |
-| Guided-review form | Visible but intentionally disabled until a protected endpoint and owner retrieval process are verified |
+| Guided-review form | Hidden until a protected endpoint and owner retrieval process are verified |
 | `mantiva360.com` DNS and TLS | Not configured by this repository |
 | `www.mantiva360.com` redirect | Must be configured against the exact Firebase domain instructions |
-| `mantiva360.app` demo access | Linked, but signed-out access, isolation and reset behaviour still require live verification |
+| `mantiva360.app` demo access | Linked, but returned HTTP 502 in two independent checks on 17 September 2026; user reachability must be verified separately |
 
 ## Local preview
 
@@ -104,7 +106,7 @@ Do not change nameservers or remove an existing apex service without confirming 
 
 ## Guided-review form
 
-The form currently fails safely. It validates locally, preserves entered data and explicitly says that nothing was sent while the endpoint is disabled.
+The form is not shown while the endpoint is disabled. Visitors see an explicit status panel explaining that no contact details are collected or sent.
 
 Before enabling it, implement a same-origin, server-side Firebase Function or Cloud Run endpoint with:
 
@@ -120,6 +122,8 @@ Before enabling it, implement a same-origin, server-side Firebase Function or Cl
 
 Do not write directly from the anonymous browser to a broadly writable Firestore collection.
 
+See `docs/enquiry-service-decision.md` for the smallest suitable service design, required owner and privacy decisions, and acceptance evidence.
+
 ## Content boundaries
 
 - Mantiva360 is positioned as a project-control and assurance layer, not a rip-and-replace execution suite.
@@ -129,7 +133,7 @@ Do not write directly from the anonymous browser to a broadly writable Firestore
 - Actual effort and cost do not automatically create earned progress.
 - GOLD2 is a fictional demonstration. Its red-to-green sequence is not a promise of one-click remediation.
 
-See `docs/content-and-claims-register.md` for the maintained claim register.
+See `docs/content-and-claims-register.md` for the maintained claim register and `docs/asset-register.md` for the product-image and video evidence review.
 
 ## Repository layout
 
