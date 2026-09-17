@@ -5,7 +5,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 ## 1. Brand and claim accuracy
 
 - [ ] Canonical Option 7 symbol and Mantiva360 wordmark are used on every website surface.
-- [ ] GOLD2 images are labelled as fictional demonstration captures.
+- [ ] Product captures are labelled as fictional and no internal demo-project identity is visible in a published crop.
 - [ ] No personal email, customer name or confidential project record appears in a public asset.
 - [ ] No SAP endorsement, certification, partnership or unverified integration is claimed.
 - [ ] Any provisional-patent wording uses the exact approved IP Australia reference and public claim.
@@ -24,7 +24,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 
 ## 3. Media and accessibility
 
-- [ ] Keyboard-only navigation reaches and operates the menu, product tabs, video choices, FAQ and form.
+- [ ] Keyboard-only navigation reaches and operates the menu, product tabs, video posters, FAQ and form.
 - [ ] Focus remains visible against every background.
 - [ ] Video opens only after a user action and closes with the button, Escape and outside click.
 - [ ] All three videos have accurate captions and a usable verified transcript or equivalent support.

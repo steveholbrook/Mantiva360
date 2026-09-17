@@ -55,14 +55,34 @@ test("market and SAP claims preserve the intended boundaries", () => {
 test("the selected Executive Confidence concept is white-led and evidence-first", () => {
   const css = fs.readFileSync(path.join(publicDirectory, "assets/css/styles.css"), "utf8");
   assert.match(index, /Know what needs your attention\.\s*<span>And why\.<\/span>/);
-  assert.match(index, /Actual product screenshot/);
+  assert.match(index, /focus-lens-viewport focus-lens-hero/);
   assert.match(index, /Product evidence/);
+  assert.match(css, /\.focus-lens-marker/);
   assert.match(css, /\.hero\s*\{[^}]*background:\s*#fff/s);
+});
+
+test("the selected media system is focused, coherent and free of demo-company references", () => {
+  const css = fs.readFileSync(path.join(publicDirectory, "assets/css/styles.css"), "utf8");
+  assert.doesNotMatch(index, new RegExp(["gold", "\\s*2"].join(""), "i"));
+  const retiredPoster = ["gold", "2-video-poster-v1.webp"].join("");
+  assert.equal(fs.existsSync(path.join(publicDirectory, "assets/images", retiredPoster)), false);
+  assert.match(index, /One focal question/);
+  assert.doesNotMatch(index, /View full screenshot/i);
+  assert.match(index, /<strong>Signal<\/strong>[\s\S]*<strong>Source<\/strong>[\s\S]*<strong>Action<\/strong>/);
+  assert.match(index, /All three frames come from the same captured reporting state/);
+
+  const posters = index.match(/class="cinematic-poster\s/g) ?? [];
+  assert.equal(posters.length, 3);
+  assert.match(index, /<span class="cinematic-headline">See what needs attention\.<\/span>/);
+  assert.match(index, /<span class="cinematic-action"><span aria-hidden="true">▶<\/span> Watch overview<\/span>/);
+  assert.match(css, /@media \(max-width: 640px\)[\s\S]*\.cinematic-secondary-grid\s*\{\s*grid-template-columns:\s*1fr;/);
+  assert.match(css, /@media \(max-width: 640px\)[\s\S]*\.decision-story-grid\s*\{\s*grid-template-columns:\s*1fr;/);
+  assert.match(css, /@media \(max-width: 640px\)[\s\S]*\.focus-lens-hero\s*\{\s*aspect-ratio:\s*4 \/ 3;/);
 });
 
 test("video handling exposes known accessibility limits and restores focus", () => {
   const javascript = fs.readFileSync(path.join(publicDirectory, "assets/js/main.js"), "utf8");
-  assert.match(index, /recordings currently report captions unavailable/i);
+  assert.match(index, /accurate captions or verified transcripts are required/i);
   assert.match(index, /public-launch accessibility blocker/i);
   assert.match(javascript, /videoOpener\.focus\(\)/);
   assert.doesNotMatch(index, /<iframe/i);

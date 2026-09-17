@@ -72,6 +72,7 @@ export function validateSite() {
     ["no setup required", "unsupported setup claim"],
     ["SAP certified", "unsupported SAP certification claim"],
     ["SAP partner", "unsupported SAP partnership claim"],
+    [["GOLD", "2"].join(""), "internal demo-company reference"],
   ];
   forbidden.forEach(([phrase, label]) => {
     if (publicText.toLowerCase().includes(phrase.toLowerCase())) errors.push(`Public content contains ${label}: ${phrase}`);
