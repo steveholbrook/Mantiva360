@@ -22,7 +22,7 @@ const css = readPublic("assets/css/styles.css");
 test("static validation reports no structural, safety or route errors", () => {
   const result = validateSite();
   assert.deepEqual(result.errors, []);
-  assert.equal(result.htmlCount, 6);
+  assert.equal(result.htmlCount, 7);
   assert.ok(result.homepageWords >= 900 && result.homepageWords <= 1200);
 });
 
