@@ -37,6 +37,7 @@ test("the product-led buyer journey and evaluation paths are explicit", () => {
   assert.match(index, /Watch overview/);
   assert.match(index, /button button-primary button-large button-app/);
   assert.match(index, /button button-secondary button-large/);
+  assert.match(javascript, /url\.hash === ""/);
 });
 
 test("the canonical identity, palette and type system are centralised", () => {

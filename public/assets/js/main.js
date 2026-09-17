@@ -27,7 +27,7 @@ const pathname = window.location.pathname.replace(/index\.html$/, "");
 document.querySelectorAll("[data-nav] > a").forEach((link) => {
   const url = new URL(link.href, window.location.origin);
   const linkPath = url.pathname.replace(/index\.html$/, "");
-  const isHomeSection = linkPath === "/" && pathname === "/";
+  const isHomeSection = linkPath === "/" && pathname === "/" && url.hash === "";
   const isSectionPage = linkPath !== "/" && pathname.startsWith(linkPath);
 
   if (isHomeSection || isSectionPage) link.setAttribute("aria-current", "page");
