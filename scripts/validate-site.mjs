@@ -15,13 +15,28 @@ function walk(directory) {
 
 function localTargetExists(reference) {
   const clean = reference.split("#")[0].split("?")[0];
-  if (!clean || clean.startsWith("#") || /^[a-z]+:/i.test(clean) || clean.startsWith("//")) return true;
+  if (!clean || /^[a-z]+:/i.test(clean) || clean.startsWith("//")) return true;
+
   const target = path.resolve(publicDirectory, clean.replace(/^\//, ""));
   if (!target.startsWith(publicDirectory)) return false;
   if (fs.existsSync(target) && fs.statSync(target).isFile()) return true;
+  if (fs.existsSync(target) && fs.statSync(target).isDirectory() && fs.existsSync(path.join(target, "index.html"))) return true;
   if (clean.endsWith("/") && fs.existsSync(path.join(target, "index.html"))) return true;
   if (!path.extname(target) && fs.existsSync(`${target}.html`)) return true;
   return false;
+}
+
+function visibleWordCount(html) {
+  const main = html.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? "";
+  return main
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-z0-9#]+;/gi, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
 }
 
 export function validateSite() {
@@ -39,14 +54,27 @@ export function validateSite() {
     if (!/<h1[\s>]/i.test(html)) errors.push(`${relative}: missing h1`);
     if (/\sstyle=/i.test(html)) errors.push(`${relative}: inline styles conflict with the Content Security Policy`);
     if (/<script(?![^>]*\bsrc=)/i.test(html)) errors.push(`${relative}: inline scripts conflict with the Content Security Policy`);
+    if (/<iframe\b/i.test(html)) errors.push(`${relative}: video iframe must not load before user action`);
+    if (html.includes("—")) errors.push(`${relative}: em dash conflicts with the Australian-English copy rule`);
+
+    if (!relative.endsWith("404.html")) {
+      const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
+      if (!canonical) errors.push(`${relative}: missing canonical URL`);
+      if (canonical && canonical !== "https://mantiva360.com/" && canonical.endsWith("/")) errors.push(`${relative}: canonical conflicts with trailingSlash=false`);
+    }
 
     const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
     const duplicateIds = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
     if (duplicateIds.length) errors.push(`${relative}: duplicate IDs ${duplicateIds.join(", ")}`);
 
     for (const match of html.matchAll(/<(?:img|script|link|a)\b[^>]*(?:src|href)="([^"]+)"[^>]*>/gi)) {
-      const reference = match[1];
-      if (!localTargetExists(reference)) errors.push(`${relative}: missing local target ${reference}`);
+      if (!localTargetExists(match[1])) errors.push(`${relative}: missing local target ${match[1]}`);
+    }
+
+    for (const match of html.matchAll(/<source\b[^>]*\bsrcset="([^"]+)"[^>]*>/gi)) {
+      const source = match[1].trim().split(/\s+/)[0];
+      if (!localTargetExists(source)) errors.push(`${relative}: missing local image source ${source}`);
+      if (!/\swidth="\d+"/i.test(match[0]) || !/\sheight="\d+"/i.test(match[0])) errors.push(`${relative}: art-directed source missing intrinsic dimensions`);
     }
 
     for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
@@ -60,11 +88,8 @@ export function validateSite() {
     }
   }
 
-  const publicText = files
-    .filter((file) => /\.(?:html|css|js|xml|txt|webmanifest)$/i.test(file))
-    .map((file) => fs.readFileSync(file, "utf8"))
-    .join("\n");
-
+  const publicTextFiles = files.filter((file) => /\.(?:html|css|js|xml|txt|webmanifest)$/i.test(file));
+  const publicText = publicTextFiles.map((file) => fs.readFileSync(file, "utf8")).join("\n");
   const forbidden = [
     ["steholbrook@gmail.com", "personal email address"],
     ["100% truth", "absolute truth claim"],
@@ -72,10 +97,28 @@ export function validateSite() {
     ["no setup required", "unsupported setup claim"],
     ["SAP certified", "unsupported SAP certification claim"],
     ["SAP partner", "unsupported SAP partnership claim"],
-    [["GOLD", "2"].join(""), "internal demo-company reference"],
+    ["single source of truth", "unsupported absolute claim"],
+    [["GOLD", "2"].join(""), "retired demonstration-company reference"],
   ];
   forbidden.forEach(([phrase, label]) => {
     if (publicText.toLowerCase().includes(phrase.toLowerCase())) errors.push(`Public content contains ${label}: ${phrase}`);
+  });
+
+  const requiredPages = [
+    "index.html",
+    "product/index.html",
+    "sap-delivery/index.html",
+    "resources/index.html",
+    "privacy/index.html",
+    "404.html",
+  ];
+  requiredPages.forEach((page) => {
+    if (!fs.existsSync(path.join(publicDirectory, page))) errors.push(`Missing required page: ${page}`);
+  });
+
+  const removedSources = ["cockpit-red-v1.webp", "delivery-plan-v1.webp"];
+  removedSources.forEach((asset) => {
+    if (fs.existsSync(path.join(publicDirectory, "assets/images", asset))) errors.push(`Deployable directory still contains retired source capture: ${asset}`);
   });
 
   const firebase = JSON.parse(fs.readFileSync(path.join(projectDirectory, "firebase.json"), "utf8"));
@@ -88,17 +131,27 @@ export function validateSite() {
 
   const config = fs.readFileSync(path.join(publicDirectory, "assets/js/site-config.js"), "utf8");
   const index = fs.readFileSync(path.join(publicDirectory, "index.html"), "utf8");
+  const resources = fs.readFileSync(path.join(publicDirectory, "resources/index.html"), "utf8");
+  const sitemap = fs.readFileSync(path.join(publicDirectory, "sitemap.xml"), "utf8");
+
   ["XMQa-RB5fUU", "QkCRdrASlAg", "wEgHPeHhb7I"].forEach((videoId) => {
     if (!config.includes(videoId)) errors.push(`site config missing video ${videoId}`);
+    if (!resources.includes(`data-video-open="${videoId}"`)) errors.push(`resources page missing video ${videoId}`);
   });
   if (!config.includes('demoUrl: "https://mantiva360.app/"')) errors.push("site config has the wrong demo destination");
   if (!config.includes("enabled: false")) errors.push("enquiry handling must remain disabled until an endpoint is verified");
   if (!/data-review-form\s+hidden/i.test(index)) errors.push("the inactive enquiry form must remain hidden while submission is disabled");
   if (!/data-review-unavailable/i.test(index)) errors.push("the disabled enquiry state must be visible and explicit");
-  if (/<iframe\b/i.test(index)) errors.push("video iframes must not be present before a visitor chooses to play");
-  if (/Website source/i.test(index)) errors.push("the source repository must not appear as primary buyer navigation");
+  if (/Website source/i.test(index)) errors.push("the source repository must not appear as buyer navigation");
 
-  return { errors, fileCount: files.length, htmlCount: htmlFiles.length };
+  const homepageWords = visibleWordCount(index);
+  if (homepageWords < 900 || homepageWords > 1200) errors.push(`homepage main copy is ${homepageWords} words; target is 900 to 1200`);
+
+  ["/product", "/sap-delivery", "/resources", "/privacy"].forEach((route) => {
+    if (!sitemap.includes(`<loc>https://mantiva360.com${route}</loc>`)) errors.push(`sitemap missing ${route}`);
+  });
+
+  return { errors, fileCount: files.length, htmlCount: htmlFiles.length, homepageWords };
 }
 
 const invokedDirectly = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
@@ -108,6 +161,6 @@ if (invokedDirectly) {
     console.error(result.errors.join("\n"));
     process.exitCode = 1;
   } else {
-    console.log(`Validated ${result.fileCount} public files across ${result.htmlCount} HTML pages.`);
+    console.log(`Validated ${result.fileCount} public files across ${result.htmlCount} HTML pages. Homepage main copy: ${result.homepageWords} words.`);
   }
 }

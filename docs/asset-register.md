@@ -1,27 +1,47 @@
 # Mantiva360 marketing asset register
 
-Reviewed 17 September 2026 against implementation baseline `8ab7560f7d63f76152a445b690d88cf377a5dc59`.
+Internal review record. Reviewed 17 September 2026 against base commit `c47ad1967f887830ee7f88247ee6320872951956`.
 
-| Asset | Public treatment | Verification | Boundary or open item |
+## Approved brand assets
+
+| Asset | Public treatment | Verification | Boundary |
 |---|---|---|---|
-| `public/assets/brand/mantiva360-full-light.svg` | Primary wordmark on light surfaces | Repository-approved Option 7 identity | Do not redraw or substitute. |
-| `public/assets/brand/mantiva360-full-dark.svg` | Wordmark on dark surfaces | Repository-approved Option 7 identity | Do not redraw or substitute. |
-| `public/assets/brand/mantiva360-compact-light.svg` and `mantiva360-compact-dark.svg` | Compact symbol and favicon use | Repository-approved Option 7 identity | Decorative repetitions use empty alt text. |
-| `cockpit-red-v1.webp` | Source for the Focus Lens hero, cockpit proof and three-step product story | Dimensions and visible content inspected; no credentials or customer data observed | Published CSS crops exclude navigation and identifying demo-project detail. Visible status and finding values are unchanged. |
-| `delivery-plan-v1.webp` | Source for the focused delivery-context view | Visible content inspected | The published crop excludes identifying demo-project detail and retains the selected execution timeline and activity context. |
-| `mantiva360-social-v1.png` | Existing social preview image | Preserved from the approved source | Social-card refresh was not requested. |
-| `XMQa-RB5fUU` | 30-second overview | Live YouTube title: `Mantiva360 SAP Promo 30s`; player reported about 31 seconds | Captions unavailable. Audio, complete visual claims and end-card destination require human review. |
-| `QkCRdrASlAg` | 90-second product story | Live YouTube title: `Mantiva360 SAP Made Simple`; player reported 1 minute 30 seconds | Captions unavailable. Audio, complete visual claims and end-card destination require human review. |
-| `wEgHPeHhb7I` | 30-second SAP delivery overview | Live YouTube title: `Mantiva360 SAP Promo 30s`; player reported 30 seconds | Captions unavailable. Audio, complete visual claims and end-card destination require human review. |
+| `public/assets/brand/mantiva360-full-light.svg` | Primary wordmark on light surfaces | Approved Option 7 source in the marketing repository | Reused without redrawing or recolouring. |
+| `public/assets/brand/mantiva360-full-dark.svg` | Wordmark on navy surfaces | Approved Option 7 source in the marketing repository | Reused without redrawing or recolouring. |
+| `public/assets/brand/mantiva360-compact-light.svg` | Favicon and compact light-surface mark | Approved Option 7 source | Decorative repetitions require empty alt text. |
+| `public/assets/brand/mantiva360-compact-dark.svg` | Compact dark-surface mark | Approved Option 7 source | Not substituted for the full wordmark where brand recognition is needed. |
+| `public/assets/images/mantiva360-social-v1.png` | 1200 by 630 social preview | Existing repository asset inspected | Review candidate. A platform preview check is still required. |
 
-## Media loading notes
+## Published product captures
 
-- No YouTube iframe is present in the initial HTML.
-- The player is created only after a visitor chooses a video and is removed when the dialog closes.
-- Video posters are CSS-rendered brand surfaces with one headline and one action; no raster poster or product screenshot is presented as the video frame.
-- The live marketing origin loaded the privacy-enhanced player. Direct no-referrer checks returned YouTube Error 153, which is not treated as proof that embedding is disabled.
-- A direct YouTube link remains available when an embed is blocked.
+Detailed crop provenance, hashes, dimensions, intended use and approval state are recorded in `docs/media-manifest.md`.
 
-## Excluded asset or claim
+| Asset | Public treatment | Integrity result | Status |
+|---|---|---|---|
+| `cockpit-context-v2.webp` | Hero and Product page contextual view | Exact lossless crop. No value, state or control altered. OCR and visual inspection found no retired demonstration identity. | Review candidate |
+| `cockpit-finding-v2.webp` | Cockpit tab and exception story | Exact lossless crop from the same Cockpit state. | Review candidate |
+| `cockpit-recovery-v2.webp` | Progress and controlled-response detail | Exact lossless crop from the same Cockpit state. | Review candidate |
+| `delivery-context-v2.webp` | Delivery Plan tab, Product page and SAP delivery page | Exact lossless crop. Scope, reporting context and selected activity are retained. | Review candidate |
+| `cockpit-mobile-v2.webp` | Mobile hero and controlled-response detail | Exact lossless crop of the approved recovery view. | Review candidate |
+| `cockpit-finding-mobile-v2.webp` | Mobile exception detail | Exact lossless crop of the approved finding view. | Review candidate |
+| `delivery-mobile-v2.webp` | Mobile Delivery Plan detail | Exact lossless crop retaining the selected activity and decision context. | Review candidate |
 
-No provisional-patent reference has been published. The exact approved IP Australia reference and public wording were not supplied in this repository, so adding a patent or patent-pending claim would be unsupported.
+The two uncropped source screenshots were removed from the deployable `public/` directory because their pixels contain a retired demonstration identity. Their source hashes and crop coordinates remain in `docs/media-manifest.md`, and the originals remain recoverable from Git history. An owner-controlled private source archive is still required.
+
+Approved media does not yet cover Planning & Forecasts, actual allocation, RAID, Reporting, detailed Project Health, Controls Reconciliation or read-only assistance. The website describes those areas only where implementation evidence exists and does not present invented interface artwork.
+
+## Video assets
+
+| Video ID | Poster headline | Observed runtime | Loading treatment | Open item |
+|---|---|---:|---|---|
+| `XMQa-RB5fUU` | See the bigger picture. | approximately 0:31 | Homepage and Resources; click-to-load privacy-enhanced embed | Captions, transcript, audio, complete footage and end card require approval. |
+| `QkCRdrASlAg` | From issue to action. | approximately 1:30 | Resources only; click-to-load privacy-enhanced embed | Captions, transcript, audio, complete footage and end card require approval. |
+| `wEgHPeHhb7I` | Project control for SAP. | approximately 0:30 | Resources only; click-to-load privacy-enhanced embed | Captions, transcript, audio, complete footage and end card require approval. |
+
+No YouTube iframe is present in the initial HTML. Each poster contains the approved logo, one headline, one action and a visible runtime. The JavaScript creates a privacy-enhanced player only after activation, removes it on close and keeps a direct YouTube fallback link.
+
+## Excluded assets and claims
+
+- No customer logo, testimonial, stock image, invented dashboard or AI-generated product interface is published.
+- No patent notice is published. Exact approved wording and verifiable filing details were not supplied.
+- No product capture is described as high definition merely because it was compressed or enlarged. CSS display widths are capped at or below half the source crop width where practical.

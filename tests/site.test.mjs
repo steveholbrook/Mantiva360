@@ -8,87 +8,145 @@ import { validateSite } from "../scripts/validate-site.mjs";
 const testsDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(testsDirectory, "..");
 const publicDirectory = path.join(projectDirectory, "public");
-const index = fs.readFileSync(path.join(publicDirectory, "index.html"), "utf8");
-const config = fs.readFileSync(path.join(publicDirectory, "assets/js/site-config.js"), "utf8");
+const readPublic = (relative) => fs.readFileSync(path.join(publicDirectory, relative), "utf8");
 
-test("static site validation reports no structural errors", () => {
+const index = readPublic("index.html");
+const product = readPublic("product/index.html");
+const sap = readPublic("sap-delivery/index.html");
+const resources = readPublic("resources/index.html");
+const privacy = readPublic("privacy/index.html");
+const config = readPublic("assets/js/site-config.js");
+const javascript = readPublic("assets/js/main.js");
+const css = readPublic("assets/css/styles.css");
+
+test("static validation reports no structural, safety or route errors", () => {
   const result = validateSite();
   assert.deepEqual(result.errors, []);
+  assert.equal(result.htmlCount, 6);
+  assert.ok(result.homepageWords >= 900 && result.homepageWords <= 1200);
 });
 
-test("the three conversion actions remain distinct", () => {
-  assert.match(index, />\s*Explore demo\s*</);
-  assert.match(index, /Watch overview/);
+test("the buyer journey and three evaluation paths are explicit", () => {
+  assert.match(index, /Know where your project stands\.\s*<span>Know what needs attention\.<\/span>/);
+  assert.match(index, /Recognise my problem|From reporting effort to decision confidence/);
   assert.match(index, /Request a guided review/);
+  assert.match(index, /Watch overview/);
+  assert.match(index, />Explore demo\s*<span/);
+  assert.match(index, /button button-primary button-large/);
+  assert.match(index, /button button-secondary button-large/);
+  assert.match(index, /class="text-action"[^>]*data-demo-link/);
 });
 
-test("the homepage uses the canonical Mantiva360 identity and destination", () => {
-  assert.match(index, /Mantiva360/);
-  assert.match(index, /Data to Progress/);
-  assert.match(config, /https:\/\/mantiva360\.app\//);
-  assert.doesNotMatch(index, /PTracker2/i);
+test("the canonical identity, palette and type system are centralised", () => {
+  assert.match(index, /Data to Progress\./);
+  assert.match(css, /--brand-navy:\s*#0b2239/i);
+  assert.match(css, /--brand-blue:\s*#1268b3/i);
+  assert.match(css, /--brand-teal:\s*#139a9a/i);
+  assert.match(css, /--brand-green:\s*#62b44b/i);
+  assert.match(css, /--page:\s*#f7f9fb/i);
+  assert.match(css, /font-family:\s*Inter,/i);
+  assert.doesNotMatch(css, /glassmorphism|purple|particle/i);
 });
 
-test("video embeds use the supplied YouTube IDs and privacy-enhanced host", () => {
-  for (const id of ["XMQa-RB5fUU", "QkCRdrASlAg", "wEgHPeHhb7I"]) assert.match(config, new RegExp(id));
-  const javascript = fs.readFileSync(path.join(publicDirectory, "assets/js/main.js"), "utf8");
+test("key text and focus colours meet their contrast targets", () => {
+  const luminance = (hex) => {
+    const channels = hex.match(/\w\w/g).map((value) => Number.parseInt(value, 16) / 255);
+    const [red, green, blue] = channels.map((value) => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4);
+    return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+  };
+  const contrast = (foreground, background) => {
+    const values = [luminance(foreground), luminance(background)].sort((a, b) => b - a);
+    return (values[0] + 0.05) / (values[1] + 0.05);
+  };
+
+  for (const pair of [["172536", "ffffff"], ["5b6d7e", "ffffff"], ["1268b3", "ffffff"], ["ffffff", "0b2239"], ["b6cad7", "071a2c"], ["1268b3", "eaf4fa"]]) {
+    assert.ok(contrast(...pair) >= 4.5);
+  }
+  assert.ok(contrast("1c827e", "0b2239") >= 3);
+  assert.ok(contrast("1c827e", "ffffff") >= 3);
+});
+
+test("product proof uses only approved exact crops", () => {
+  for (const asset of ["cockpit-context-v2.webp", "cockpit-finding-v2.webp", "cockpit-recovery-v2.webp", "delivery-context-v2.webp", "cockpit-mobile-v2.webp", "cockpit-finding-mobile-v2.webp", "delivery-mobile-v2.webp"]) {
+    assert.equal(fs.existsSync(path.join(publicDirectory, "assets/images", asset)), true);
+  }
+  for (const asset of ["cockpit-red-v1.webp", "delivery-plan-v1.webp"]) {
+    assert.equal(fs.existsSync(path.join(publicDirectory, "assets/images", asset)), false);
+  }
+  assert.doesNotMatch([index, product, sap, resources].join("\n"), new RegExp(["gold", "\\s*2"].join(""), "i"));
+  assert.match(index, /Genuine product capture using representative fictional data/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/cockpit-mobile-v2\.webp"/);
+  assert.match(index, /<source media="\(max-width: 720px\)" srcset="\/assets\/images\/delivery-mobile-v2\.webp"/);
+  assert.match(product, /does not present invented interface artwork|captures are still required/i);
+});
+
+test("the product showcase is user controlled and keyboard operable", () => {
+  assert.equal((index.match(/role="tab"/g) ?? []).length, 3);
+  assert.equal((index.match(/role="tabpanel"/g) ?? []).length, 3);
+  assert.match(index, /data-tab-select/);
+  assert.match(javascript, /ArrowRight/);
+  assert.match(javascript, /ArrowLeft/);
+  assert.match(javascript, /event\.key === "Home"/);
+  assert.match(javascript, /event\.key === "End"/);
+  assert.doesNotMatch(javascript, /setInterval|autoRotate|autoplayTabs/i);
+});
+
+test("video posters carry one title, one action and a verified runtime", () => {
+  assert.equal((resources.match(/class="video-poster"/g) ?? []).length, 3);
+  assert.match(resources, /See the bigger picture\./);
+  assert.match(resources, /From issue to action\./);
+  assert.match(resources, /Project control for SAP\./);
+  for (const runtime of ["0:31", "1:30", "0:30"]) assert.match(resources, new RegExp(runtime.replace(":", "\\:")));
+  assert.equal((resources.match(/> Watch overview<\/span>/g) ?? []).length, 3);
+  assert.doesNotMatch([index, product, sap, resources].join("\n"), /<iframe\b/i);
   assert.match(javascript, /youtube-nocookie\.com\/embed/);
+  assert.match(javascript, /videoTrigger\?\.focus\(\)/);
+  assert.match(javascript, /videoEmbed\.replaceChildren\(\)/);
 });
 
-test("enquiry success is impossible until a real endpoint is enabled", () => {
+test("product claims preserve calculation and assistant boundaries", () => {
+  assert.match(product, /configured control method governs progress recognition/i);
+  assert.match(product, /does not by itself earn progress or close an exception/i);
+  assert.match(product, /Actuals and allocation/);
+  assert.match(product, /RAID/);
+  assert.match(product, /Health and reconciliation/);
+  assert.match(product, /Reporting/);
+  assert.match(product, /Read-only assistance/);
+  assert.match(index, /Deterministic services calculate health, reconciliation, progress and financial results/);
+  assert.match(index, /cannot decide health, rewrite data or remediate delivery/);
+});
+
+test("SAP delivery explains alignment without borrowed credibility", () => {
+  for (const phase of ["Discover", "Prepare", "Explore", "Realize", "Deploy", "Run"]) assert.match(sap, new RegExp(`>${phase}<`));
+  assert.match(sap, /Methodology alignment is distinct from SAP endorsement, certification, partnership or a native integration/);
+  assert.match(sap, /does not claim a generally available automated quality-gate workflow/);
+  assert.match(sap, /Keep specialist systems in their proper roles/);
+  assert.doesNotMatch(sap, /<img[^>]+sap/i);
+});
+
+test("the disabled enquiry cannot imply success or collect details", () => {
   assert.match(config, /enabled:\s*false/);
   assert.match(config, /endpoint:\s*""/);
-  const javascript = fs.readFileSync(path.join(publicDirectory, "assets/js/main.js"), "utf8");
-  assert.match(javascript, /result\.saved !== true/);
   assert.match(index, /data-review-form hidden/);
-  assert.match(index, /does not collect or send contact details/i);
-  assert.match(javascript, /reviewForm\.hidden = false/);
+  assert.match(index, /does not collect or transmit contact details/i);
+  assert.match(javascript, /result\.saved !== true/);
+  assert.match(javascript, /track\("review_request_success"\)/);
+  assert.match(privacy, /must validate the request on the server and confirm storage or delivery before the website displays success/i);
+  assert.doesNotMatch(index, /Start free trial/i);
 });
 
-test("market and SAP claims preserve the intended boundaries", () => {
-  assert.match(index, /Keep the execution tools/);
-  assert.match(index, /do not imply live native connectors/);
-  assert.match(index, /native Cloud ALM or LeanIX integration are not claimed/);
-  assert.match(index, /Actual effort or cost does not automatically create earned progress/);
+test("measurement hooks are small and exclude form payloads", () => {
+  for (const eventName of ["overview_play", "product_exploration", "demo_click", "review_request_start", "review_request_success"]) {
+    assert.match(javascript, new RegExp(`"${eventName}"`));
+  }
+  assert.match(javascript, /window\.dataLayer\.push\(\{ event: name, \.\.\.properties \}\)/);
+  assert.doesNotMatch(javascript, /track\([^)]*payload/);
+  assert.doesNotMatch(javascript, /dataLayer\.push\([^)]*(?:email|organisation|question|name: payload)/s);
 });
 
-test("the selected Executive Confidence concept is white-led and evidence-first", () => {
-  const css = fs.readFileSync(path.join(publicDirectory, "assets/css/styles.css"), "utf8");
-  assert.match(index, /Know what needs your attention\.\s*<span>And why\.<\/span>/);
-  assert.match(index, /focus-lens-viewport focus-lens-hero/);
-  assert.match(index, /Product evidence/);
-  assert.match(css, /\.focus-lens-marker/);
-  assert.match(css, /\.hero\s*\{[^}]*background:\s*#fff/s);
-});
-
-test("the selected media system is focused, coherent and free of demo-company references", () => {
-  const css = fs.readFileSync(path.join(publicDirectory, "assets/css/styles.css"), "utf8");
-  assert.doesNotMatch(index, new RegExp(["gold", "\\s*2"].join(""), "i"));
-  const retiredPoster = ["gold", "2-video-poster-v1.webp"].join("");
-  assert.equal(fs.existsSync(path.join(publicDirectory, "assets/images", retiredPoster)), false);
-  assert.match(index, /One focal question/);
-  assert.doesNotMatch(index, /View full screenshot/i);
-  assert.match(index, /<strong>Signal<\/strong>[\s\S]*<strong>Source<\/strong>[\s\S]*<strong>Action<\/strong>/);
-  assert.match(index, /All three frames come from the same captured reporting state/);
-
-  const posters = index.match(/class="cinematic-poster\s/g) ?? [];
-  assert.equal(posters.length, 3);
-  assert.match(index, /<span class="cinematic-headline">See what needs attention\.<\/span>/);
-  assert.match(index, /<span class="cinematic-action"><span aria-hidden="true">▶<\/span> Watch overview<\/span>/);
-  assert.match(css, /@media \(max-width: 640px\)[\s\S]*\.cinematic-secondary-grid\s*\{\s*grid-template-columns:\s*1fr;/);
-  assert.match(css, /@media \(max-width: 640px\)[\s\S]*\.decision-story-grid\s*\{\s*grid-template-columns:\s*1fr;/);
-  assert.match(css, /@media \(max-width: 640px\)[\s\S]*\.focus-lens-hero\s*\{\s*aspect-ratio:\s*4 \/ 3;/);
-});
-
-test("video handling exposes known accessibility limits and restores focus", () => {
-  const javascript = fs.readFileSync(path.join(publicDirectory, "assets/js/main.js"), "utf8");
-  assert.match(index, /accurate captions or verified transcripts are required/i);
-  assert.match(index, /public-launch accessibility blocker/i);
-  assert.match(javascript, /videoOpener\.focus\(\)/);
-  assert.doesNotMatch(index, /<iframe/i);
-});
-
-test("public buyer navigation does not promote the source repository", () => {
-  assert.doesNotMatch(index, /Website source/);
-  assert.doesNotMatch(index, /github\.com\/steveholbrook\/Mantiva360/);
+test("the site preserves the separate verified demo destination", () => {
+  assert.match(config, /demoUrl:\s*"https:\/\/mantiva360\.app\/"/);
+  assert.match(index, /Availability and signed-out access are still being verified/);
+  assert.match(resources, /Availability and signed-out access are still being verified/);
+  assert.doesNotMatch([index, product, sap, resources].join("\n"), /mantiva360\.app\/(?:login|demo|project)/i);
 });
