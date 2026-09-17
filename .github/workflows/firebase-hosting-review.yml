@@ -15,6 +15,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Reuse the protected credential scope configured by the existing workflow.
+    # The Firebase target below remains an expiring, non-live channel.
+    environment: production
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
