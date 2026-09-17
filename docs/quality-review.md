@@ -1,41 +1,62 @@
-# Quality and readiness review, 17 September 2026
+# Mantiva360 quality and readiness review
 
-Implementation baseline source commit: `8ab7560f7d63f76152a445b690d88cf377a5dc59`.
+Review date: 17 September 2026
 
-The deployed homepage, stylesheet, JavaScript, configuration and privacy page matched the inspected baseline after newline normalisation. The revised build remains on the review branch and has not been deployed to production.
+Implementation base: `c47ad1967f887830ee7f88247ee6320872951956`
 
-| Criterion | Assessment | Evidence | Remaining weakness |
-|---|---|---|---|
-| Brand and visual quality | Strong review candidate | Approved Option 7 assets, white-led Executive Confidence hero, restrained palette, consistent grid and one dominant product visual. | Final judgement requires the Firebase preview at the full target viewport set and physical devices. |
-| Buyer comprehension | Strong with an operational caveat | Hero states the control outcome; three buyer intents remain distinct; product, corrective action, SAP and evaluation sections follow a deliberate sequence. | No working guided-review path means the strongest commercial action cannot yet be used. |
-| Product proof | Strong and clearly labelled | Focus Lens crops use genuine product captures with fictional data, exclude identifying demo-project detail and retain unchanged visible status content. The Signal → Source → Action sequence uses one coherent reporting state. | A current genuine Planning & Forecasts capture was not available, so that panel remains an explanatory graphic. |
-| SAP and enterprise credibility | Strong, claim-disciplined | Activate phases are tied to specific control uses; toolchain references are category-level; deterministic controls and read-only AI are separated. | Deployment, enterprise roles, SSO, residency, retention, service levels and support require verified product evidence. |
-| Accessibility, performance and operational reliability | Not launch-ready | Semantic HTML, keyboard tabs, native modal dialog, explicit focus restoration, reduced motion, responsive layout, local imagery and deferred video loading are implemented. Six target widths rendered without horizontal overflow; critical colour pairs met at least 5.00:1 in source checks. | All videos report captions unavailable; the demo returned HTTP 502 in two checks; enquiry handling is disabled; physical-device and deployed field measurements remain open. |
+Review branch: `review/world-class-executive-confidence-2026-09-17`
 
-## Confirmed live checks
+This branch has not been deployed. Scores are an internal prioritisation aid, not a certification. Release blockers override the total.
 
-- `https://mantiva360.com/` loaded in the cloud browser.
-- `https://mantiva360.com/privacy/` loaded and redirected cleanly to `/privacy`.
-- Primary live source files matched the inspected repository baseline after newline normalisation.
-- Security headers were present on the live homepage response.
-- The marketing origin loaded the click-to-play YouTube frame.
-- Responsive render checks completed at 360, 390, 768, 1024, 1440 and 1920 pixels with no document-level horizontal overflow.
-- Keyboard arrow navigation changed the active product tab; the mobile menu opened, exposed both Watch and Explore demo, and closed with Escape.
-- The video dialog created one iframe only after activation, removed it on close and restored focus to the opener.
-- Source contrast checks for core body, muted, link, button, dark-surface and video-support colour pairs ranged from 5.00:1 to 16.13:1.
-- The revised build keeps the static architecture, removes two obsolete raster captures and the legacy poster source, and loads no framework or initial video payload.
-- `https://mantiva360.app/` returned HTTP 502 in both browser and command-line checks from this environment. This is a current observation, not proof that every user or region is affected.
-- YouTube watch pages loaded for all three configured IDs. Player controls reported durations of approximately 31 seconds, 90 seconds and 30 seconds. Captions were unavailable.
+## Evidence-based quality gates
 
-## Public-launch blockers
+| Area | Score | Evidence | Limitation |
+|---|---:|---|---|
+| Comprehension | 21/25 | The homepage follows problem, product, inspection, trust and evaluation in 1,200 words. Product and SAP detail are organised by buyer questions. Actions have stable labels and clear hierarchy. | No representative-user comprehension test was available. Do not mark unfamiliar-buyer comprehension as passed without actual feedback. |
+| Product proof | 21/25 | Seven genuine, lossless desktop and mobile crops are recorded with provenance and exact coordinates. The product repository supports the published Cockpit, deterministic control, progress, actual-allocation, reporting, SAP-phase and read-only-assistance boundaries. | Approved captures do not cover every described capability. Capture date and product version metadata were not supplied. |
+| Brand coherence | 17/20 | Approved Option 7 SVGs, exact palette tokens, a single sans-serif stack, 8-pixel spacing logic, restrained borders and one editorial product-stage system are implemented. | The unpublished branch could not be opened in the managed browser, so optical judgement at final target viewports and platform font rendering remain open. |
+| Evaluation journey | 8/15 | Guided review, overview and demo remain distinct. Three videos use one poster system and load after user action. The enquiry form cannot produce false success while disabled. | The enquiry endpoint is absent, the separate demo returned HTTP 502 from this environment, and captions and transcripts are unapproved. |
+| Technical quality | 10/15 | Semantic static HTML, keyboard-tab logic, native dialog focus restoration, reduced-motion support, clean routes, security headers, responsive sources, intrinsic dimensions and privacy-safe event hooks are implemented. Twelve automated tests pass. | Rendered browser, screen-reader, Safari, physical-device, slow-network and field Core Web Vitals tests were not possible on the unpublished branch. |
+| **Provisional total** | **77/100** | Strong review candidate with disciplined claims and genuine product proof. | Below the 90/100 internal target and blocked from release. |
 
-1. Connect and verify a durable enquiry service, monitored lead owner, retention rule and privacy contact, or publish another verified contact path.
-2. Restore and verify the demo journey, including signed-out behaviour, data isolation, reset expectations and mobile access.
-3. Add accurate captions or verified transcripts for all published recordings, then review narration, visual claims and end cards.
-4. Complete deployed responsive, keyboard, contrast, zoom, reflow, browser and physical-device tests.
-5. Record deployed performance measurements and rollback ownership.
-6. Supply approved public wording and the exact IP Australia reference before adding any provisional-patent statement.
+## Completed checks
+
+- `npm test`: 12 tests passed, 0 failed.
+- `npm run validate`: 24 public files and 6 HTML pages validated; homepage main copy counted at 1,200 words.
+- `node --check`: shared JavaScript and configuration parsed successfully.
+- `git diff --check`: no whitespace errors.
+- Local HTTP smoke test: `/`, `/product`, `/sap-delivery`, `/resources` and `/privacy` returned 200; an unknown route returned the custom 404 response.
+- All initial HTML is iframe-free. YouTube is created only after an explicit play action and removed when the dialog closes.
+- The deployable directory contains no uncropped source screenshots or retired demonstration-company filenames.
+- OCR, visual review and string inspection found no retired demonstration identity in the seven published product crops.
+- Published captures are lossless WebP with intrinsic dimensions. CSS width caps prevent upscaling, and narrow layouts select art-directed detail crops.
+- Key text contrast pairs range from 5.15:1 to 16.13:1. The focus outline ranges from 3.49:1 to 4.62:1 against tested light and navy surfaces.
+- Interactive controls are designed around a 44-pixel minimum target, including navigation, tabs, modal close and footer actions.
+- Canonical URLs and sitemap routes match Firebase clean URLs with `trailingSlash: false`.
+- Only privacy-safe event names are exposed. Name, email, organisation and free-text question values are not sent to analytics hooks.
+- The public homepage at `https://mantiva360.com` returned HTTP 200 during source inspection. It does not contain this branch.
+- The separate `https://mantiva360.app` destination returned HTTP 502 from this environment. This observation does not establish universal availability.
+
+## Not completed
+
+- No public or authorised remote preview was created because production deployment is prohibited without approval and the managed browser cannot access the unpublished local origin.
+- Desktop and mobile rendered screenshots are therefore not available for this branch.
+- No representative-user comprehension test was conducted and no user feedback is reported.
+- No Safari, physical iPhone, physical Android, screen-reader or 200% browser-zoom session was completed.
+- No laboratory performance trace or representative 75th-percentile field Core Web Vitals data exists for this branch.
+- No live enquiry submission was attempted because no approved endpoint exists.
+- No successful signed-out demo session was observed.
+- The three videos were not approved for public accessibility because verified captions, transcripts and material visual descriptions were not supplied.
+
+## Release blockers
+
+1. Connect and test an approved enquiry endpoint or provide a verified public business contact. Confirm server validation, abuse protection, persistence or delivery, owner notification, retention and deletion.
+2. Restore and verify the separate demo journey, including signed-out behaviour, data isolation, reset expectations and mobile access.
+3. Supply accurate captions, transcripts and material visual descriptions, then complete an end-to-end footage, narration, identity and end-card audit for each video.
+4. Supply approved neutral high-resolution captures for uncovered capabilities, including capture date and product version metadata.
+5. Create an authorised review preview and complete rendered 320, 390, 768 and 1440 pixel checks, 200% reflow, Safari, physical-device, keyboard, screen-reader, slow-network and error-state testing.
+6. Collect laboratory performance evidence before release, then field Core Web Vitals separately for mobile and desktop after sufficient production traffic exists.
 
 ## Release recommendation
 
-Use this branch as the next review candidate. Do not deploy it to the public production channel until blockers 1 to 3 are resolved and blockers 4 to 5 have named owners and acceptable evidence.
+Keep the branch in review. Do not deploy it to the production Hosting channel until blockers 1 to 3 are resolved and blockers 4 to 6 have accepted evidence and owners. Preserve the current production release identifier before any approved deployment so Firebase Hosting rollback remains available.

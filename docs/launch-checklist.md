@@ -6,6 +6,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 
 - [ ] Canonical Option 7 symbol and Mantiva360 wordmark are used on every website surface.
 - [ ] Product captures are labelled as fictional and no internal demo-project identity is visible in a published crop.
+- [ ] Desktop and mobile art-directed crops have been reviewed at their actual CSS display sizes.
 - [ ] No personal email, customer name or confidential project record appears in a public asset.
 - [ ] No SAP endorsement, certification, partnership or unverified integration is claimed.
 - [ ] Any provisional-patent wording uses the exact approved IP Australia reference and public claim.
@@ -18,6 +19,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 - [ ] The demo CTA opens correctly on a physical phone.
 - [ ] Nearby copy accurately describes sign-in and access requirements.
 - [ ] The video action is distinct from demo access.
+- [ ] Product, SAP delivery and Resources routes resolve without a redirect loop and match their canonical URLs.
 - [ ] The guided-review form remains hidden while its endpoint is disabled.
 - [ ] Once enabled, the guided-review form stores a test enquiry and only then shows success.
 - [ ] The owner can retrieve and action that test enquiry.
@@ -48,10 +50,11 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 ## 5. Performance and maintainability
 
 - [ ] No YouTube iframe or video payload loads before a visitor clicks play.
-- [ ] Page works without horizontal overflow at 360, 390, 768, 1024, 1440 and 1920 pixels.
+- [ ] Page works without horizontal overflow at 320, 390, 768 and 1440 pixels, including 200% text reflow.
 - [ ] Hero image is prioritised; below-fold images are lazy-loaded.
 - [ ] All local images are optimised and have intrinsic dimensions.
 - [ ] Shared demo and video destinations are controlled in one configuration file.
+- [ ] Overview play, product exploration, demo click, review-request start and confirmed review-request success events carry no personal or free-text data.
 - [ ] Security headers are present on the deployed response.
 - [ ] Lighthouse or equivalent mobile performance and accessibility reports are retained.
 - [ ] GitHub quality workflow and Firebase deployment workflow complete successfully.

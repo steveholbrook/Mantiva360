@@ -2,9 +2,9 @@
 
 Public marketing website source for **Mantiva360**, designed for `https://mantiva360.com` and Firebase Hosting. The separate product and demonstration destination is `https://mantiva360.app`.
 
-The site uses the approved Mantiva360 Option 7 production identity, the white-led Executive Confidence concept, focused product captures with fictional project data, three supplied YouTube videos and evidence-led SAP Activate positioning.
+The site uses the approved Mantiva360 Option 7 production identity, the white-led Executive Confidence system, focused product captures with fictional project data, three supplied YouTube videos and evidence-led SAP Activate positioning.
 
-Implementation baseline: latest `main` commit `8ab7560f7d63f76152a445b690d88cf377a5dc59`, inspected on 17 September 2026. This media revision remains a review-branch change and has not been deployed.
+Implementation base: `main` merge commit `c47ad1967f887830ee7f88247ee6320872951956`, inspected on 17 September 2026. The implementation is on `review/world-class-executive-confidence-2026-09-17` and has not been deployed.
 
 ## Important architecture correction
 
@@ -16,13 +16,13 @@ The repository intentionally contains no Firebase credentials, customer data, en
 
 | Area | Status |
 |---|---|
-| Homepage and privacy page | Revised Executive Confidence review build |
-| Responsive CSS | Implemented for 360, 390, 768, 1024, 1440 and 1920 pixel targets; physical-device checks remain |
+| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented in the Executive Confidence review build |
+| Responsive CSS and art direction | Breakpoints cover 320, 390, 720, 768, 900, 1120 and 1440 pixel contexts; managed rendered, Safari and physical-device checks remain |
 | Supplied YouTube content | Click-to-load privacy-enhanced embeds; all three currently report captions unavailable |
-| Product captures | Focus Lens crops retain genuine interface content while excluding navigation and identifying demo-project detail |
+| Product captures | Lossless Focus Lens crops retain genuine interface content; mobile views use separate exact detail crops and the deployable directory excludes identifying source pixels |
 | Firebase Hosting configuration | Ready for a selected Firebase project |
 | Guided-review form | Hidden until a protected endpoint and owner retrieval process are verified |
-| `mantiva360.com` DNS and TLS | Not configured by this repository |
+| `mantiva360.com` live behaviour | Returned HTTP 200 with TLS during inspection; this review branch is not deployed there |
 | `www.mantiva360.com` redirect | Must be configured against the exact Firebase domain instructions |
 | `mantiva360.app` demo access | Linked, but returned HTTP 502 in two independent checks on 17 September 2026; user reachability must be verified separately |
 
@@ -33,7 +33,7 @@ Requirements: Node.js 22 or later and Python 3.
 ```bash
 npm test
 npm run validate
-npm run preview
+npm run dev
 ```
 
 Open `http://localhost:4173`.
@@ -131,10 +131,10 @@ See `docs/enquiry-service-decision.md` for the smallest suitable service design,
 - SAP Cloud ALM, Jira, Microsoft Project, finance and document platforms are referenced as toolchain categories. Native integrations are not claimed.
 - AI assists interpretation and navigation. Deterministic services calculate status and reconciliation.
 - Actual effort and cost do not automatically create earned progress.
-- Published product captures use fictional project data and exclude the internal demo-project identity.
-- The Signal → Source → Action story does not promise one-click remediation; status changes only when the underlying governed records change.
+- Published product captures use fictional project data and exclude identifying demonstration detail.
+- The four-step exception story does not promise one-click remediation; status changes only when the underlying governed records change and controls recalculate.
 
-See `docs/content-and-claims-register.md` for the maintained claim register and `docs/asset-register.md` for the product-image and video evidence review.
+See `docs/change-summary.md` for the implementation handoff, `docs/design-system.md` for tokens and components, `docs/content-and-claims-register.md` for the maintained claim register and `docs/media-manifest.md` for product-image and video provenance.
 
 ## Repository layout
 
@@ -143,6 +143,9 @@ public/                   Firebase Hosting root
   assets/brand/           Canonical Mantiva360 SVG assets
   assets/images/          Optimised product and marketing imagery
   assets/js/              Shared destinations and interactions
+  product/                Product route
+  sap-delivery/           SAP delivery route
+  resources/              Video and evaluation resources route
   privacy/                Privacy route
 scripts/                  Static validation
 tests/                    Node-based content and safety tests

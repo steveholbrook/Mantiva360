@@ -7,16 +7,22 @@
   <meta name="description" content="How the Mantiva360 marketing website handles enquiries, video embeds and technical website data.">
   <meta name="theme-color" content="#0B2239">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://mantiva360.com/privacy/">
+  <link rel="canonical" href="https://mantiva360.com/privacy">
   <link rel="icon" href="/assets/brand/mantiva360-compact-light.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#privacy-content">Skip to privacy information</a>
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Mantiva360 home"><img src="/assets/brand/mantiva360-full-light.svg" width="330" height="64" alt="Mantiva360"></a>
-      <nav class="legal-header-nav" aria-label="Privacy navigation"><a href="/">Back to website</a><a href="https://mantiva360.app" target="_blank" rel="noopener noreferrer">Open Mantiva360</a></nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="/product">Product</a><a href="/#how-it-works">How it works</a><a href="/sap-delivery">SAP delivery</a><a href="/resources">Resources</a>
+        <div class="nav-mobile-actions"><button class="button button-secondary" type="button" data-video-open="XMQa-RB5fUU" data-video-title="Mantiva360 overview">Watch overview</button><a class="text-link" href="https://mantiva360.app/" target="_blank" rel="noopener noreferrer" data-demo-link data-track="demo_click">Explore demo <span aria-hidden="true">↗</span></a></div>
+      </nav>
+      <a class="button button-small button-primary header-cta" href="/#guided-review" data-review-link data-track="review_request_start">Request a guided review</a>
     </div>
   </header>
 
@@ -52,12 +58,11 @@
           <p>When the enquiry service is connected, the form is intended to collect:</p>
           <ul>
             <li>name and business email address;</li>
-            <li>organisation and optional role;</li>
-            <li>the project-control topic selected;</li>
-            <li>optional context supplied by the person submitting the request; and</li>
+            <li>organisation;</li>
+            <li>an optional project-control question; and</li>
             <li>consent to use those details to respond to that request.</li>
           </ul>
-          <p>Submitting an enquiry is not intended to subscribe a person to marketing, confirm a meeting or create a purchase. The launch implementation must confirm storage before the website displays success.</p>
+          <p>Marketing consent is not preselected or combined with the response consent. Submitting an enquiry is not intended to confirm a meeting or create a purchase. The service must validate the request on the server and confirm storage or delivery before the website displays success.</p>
         </section>
 
         <section id="videos">
@@ -89,10 +94,16 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-bottom">
-      <p>© 2026 Mantiva360. All rights reserved.</p>
-      <p>Mantiva360 is an independent product. SAP and SAP Activate are trademarks or registered trademarks of SAP SE or its affiliates. No SAP endorsement, certification or partnership is claimed.</p>
+    <div class="container footer-grid">
+      <div class="footer-brand"><img src="/assets/brand/mantiva360-full-dark.svg" width="330" height="64" alt="Mantiva360"><p>Data to Progress.</p><span>Connected project control for SAP programmes and complex enterprise delivery.</span></div>
+      <div><h2>Explore</h2><a href="/product">Product</a><a href="/#how-it-works">How it works</a><a href="/sap-delivery">SAP delivery</a><a href="/resources">Resources</a></div>
+      <div><h2>Evaluate</h2><a href="/#guided-review" data-review-link>Request a guided review</a><a href="https://mantiva360.app/" target="_blank" rel="noopener noreferrer" data-demo-link data-track="demo_click">Explore demo <span aria-hidden="true">↗</span></a><button type="button" data-video-open="XMQa-RB5fUU" data-video-title="Mantiva360 overview">Watch overview</button></div>
+      <div><h2>Information</h2><a href="/privacy" aria-current="page">Privacy</a><span>Independent product. SAP endorsement is not claimed.</span></div>
     </div>
+    <div class="container footer-bottom"><p>© 2026 Mantiva360. All rights reserved.</p><p>SAP and SAP Activate are trademarks or registered trademarks of SAP SE or its affiliates.</p></div>
   </footer>
+
+  <dialog class="video-dialog" data-video-dialog aria-labelledby="video-dialog-title" aria-describedby="video-dialog-note"><div class="dialog-header"><div><span>Video</span><h2 id="video-dialog-title" data-video-dialog-title>Mantiva360 overview</h2></div><button class="dialog-close" type="button" data-video-close aria-label="Close video">×</button></div><div class="video-embed" data-video-embed></div><div class="dialog-support" id="video-dialog-note"><p>Playback is provided by YouTube using its privacy-enhanced domain. Captions and a verified transcript remain under review.</p><a href="https://youtu.be/XMQa-RB5fUU" target="_blank" rel="noopener noreferrer" data-video-youtube-link>Open on YouTube <span aria-hidden="true">↗</span></a></div></dialog>
+  <script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>
