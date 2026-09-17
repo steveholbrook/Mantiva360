@@ -89,6 +89,22 @@ Configure these repository settings before running `Deploy Firebase Hosting`:
 
 Generate the service-account payload through the Firebase GitHub integration or a least-privilege Google Cloud service account. Never paste it into a tracked file.
 
+### Keyless deployment migration
+
+The current production workflow still uses the encrypted service-account JSON secret. Replace it with short-lived GitHub OpenID Connect credentials before deleting that secret.
+
+Run the one-time bootstrap script from Google Cloud Shell while signed in as a project owner:
+
+```bash
+git clone https://github.com/steveholbrook/Mantiva360.git
+cd Mantiva360
+bash scripts/bootstrap-firebase-wif.sh
+```
+
+The script refuses service-account authentication. It creates a Workload Identity Federation provider restricted to this repository's immutable numeric ID, the owner's numeric ID, the `main` branch and the protected `production` environment. It grants only `roles/iam.workloadIdentityUser` on the existing Firebase deployment service account.
+
+After the keyless production workflow completes successfully, revoke the old Google Cloud service-account key and remove `FIREBASE_SERVICE_ACCOUNT_MANTIVA360` from GitHub. Do not delete either credential before that verification deployment passes.
+
 ## Custom domains
 
 After the Firebase review URL passes acceptance:
