@@ -8,7 +8,7 @@
   </defs>
   <rect width="720" height="980" rx="28" fill="#eef4f6"/>
   <rect width="720" height="72" rx="28" fill="url(#nav)"/><rect y="44" width="720" height="28" fill="url(#nav)"/>
-  <circle cx="38" cy="36" r="14" fill="none" stroke="#46c7b3" stroke-width="6"/><path d="M38 22a14 14 0 0 1 13 8" fill="none" stroke="#8db7c8" stroke-width="6" stroke-linecap="round"/><text x="66" y="45" class="white strong" font-size="24">Mantiva360</text><circle cx="675" cy="36" r="18" fill="#fff" opacity=".14"/><text x="675" y="42" class="white tiny strong" text-anchor="middle">GR</text>
+  <circle cx="38" cy="36" r="14" fill="none" stroke="#46c7b3" stroke-width="6"/><path d="M38 22a14 14 0 0 1 13 8" fill="none" stroke="#8db7c8" stroke-width="6" stroke-linecap="round"/><text x="66" y="45" class="white strong" font-size="24">Mantiva360</text>
   <text x="30" y="117" class="strong" font-size="30">Signal and source</text><text x="30" y="147" class="small muted">Why is delivery off track?</text>
   <rect x="30" y="174" width="660" height="758" rx="20" fill="url(#glow)" stroke="#c9dae2"/>
   <g opacity=".28"><rect x="58" y="203" width="604" height="76" rx="12" fill="#fff" stroke="#cbd7df"/><rect x="80" y="226" width="220" height="14" rx="7" fill="#b6c4ce"/><rect x="80" y="251" width="356" height="10" rx="5" fill="#ccd7df"/></g>
