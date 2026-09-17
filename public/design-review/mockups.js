@@ -90,8 +90,10 @@ document.querySelectorAll("[data-product-switcher]").forEach(initialiseProductSw
 
 const requestedConcept = window.location.hash.replace(/^#/, "");
 if (concepts.some((concept) => concept.id === requestedConcept)) {
+  history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
   activateConcept(requestedConcept, { updateHash: false });
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: "auto" }));
-  });
+  window.addEventListener("load", () => {
+    history.replaceState(null, "", `#${requestedConcept}`);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, { once: true });
 }
