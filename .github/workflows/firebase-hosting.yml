@@ -23,9 +23,12 @@ jobs:
       - run: npm test
       - run: npm run validate
       - name: Verify Firebase configuration
+        env:
+          FIREBASE_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MANTIVA360 }}
         run: |
-          test -n "${{ vars.FIREBASE_PROJECT_ID }}"
-          test -n "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MANTIVA360 }}"
+          test -n "$FIREBASE_PROJECT_ID"
+          test -n "$FIREBASE_SERVICE_ACCOUNT"
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
