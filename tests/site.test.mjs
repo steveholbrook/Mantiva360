@@ -26,15 +26,18 @@ test("static validation reports no structural, safety or route errors", () => {
   assert.ok(result.homepageWords >= 900 && result.homepageWords <= 1200);
 });
 
-test("the buyer journey and three evaluation paths are explicit", () => {
-  assert.match(index, /Know where your project stands\.\s*<span>Know what needs attention\.<\/span>/);
+test("the product-led buyer journey and evaluation paths are explicit", () => {
+  assert.match(index, /Turn project data into\s*<span>decision confidence\.<\/span>/);
   assert.match(index, /Recognise my problem|From reporting effort to decision confidence/);
-  assert.match(index, /Request a guided review/);
+  assert.match(index, /What needs attention now\?/);
+  assert.match(index, /Why is it off track\?/);
+  assert.match(index, /What should we do next\?/);
+  assert.match(index, /What changes downstream\?/);
+  assert.match(index, />Get started\s*<span/);
   assert.match(index, /Watch overview/);
-  assert.match(index, />Explore demo\s*<span/);
-  assert.match(index, /button button-primary button-large/);
+  assert.match(index, /button button-primary button-large button-app/);
   assert.match(index, /button button-secondary button-large/);
-  assert.match(index, /class="text-action"[^>]*data-demo-link/);
+  assert.match(javascript, /url\.hash === ""/);
 });
 
 test("the canonical identity, palette and type system are centralised", () => {
@@ -80,10 +83,11 @@ test("product proof uses only approved exact crops", () => {
   assert.match(product, /does not present invented interface artwork|captures are still required/i);
 });
 
-test("the product showcase is user controlled and keyboard operable", () => {
-  assert.equal((index.match(/role="tab"/g) ?? []).length, 3);
-  assert.equal((index.match(/role="tabpanel"/g) ?? []).length, 3);
-  assert.match(index, /data-tab-select/);
+test("the question-led product panorama is user controlled and keyboard operable", () => {
+  assert.equal((index.match(/role="tab"/g) ?? []).length, 4);
+  assert.equal((index.match(/role="tabpanel"/g) ?? []).length, 4);
+  assert.match(index, /class="question-tabs" role="tablist"/);
+  assert.match(index, /id="product-experience"[^>]*data-tabs/);
   assert.match(javascript, /ArrowRight/);
   assert.match(javascript, /ArrowLeft/);
   assert.match(javascript, /event\.key === "Home"/);
@@ -146,7 +150,12 @@ test("measurement hooks are small and exclude form payloads", () => {
 
 test("the site preserves the separate verified demo destination", () => {
   assert.match(config, /demoUrl:\s*"https:\/\/mantiva360\.app\/"/);
-  assert.match(index, /Availability and signed-out access are still being verified/);
+  assert.match(index, /Get started opens the Mantiva360 application in a new tab/);
   assert.match(resources, /Availability and signed-out access are still being verified/);
   assert.doesNotMatch([index, product, sap, resources].join("\n"), /mantiva360\.app\/(?:login|demo|project)/i);
+
+  const pages = [index, product, sap, resources, privacy].join("\n");
+  const destinations = [...pages.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>Get started\b/g)].map((match) => match[1]);
+  assert.ok(destinations.length >= 10);
+  assert.ok(destinations.every((destination) => destination === "https://mantiva360.app/"));
 });

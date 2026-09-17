@@ -1,4 +1,4 @@
-# Executive Confidence design system
+# Mantiva360 product panorama design system
 
 Internal implementation summary, 17 September 2026.
 
@@ -25,10 +25,10 @@ The layout uses a 1,280-pixel maximum container, a 12-column desktop grid, 32-pi
 
 | Component | Purpose | Accessibility and content rule |
 |---|---|---|
-| Site header | Four-item primary navigation plus one prioritised commercial action | Sticky without covering focused anchors; mobile menu exposes Watch and Explore demo; Escape closes and restores focus. |
-| Action hierarchy | Guided review, video and demo paths | Guided review is filled navy, Watch is secondary, Explore demo is a text link. Labels remain consistent. |
+| Site header | Four-item primary navigation plus one prioritised commercial action | Sticky without covering focused anchors; Get started opens the separate Mantiva360 application; Escape closes the mobile menu and restores focus. |
+| Action hierarchy | Application, video and guided-review paths | Get started is the primary action, Watch overview is secondary and the lower guided-review route remains clearly separate. |
 | Focus Lens frame | Contextual or focused genuine product evidence | One substantial capture, at most two callouts, no perspective distortion or invented overlay metrics. |
-| Product stage | Three buyer-question views | Native ARIA tabs on wider screens and a labelled native select on narrow screens. No auto-rotation. Arrow, Home and End keys are supported. |
+| Product panorama | Four management-question views | Attention, Cause, Action and Impact use native ARIA tabs at every breakpoint. The narrow layout uses a touch-scrollable tab rail. No auto-rotation. Arrow, Home and End keys are supported. |
 | Art-directed capture | Legible product proof on narrow screens | Responsive `<picture>` sources use exact mobile crops and explicit dimensions. CSS prevents upscaling. |
 | Video poster | One simple invitation per film | Approved logo, one headline, one play action and verified runtime. No iframe until activation. |
 | Video dialog | Privacy-enhanced playback | Native modal focus handling, explicit close, Escape, outside-click close, focus restoration and direct YouTube fallback. |
