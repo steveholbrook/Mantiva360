@@ -18,7 +18,19 @@ Publication states are **Publish**, **Publish with boundary**, **Hold** and **Ex
 | Mantiva360 can classify work in an SAP Activate phase context. | Methodology settings and phase model inspected; official phase names retained. | 17 Sep 2026 | Publish with boundary | No SAP endorsement, certification, partnership or unverified native integration. |
 | The demo is hosted separately at `https://mantiva360.app/`. | Shared site configuration and direct HTTP check. | 17 Sep 2026 | Publish with boundary | The destination returned HTTP 502 from this environment. Do not promise anonymous or uninterrupted access. |
 | The overview, product story and SAP films run for about 0:31, 1:30 and 0:30. | Previously observed YouTube player durations and current configured IDs. | 17 Sep 2026 | Publish with boundary | Captions, transcripts and complete media audit remain release blockers. |
-| The inactive guided-review journey collects no personal data. | `site-config.js` has `enabled: false` and an empty endpoint; the form is hidden. | 17 Sep 2026 | Publish | Reassess server validation, storage, retention, owner access and privacy wording before enabling. |
+| The inactive guided-review journey collects no personal data. | `site-config.js` has `enabled: false` and an empty endpoint; no public form is rendered. | 17 Sep 2026 | Publish | Reassess server validation, storage, retention, owner access and privacy wording before enabling. |
+
+## Five-question homepage mapping
+
+| Buyer question | Answer published in the review branch | Supporting demonstration | Relevant next action | Boundary |
+|---|---|---|---|---|
+| Why change? | A status update is not a decision you can defend. | Explicitly illustrative conflict: workstream on track, acceptance not confirmed, forecast needs review. | Follow the signal to the product walkthrough. | Not a customer result. |
+| Why not keep our tools? | Keep what works and test the gap between specialist systems. | Scheduling, work tracking, finance and documents are shown as operating roles, not connector claims. | Assess supported imports, ownership and cadence. | Mantiva360 must earn its place when the existing process works well. |
+| Why Mantiva360? | Follow a flag to its source, authorised response and recalculated result. | Genuine Attention, Cause, Action and Impact captures. | Inspect the four user-controlled views. | A marketing tab does not operate on project data. |
+| Why trust it? | Inspect the condition; separate deterministic calculation from read-only explanation; keep changes with authorised people. | Product proof plus SAP phase context. | Challenge the records, assumptions, configuration and governance. | No testimonial, certification, residency, SSO, scale, ROI or integration claim. |
+| Why act now? | Test one decision before an upcoming steering committee, acceptance decision or delivery gate. | One-decision evaluation checklist. | Define the question, trace an exception and agree acceptance criteria. | No duration, commercial offer or promised result. |
+
+The review homepage remains `noindex,nofollow`. The checklist collects no data and does not create an enquiry or booking. Booking-style calls to action remain withheld until the enquiry service and owner retrieval path are verified.
 
 ## Held claims
 

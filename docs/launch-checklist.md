@@ -5,8 +5,8 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 ## 1. Brand and claim accuracy
 
 - [ ] Canonical Option 7 symbol and Mantiva360 wordmark are used on every website surface.
-- [ ] Product visuals are labelled as promotional renderings with fictional data, and no source-account identity or legacy application branding is visible.
-- [ ] Desktop and mobile art-directed crops have been reviewed at their actual CSS display sizes.
+- [ ] Homepage visuals are verified genuine captures with unchanged values/statuses; deeper-page promotional renderings remain labelled and no source-account identity or legacy application branding is visible.
+- [ ] Desktop and mobile art-directed WebP crops have been reviewed at their actual CSS display sizes.
 - [ ] No personal email, customer name or confidential project record appears in a public asset.
 - [ ] No SAP endorsement, certification, partnership or unverified integration is claimed.
 - [ ] Any provisional-patent wording uses the exact approved IP Australia reference and public claim.
@@ -20,8 +20,8 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 - [ ] Nearby copy accurately describes sign-in and access requirements.
 - [ ] The video action is distinct from demo access.
 - [ ] Product, SAP delivery and Resources routes resolve without a redirect loop and match their canonical URLs.
-- [ ] The guided-review form remains hidden while its endpoint is disabled.
-- [ ] Once enabled, the guided-review form stores a test enquiry and only then shows success.
+- [ ] No booking CTA or public form appears while the guided-review endpoint is disabled.
+- [ ] Once a route is approved, the guided-review form stores a test enquiry and only then shows success.
 - [ ] The owner can retrieve and action that test enquiry.
 
 ## 3. Media and accessibility
@@ -50,7 +50,7 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 ## 5. Performance and maintainability
 
 - [ ] No YouTube iframe or video payload loads before a visitor clicks play.
-- [ ] Page works without horizontal overflow at 320, 390, 768 and 1440 pixels, including 200% text reflow.
+- [ ] Page works without horizontal overflow at 320, 390, 768, 1024 and 1440 pixels, including 200% text reflow.
 - [ ] Hero image is prioritised; below-fold images are lazy-loaded.
 - [ ] All local images are optimised and have intrinsic dimensions.
 - [ ] Shared demo and video destinations are controlled in one configuration file.

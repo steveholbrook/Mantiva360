@@ -2,18 +2,32 @@
 
 Internal review record, 17 September 2026. Public media must use only approved fictional data and must not expose the retired internal demonstration identity.
 
-The published Option 02 screens are promotional SVG renderings, not exact screenshots. They were designed from the inspected live Delivery Plan, exception-detail and corrective-action structures, with simplified application chrome and one consistent fictional scenario. Separate desktop and mobile compositions preserve legibility. The prior exact WebP crops remain in the repository for rollback but are not referenced by public HTML.
+The homepage uses the existing genuine WebP product captures. Their binaries are unchanged. The deeper Product and SAP delivery pages retain Option 02 promotional SVG renderings, which are not exact screenshots.
+
+## Genuine homepage captures
+
+| Published asset | Native dimensions | Intended use | SHA-256 |
+|---|---:|---|---|
+| `cockpit-context-v2.webp` | 1040 × 550 | Hero and Attention desktop | `a3e4bdd6d85fa540fcd6af5157798e19e8b0ef29cd56b174b42d277cbfe8a307` |
+| `cockpit-mobile-v2.webp` | 295 × 330 | Hero and Attention mobile crop | `33f6fd2e9ca95d10372b84ed9241e3d09c5dfc8f091c5fcfb7ab9214b9b86c95` |
+| `cockpit-finding-v2.webp` | 1010 × 350 | Cause desktop | `3e1718b2eedad8fbf4d9339c9bfcf36f3b51857648dcc4175afe1452f3751dca` |
+| `cockpit-finding-mobile-v2.webp` | 330 × 270 | Cause mobile crop | `59869a742de364c31567df0b2e94452e9d8925d3509e3d513188ac062e4b019f` |
+| `cockpit-recovery-v2.webp` | 670 × 330 | Action | `18e7f8982cd80ae28d282f0e4373d6a46edd73c3c2571eb76da54c0b95f5e5a8` |
+| `delivery-context-v2.webp` | 1050 × 740 | Impact desktop | `ad15162a9410809dec5bf8092e7916b26c53b0a1a343aca93ded0d208dbe4cd5` |
+| `delivery-mobile-v2.webp` | 420 × 740 | Impact mobile crop | `0b56405f73141ba0ab397d643d605cbf3b4d9f9e39e15b971bb027d87e1a6b49` |
+
+The capture values and statuses are not rewritten. Explanatory labels and annotations remain outside the images.
 
 ## Promotional product renderings
 
 | Published asset | Product basis | Native dimensions | Intended use | Alt-text intent | Approval state |
 |---|---|---:|---|---|---|
-| `option2-delivery-plan.svg` | Live Delivery Plan and POAP structure | 1440 × 900 | Homepage, Product and SAP Delivery | Six workstreams with Solution Design crossing Today | Selected Option 02 |
-| `option2-delivery-plan-mobile.svg` | Responsive reconstruction of the same plan | 720 × 980 | Narrow-screen art direction | Legible plan summary, workstreams, timeline and highlighted activity | Selected Option 02 |
-| `option2-signal-source.svg` | Live exception-detail structure | 1440 × 900 | Homepage and corrective-action story | Schedule severity, affected record, detection and deterministic trace | Selected Option 02 |
-| `option2-signal-source-mobile.svg` | Responsive reconstruction of the same signal | 720 × 980 | Narrow-screen art direction | Signal and governed source in a stacked view | Selected Option 02 |
-| `option2-governed-response.svg` | Live corrective-action fields and control boundary | 1440 × 900 | Homepage and corrective-action story | Owner, target, required outcome and recalculation verification | Selected Option 02 |
-| `option2-governed-response-mobile.svg` | Responsive reconstruction of the same response | 720 × 1040 | Narrow-screen art direction | Accountable action and verification path in a stacked view | Selected Option 02 |
+| `option2-delivery-plan.svg` | Live Delivery Plan and POAP structure | 1440 × 900 | Product and SAP Delivery | Six workstreams with Solution Design crossing Today | Selected Option 02 |
+| `option2-delivery-plan-mobile.svg` | Responsive reconstruction of the same plan | 720 × 980 | Product and SAP Delivery narrow-screen art direction | Legible plan summary, workstreams, timeline and highlighted activity | Selected Option 02 |
+| `option2-signal-source.svg` | Live exception-detail structure | 1440 × 900 | Product | Schedule severity, affected record, detection and deterministic trace | Selected Option 02 |
+| `option2-signal-source-mobile.svg` | Responsive reconstruction of the same signal | 720 × 980 | Product narrow-screen art direction | Signal and governed source in a stacked view | Selected Option 02 |
+| `option2-governed-response.svg` | Live corrective-action fields and control boundary | 1440 × 900 | Product | Owner, target, required outcome and recalculation verification | Selected Option 02 |
+| `option2-governed-response-mobile.svg` | Responsive reconstruction of the same response | 720 × 1040 | Product narrow-screen art direction | Accountable action and verification path in a stacked view | Selected Option 02 |
 
 Public captions identify these as promotional renderings based on the live interface. The assets exclude source-account identity and legacy application branding. `Golden Reference SAP Programme`, `Solution Design` and `Alex Morgan` are representative fictional data.
 

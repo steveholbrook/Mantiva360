@@ -7,8 +7,8 @@ Reviewed 17 September 2026 for the Executive Confidence implementation.
 | Item | Verified source | Review result |
 |---|---|---|
 | Marketing repository | `steveholbrook/Mantiva360` | Confirmed from the configured Git remote. |
-| Implementation base | `main` at merge commit `c47ad1967f887830ee7f88247ee6320872951956` | PR #2 is present in the branch history. |
-| Review branch | `review/world-class-executive-confidence-2026-09-17` | New branch created from current `origin/main`. |
+| Implementation base | `main` at `a196500507e29636e1f4bb5b58bd970ebc16c200` | Confirmed against the GitHub branch ref before editing. |
+| Review branch | `review/five-buyer-questions` | Created from the current remote `main`. |
 | Hosting architecture | `firebase.json` and the manual GitHub workflow | Static files under `public/` are the Firebase Hosting payload. No replatforming is required. |
 | Marketing destination | `https://mantiva360.com` | Returned HTTP 200 from this review environment. The deployed files differ from current `main`, so production is treated as the behavioural baseline only. |
 | Demonstration destination | `https://mantiva360.app` | Preserved exactly. It returned HTTP 502 from this review environment. This does not prove universal unavailability, but anonymous access cannot be claimed. |
@@ -18,7 +18,7 @@ Reviewed 17 September 2026 for the Executive Confidence implementation.
 
 | Route | Purpose | Review-branch status |
 |---|---|---|
-| `/` | Core buyer story and evaluation paths | Rebuilt. |
+| `/` | Five-question buyer story, genuine product proof and one-decision evaluation | Rebuilt; review noindex retained. |
 | `/product` | Buyer-led product and control explanation | Added. |
 | `/sap-delivery` | SAP-specific delivery and toolchain context | Added. |
 | `/resources` | Approved video library and evaluation resources | Added. |
@@ -60,8 +60,8 @@ These statements are narrower than a general claim that every module, integratio
 |---|---|---|
 | YouTube playback | Three configured video IDs use `youtube-nocookie.com` and are loaded after user action. | Runtime was previously observed as approximately 31 seconds, 90 seconds and 30 seconds. Captions and transcripts remain unverified. |
 | Demo link | Shared `siteConfig.demoUrl` points to `https://mantiva360.app/`. | Preserve the URL. Do not promise anonymous or uninterrupted access. |
-| Guided-review enquiry | `siteConfig.enquiry.enabled` is false and no endpoint is configured. | Do not show a success state or transmit contact details until a verified service is supplied. |
-| Analytics | No approved provider is configured. | Instrument only privacy-safe local event hooks. Do not transmit personal or free-text data. |
+| Guided-review enquiry | `siteConfig.enquiry.enabled` is false and no endpoint is configured. No public form is rendered. | Do not restore booking CTAs, show success or transmit details until a verified service and owner retrieval path are supplied. |
+| Analytics | No approved provider is configured. The revised homepage emits no tracking request. | Deeper-page local event hooks remain non-transmitting unless an approved provider is introduced. |
 | Firebase production deployment | Manual workflow only. | Do not run without explicit approval. |
 
 ## Material blockers
@@ -70,5 +70,5 @@ These statements are narrower than a general claim that every module, integratio
 2. The demonstration destination must be restored and its signed-out, isolation, reset and mobile behaviour verified.
 3. Accurate captions or verified transcripts and a complete footage, audio and end-card review are required for each published video.
 4. Additional inspected screens are still required before Planning & Forecasts, Actuals, RAID, Reporting, detailed reconciliation or read-only assistance can be shown as product UI.
-5. The published Option 02 SVGs reconstruct the inspected Delivery Plan, exception-detail and corrective-action structures with fictional data. They exclude source-account identity and legacy application branding; prior exact crops remain only for rollback and provenance.
+5. The homepage reuses the unchanged genuine WebP captures and mobile crops. Option 02 SVGs remain on the Product and SAP delivery pages with their promotional disclosure.
 6. Physical-device, Safari and deployed field-performance evidence remain outstanding.

@@ -1,4 +1,4 @@
-# Mantiva360 product panorama design system
+# Mantiva360 five-question buyer journey design system
 
 Internal implementation summary, 17 September 2026.
 
@@ -15,7 +15,7 @@ Internal implementation summary, 17 September 2026.
 | Body text | `#172536` | Primary copy |
 | White | `#FFFFFF` | Dominant surface |
 
-The approved Option 7 segmented circular symbol, Mantiva360 wordmark and `Data to Progress.` tagline are reused from the repository SVGs. The Option 02 product renderings use the product's status semantics while simplifying application chrome for marketing legibility.
+The approved Option 7 segmented circular symbol, Mantiva360 wordmark and `Data to Progress.` tagline are reused from the repository SVGs. The homepage uses the existing genuine product captures; Option 02 renderings remain on deeper Product and SAP delivery pages.
 
 Typography uses one highly legible sans-serif stack, led by Inter where installed and followed by native system sans-serif faces. Body text starts at 18 pixels with 1.55 line height. Major desktop headings use fluid sizes up to approximately 72 pixels. Mobile hero headings resolve to approximately 42 pixels at the narrow breakpoint. Prose measures are generally capped at 60 to 68 characters.
 
@@ -26,17 +26,17 @@ The layout uses a 1,280-pixel maximum container, a 12-column desktop grid, 32-pi
 | Component | Purpose | Accessibility and content rule |
 |---|---|---|
 | Site header | Four-item primary navigation plus one prioritised commercial action | Sticky without covering focused anchors; Get started opens the separate Mantiva360 application; Escape closes the mobile menu and restores focus. |
-| Action hierarchy | Application, video and guided-review paths | Get started is the primary action, Watch overview is secondary and the lower guided-review route remains clearly separate. |
-| Guided Spotlight frame | Question-led promotional product explanation | One substantial interface rendering, one numbered focus point and no perspective distortion. |
-| Product panorama | Four management-question views | Attention, Cause, Action and Impact use native ARIA tabs at every breakpoint. The narrow layout uses a touch-scrollable tab rail. No auto-rotation. Arrow, Home and End keys are supported. |
-| Art-directed rendering | Legible product proof on narrow screens | Responsive `<picture>` sources use separate mobile SVG compositions and explicit dimensions. |
+| Action hierarchy | Walkthrough, video, application and checklist paths | See how it works is the primary in-page action, Watch overview is secondary, Get started remains the separate application action and the checklist is the honest evaluation route. |
+| Five-question navigation | Buying argument | Why change, current tools, Mantiva360, trust and timing are presented as buyer questions rather than a root-cause workshop. |
+| Product proof | Four management-question views | Attention, Cause, Action and Impact use native ARIA tabs at every breakpoint. No auto-rotation. Arrow, Home and End keys are supported. |
+| Art-directed capture | Legible product proof on narrow screens | Responsive `<picture>` sources use the existing mobile WebP crops and explicit intrinsic dimensions. |
 | Video poster | One simple invitation per film | Approved logo, one headline, one play action and verified runtime. No iframe until activation. |
 | Video dialog | Privacy-enhanced playback | Native modal focus handling, explicit close, Escape, outside-click close, focus restoration and direct YouTube fallback. |
 | Controlled-action story | Four-step product workflow | Identifies exception, source, authorised correction and recalculated result without implying dashboard edits or automatic recovery. |
 | Phase rail | SAP Activate context | Uses text rather than SAP logos and separates methodology alignment from endorsement or integration. |
 | Editorial columns | Capability breadth | Three management responsibilities on the homepage; deeper Product coverage uses concise evidence-led cards and a boundary table. |
 | FAQ | Detailed buyer objections | Native `details` and `summary` controls keep qualifications out of the hero while remaining keyboard accessible. |
-| Guided-review panel | Primary commercial route | Form remains hidden while the endpoint is disabled. The visible state explains the blocker and cannot display false success. |
+| Evaluation panel | Honest next step | The checklist collects no details and implies no booking, duration, offer or result. The unavailable guided-review route is not promoted. |
 
 ## Interaction and motion
 
@@ -49,4 +49,4 @@ The layout uses a 1,280-pixel maximum container, a 12-column desktop grid, 32-pi
 
 ## Media integrity
 
-Desktop promotional renderings use a 1440 by 900 canvas. Narrow layouts receive purpose-built 720-pixel compositions rather than a scaled-down desktop interface. Every public caption states that the visuals are promotional renderings based on the live interface and use representative fictional data. Asset hashes and product basis are maintained in `docs/media-manifest.md`.
+Homepage capture dimensions, mobile crops and hashes are maintained in `docs/media-manifest.md`. Values, statuses, controls and capabilities are not retouched. Presentation framing remains outside the capture. The deeper-page Option 02 renderings retain their promotional labels and separate 720-pixel mobile compositions.

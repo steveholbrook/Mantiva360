@@ -1,6 +1,6 @@
 # Mantiva360 marketing asset register
 
-Internal review record. Updated 17 September 2026 against base commit `4b085af`.
+Internal review record. Updated 17 September 2026 against base commit `a196500`.
 
 ## Approved brand assets
 
@@ -12,19 +12,35 @@ Internal review record. Updated 17 September 2026 against base commit `4b085af`.
 | `public/assets/brand/mantiva360-compact-dark.svg` | Compact dark-surface mark | Approved Option 7 source | Not substituted for the full wordmark where brand recognition is needed. |
 | `public/assets/images/mantiva360-social-v1.png` | 1200 by 630 social preview | Existing repository asset inspected | Review candidate. A platform preview check is still required. |
 
-## Published promotional product renderings
+## Genuine published product captures
+
+The five-question homepage reuses the existing WebP captures without changing the binary files, displayed values, status, controls or capabilities. Desktop and mobile pairs are selected through `<picture>`; the Action view uses its single focused capture.
+
+| Asset | Native dimensions | Homepage treatment |
+|---|---:|---|
+| `cockpit-context-v2.webp` | 1040 × 550 | Hero and Attention desktop capture |
+| `cockpit-mobile-v2.webp` | 295 × 330 | Hero and Attention narrow-screen crop |
+| `cockpit-finding-v2.webp` | 1010 × 350 | Cause desktop capture |
+| `cockpit-finding-mobile-v2.webp` | 330 × 270 | Cause narrow-screen crop |
+| `cockpit-recovery-v2.webp` | 670 × 330 | Action capture |
+| `delivery-context-v2.webp` | 1050 × 740 | Impact desktop capture |
+| `delivery-mobile-v2.webp` | 420 × 740 | Impact narrow-screen crop |
+
+Presentation labels and explanatory annotations remain outside the image pixels. Public captions identify the images as actual captures with fictional project data, and image-failure states never substitute an invented interface.
+
+## Deeper-page promotional product renderings
 
 The selected Option 02 treatment is a transparent promotional reconstruction of the live Mantiva360 interface. It keeps the actual Delivery Plan, signal-detail and governed-response structures while simplifying application chrome and using representative fictional data. Detailed dimensions, intended use and hashes are recorded in `docs/media-manifest.md`.
 
 | Asset pair | Public treatment | Product basis | Status |
 |---|---|---|---|
-| `option2-delivery-plan.svg` and `option2-delivery-plan-mobile.svg` | Homepage lead screen, Product page and SAP Delivery page | Live Delivery Plan structure, six workstreams, POAP baseline, progress and Today markers | Selected Option 02 |
-| `option2-signal-source.svg` and `option2-signal-source-mobile.svg` | Homepage explanation screen and corrective-action story | Live exception-detail structure with severity, detection, affected record and deterministic trace | Selected Option 02 |
-| `option2-governed-response.svg` and `option2-governed-response-mobile.svg` | Homepage action screen and corrective-action story | Live corrective-action fields with owner, target, required outcome and post-recalculation verification | Selected Option 02 |
+| `option2-delivery-plan.svg` and `option2-delivery-plan-mobile.svg` | Product page and SAP Delivery page | Live Delivery Plan structure, six workstreams, POAP baseline, progress and Today markers | Selected Option 02 |
+| `option2-signal-source.svg` and `option2-signal-source-mobile.svg` | Product page | Live exception-detail structure with severity, detection, affected record and deterministic trace | Selected Option 02 |
+| `option2-governed-response.svg` and `option2-governed-response-mobile.svg` | Product page | Live corrective-action fields with owner, target, required outcome and post-recalculation verification | Selected Option 02 |
 
 The renderings are SVG interface artwork, not pixel-for-pixel product captures. Every public caption states that the treatment is promotional and based on the live interface. The scenario consistently uses the fictional `Solution Design` condition and `Alex Morgan` owner. It excludes personal account details and the source application's legacy branding.
 
-The prior exact WebP crops remain in the repository for rollback and provenance but are no longer referenced by public HTML. Approved media still does not cover Planning & Forecasts, actual allocation, RAID, Reporting, detailed reconciliation or read-only assistance.
+The WebP captures are now the homepage proof. Approved media still does not cover Planning & Forecasts, actual allocation, RAID, Reporting, detailed reconciliation or read-only assistance.
 
 ## Video assets
 

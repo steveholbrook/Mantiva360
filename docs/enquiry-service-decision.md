@@ -1,6 +1,6 @@
 # Guided-review enquiry service decision
 
-The current website must keep `enquiry.enabled` set to `false`. No approved backend, monitored lead owner, retention period or public privacy contact is configured.
+The current website must keep `enquiry.enabled` set to `false`. No approved backend, monitored lead owner, retention period or public privacy contact is configured. The review homepage therefore renders no enquiry form or booking-style call to action.
 
 ## Smallest suitable implementation
 

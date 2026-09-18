@@ -1,45 +1,38 @@
-# Product panorama implementation summary
+# Five buyer questions implementation summary
 
-Branch: `main`
+Branch: `review/five-buyer-questions`
 
-Status: Option 02 selected for production
+Base: `a196500507e29636e1f4bb5b58bd970ebc16c200`
+
+Status: review only; production is unchanged
 
 ## Implemented
 
-- Reworked the homepage around the selected Option 02 Question-Led Guided Spotlight treatment.
-- Made the visual Delivery Plan the lead screen, followed by Signal and Source and Governed Response in three keyboard-operable ARIA tabs.
-- Added buyer-led Product, SAP delivery and Resources pages without changing the static Firebase Hosting architecture.
-- Preserved the approved Option 7 brand assets, tagline and exact palette in a central CSS token system.
-- Added six responsive SVG renderings grounded in the inspected live interface, with simplified application chrome and a consistent fictional `Solution Design` scenario.
-- Added separate mobile compositions and responsive `<picture>` selection so product text remains legible on narrow screens.
-- Updated the Product and SAP Delivery pages to use the same selected visual treatment and removed public HTML references to the prior WebP crops.
-- Added one homepage video invitation and a three-film Resources library with one-headline, one-action posters and click-to-load privacy-enhanced playback.
-- Updated the four-step corrective-action story: see movement off plan, inspect the source, make recovery accountable and review the recalculated position.
-- Separated deterministic controls from authorised read-only assistance and narrowed SAP, progress, actuals, reporting and integration statements to inspected evidence.
-- Made Get started the primary site-wide action and kept every instance pointed at `https://mantiva360.app/`. Watch overview and the lower guided-review route remain separate. The unconnected enquiry form stays hidden and cannot display success.
-- Added privacy-safe local measurement hooks for overview play, product exploration, demo click, review-request start and confirmed review-request success.
-- Updated clean canonical routes, sitemap, 404 response, privacy content, security-header validation and repository tests.
+- Merged the supplied `repository-overlay/public/` into the existing Firebase Hosting public directory without replacing the repository, routes, deployment configuration or image library.
+- Rebuilt the homepage around five buyer questions: why change, why not keep the current tools, why Mantiva360, why trust it and why act now.
+- Reused the approved Option 7 SVG asset and `Data to Progress.` line; no brand mark was redrawn.
+- Replaced the prior three-tab promotional homepage with one genuine 360 Cockpit hero capture and four genuine Attention, Cause, Action and Impact product views.
+- Added the supplied one-decision evaluation checklist and linked it from the homepage and deeper routes.
+- Preserved Product, SAP delivery, Resources, Privacy, `/#how-it-works` and `/#guided-review` deep links.
+- Retained every Get started destination as `https://mantiva360.app/` and kept the application/video destinations in `site-config.js`.
+- Kept the enquiry endpoint disabled and removed booking-style calls to action. No public form, false success state, tracking request or personal-data collection is present on the revised homepage.
+- Preserved the strict Firebase CSP, same-origin image policy and YouTube privacy-enhanced frame origin.
+- Kept video two-stage consent: opening the native dialog makes no third-party request; selecting Play creates the iframe; closing removes it and returns focus.
+- Added intrinsic image dimensions, responsive WebP art direction, mobile navigation focus restoration and full Arrow/Home/End tab-key handling.
+- Kept review `noindex,nofollow`; canonical and social metadata remain prepared for an approved production release.
+- Updated repository validation and safety tests for the new copy, proof assets, conversion path and interaction boundaries.
 
-## Verification records
+## Deliberately unchanged
 
-- Source and architecture inventory: `docs/source-inventory.md`
-- Product-media provenance: `docs/media-manifest.md`
-- Broader asset register: `docs/asset-register.md`
-- Claim evidence and publication status: `docs/content-and-claims-register.md`
-- Tokens and components: `docs/design-system.md`
-- Test evidence and internal quality score: `docs/quality-review.md`
-- Release acceptance list: `docs/launch-checklist.md`
-- Enquiry service decision: `docs/enquiry-service-decision.md`
+- Product application code, authentication, data, calculations and hosting.
+- DNS, Firebase production channel, secrets and production workflow.
+- Existing Product, SAP delivery, Resources, Privacy and 404 route content except for replacing unverified guided-review CTAs with the checklist.
+- Existing genuine WebP capture binaries and Option 02 SVG assets.
 
 ## Current blockers
 
-1. Approved enquiry endpoint or verified public business contact.
-2. Configured and tested access to the separate Mantiva360 application.
-3. Approved captions, transcripts, visual descriptions and full video audit.
-4. Inspected source screens for uncovered capabilities before any additional interface artwork is published.
-5. Authorised remote preview for rendered screenshots, browser, device and accessibility testing.
-6. Laboratory performance test followed by post-release field measurement.
-
-## Deployment and rollback
-
-Production deployment requires explicit approval. The user selected Option 02 and requested that the website screens be changed. The manual Firebase workflow remains unchanged, and Firebase Hosting release history provides the rollback path. Detailed review-channel, production and domain instructions remain in `README.md`.
+1. Captions, transcripts, material visual descriptions and full content review for the published videos.
+2. Successful signed-out desktop/mobile application access, data-isolation and reset verification at `https://mantiva360.app/`.
+3. A protected enquiry service or verified business contact with validation, abuse controls, confirmed persistence/delivery and an owner-retrieval test before any booking CTA is restored.
+4. Physical Safari, iPhone, Android and screen-reader checks.
+5. Launch approval, removal of homepage `noindex,nofollow` and an explicit production deployment.
