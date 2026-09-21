@@ -21,7 +21,7 @@
 .about{background:var(--wash);border-bottom:1px solid var(--line);scroll-margin-top:20px}
 .about-grid{display:grid;grid-template-columns:minmax(240px,340px) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:center}
 .about-portrait{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.about-portrait img{width:100%;height:auto;aspect-ratio:3/4}
+.about-portrait img{width:100%;height:auto}
 .about-portrait figcaption{padding:20px 24px;border-top:3px solid var(--teal)}
 .about-portrait figcaption strong{display:block;color:var(--ink);font-size:22px;line-height:1.3}
 .about-portrait figcaption span{display:block;margin-top:4px;font-size:14px;line-height:1.5;color:var(--muted)}
