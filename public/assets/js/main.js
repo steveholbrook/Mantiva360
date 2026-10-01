@@ -1,244 +1,147 @@
 import { siteConfig } from "./site-config.js";
 
-const safeEventNames = new Set([
-  "overview_play",
-  "product_exploration",
-  "demo_click",
-  "review_request_start",
-  "review_request_success",
-]);
-
-function track(name, properties = {}) {
-  if (!safeEventNames.has(name)) return;
-
-  const detail = { name, ...properties };
-  window.dispatchEvent(new CustomEvent("mantiva:analytics", { detail }));
-
-  if (Array.isArray(window.dataLayer)) {
-    window.dataLayer.push({ event: name, ...properties });
-  }
-}
-
-document.querySelectorAll("[data-demo-link]").forEach((link) => {
-  link.href = siteConfig.demoUrl;
-});
-
-const pathname = window.location.pathname.replace(/index\.html$/, "");
-document.querySelectorAll("[data-nav] > a").forEach((link) => {
-  const url = new URL(link.href, window.location.origin);
-  const linkPath = url.pathname.replace(/index\.html$/, "");
-  const isHomeSection = linkPath === "/" && pathname === "/" && url.hash === "";
-  const isSectionPage = linkPath !== "/" && pathname.startsWith(linkPath);
-
-  if (isHomeSection || isSectionPage) link.setAttribute("aria-current", "page");
-});
-
+// Progressive enhancement: navigation, proof and direct video links work without JS.
+document.documentElement.classList.add("enhanced");
+document.querySelectorAll("[data-demo-link]").forEach((link) => { link.href = siteConfig.demoUrl; });
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navigation = document.querySelector("[data-nav]");
-
 function closeMenu({ restoreFocus = false } = {}) {
-  if (!menuToggle || !navigation) return;
-  navigation.classList.remove("is-open");
-  menuToggle.setAttribute("aria-expanded", "false");
-  const label = menuToggle.querySelector(".sr-only");
-  if (label) label.textContent = "Open navigation";
-  if (restoreFocus) menuToggle.focus();
+  navigation?.classList.remove("is-open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  if (restoreFocus) menuToggle?.focus();
 }
-
 if (menuToggle && navigation) {
+  const narrow = window.matchMedia("(max-width: 900px)");
+  function syncMenu() { menuToggle.hidden = !narrow.matches; closeMenu(); }
+  syncMenu();
+  narrow.addEventListener("change", syncMenu);
   menuToggle.addEventListener("click", () => {
-    const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
-    navigation.classList.toggle("is-open", willOpen);
-    menuToggle.setAttribute("aria-expanded", String(willOpen));
-    const label = menuToggle.querySelector(".sr-only");
-    if (label) label.textContent = willOpen ? "Close navigation" : "Open navigation";
+    const open = menuToggle.getAttribute("aria-expanded") !== "true";
+    navigation.classList.toggle("is-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
   });
-
   navigation.addEventListener("click", (event) => {
-    if (event.target.closest("a, button")) closeMenu();
+    if (event.target.closest("a")) closeMenu();
   });
-
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && navigation.classList.contains("is-open")) {
-      closeMenu({ restoreFocus: true });
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.matchMedia("(min-width: 901px)").matches) closeMenu();
+    if (event.key === "Escape" && navigation.classList.contains("is-open")) closeMenu({ restoreFocus: true });
   });
 }
 
-function initialiseTabs(root) {
+document.querySelectorAll("[data-tabs]").forEach((root) => {
   const tabs = [...root.querySelectorAll('[role="tab"]')];
   const panels = [...root.querySelectorAll('[role="tabpanel"]')];
-  const select = root.querySelector("[data-tab-select]");
-  if (!tabs.length || !panels.length) return;
-
-  function activate(panelId, { moveFocus = false, report = true } = {}) {
-    const nextTab = tabs.find((tab) => tab.getAttribute("aria-controls") === panelId);
-    const nextPanel = panels.find((panel) => panel.id === panelId);
-    if (!nextTab || !nextPanel) return;
-
-    tabs.forEach((tab) => {
-      const selected = tab === nextTab;
-      tab.setAttribute("aria-selected", String(selected));
-      tab.tabIndex = selected ? 0 : -1;
+  function activate(tab, focus = false) {
+    tabs.forEach((candidate) => {
+      const active = candidate === tab;
+      candidate.setAttribute("aria-selected", String(active));
+      candidate.tabIndex = active ? 0 : -1;
     });
-    panels.forEach((panel) => {
-      panel.hidden = panel !== nextPanel;
-    });
-    if (select) select.value = panelId;
-    if (moveFocus) nextTab.focus();
-    if (report) track("product_exploration", { view: panelId.replace(/^panel-/, "") });
+    panels.forEach((panel) => { panel.hidden = panel.id !== tab.getAttribute("aria-controls"); });
+    if (focus) tab.focus();
   }
-
   tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => activate(tab.getAttribute("aria-controls")));
+    tab.addEventListener("click", () => activate(tab));
     tab.addEventListener("keydown", (event) => {
-      let nextIndex;
-      if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % tabs.length;
-      if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === "Home") nextIndex = 0;
-      if (event.key === "End") nextIndex = tabs.length - 1;
-      if (nextIndex === undefined) return;
+      let next;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % tabs.length;
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === "Home") next = 0;
+      if (event.key === "End") next = tabs.length - 1;
+      if (next === undefined) return;
       event.preventDefault();
-      activate(tabs[nextIndex].getAttribute("aria-controls"), { moveFocus: true });
+      activate(tabs[next], true);
     });
   });
-
-  select?.addEventListener("change", () => activate(select.value));
-}
-
-document.querySelectorAll("[data-tabs]").forEach(initialiseTabs);
-
-document.addEventListener("click", (event) => {
-  const tracked = event.target.closest("[data-track]");
-  if (!tracked) return;
-  const eventName = tracked.dataset.track;
-  if (eventName === "overview_play") return;
-  track(eventName);
+  if (tabs.length) activate(tabs[0]);
 });
 
-const videoDialog = document.querySelector("[data-video-dialog]");
-const videoEmbed = videoDialog?.querySelector("[data-video-embed]");
-const videoTitle = videoDialog?.querySelector("[data-video-dialog-title]");
-const videoLink = videoDialog?.querySelector("[data-video-youtube-link]");
-let videoTrigger = null;
-
+const dialog = document.querySelector("[data-video-dialog]");
+const stage = dialog?.querySelector("[data-video-embed]");
+const title = dialog?.querySelector("[data-video-dialog-title]");
+const note = dialog?.querySelector("[data-video-note]");
+const fallback = dialog?.querySelector("[data-video-fallback]");
+let opener;
 function clearVideo() {
-  if (videoEmbed) videoEmbed.replaceChildren();
+  const video = stage?.querySelector("video");
+  if (video) { video.pause(); video.removeAttribute("src"); video.load(); }
+  stage?.replaceChildren();
 }
-
-function closeVideo() {
-  if (!videoDialog?.open) return;
-  videoDialog.close();
-}
-
-function openVideo(trigger) {
-  if (!videoDialog || !videoEmbed || !videoTitle || !videoLink) return;
-  const videoId = trigger.dataset.videoOpen;
-  if (!siteConfig.videos[videoId]) return;
-
-  videoTrigger = trigger;
-  videoTitle.textContent = trigger.dataset.videoTitle || siteConfig.videos[videoId];
-  videoLink.href = `https://youtu.be/${videoId}`;
-
-  const iframe = document.createElement("iframe");
-  iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
-  iframe.title = videoTitle.textContent;
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-  iframe.referrerPolicy = "strict-origin-when-cross-origin";
-  iframe.allowFullscreen = true;
-  videoEmbed.replaceChildren(iframe);
-
-  videoDialog.showModal();
+function openVideo(event, trigger) {
+  const id = trigger.dataset.videoOpen;
+  const media = siteConfig.videos[id];
+  if (!media || !dialog?.showModal || !stage || !title || !note || !fallback) return;
+  event.preventDefault();
+  clearVideo();
+  opener = trigger;
+  title.textContent = `${media.title} · ${media.seconds} sec`;
+  if (media.type === "local") {
+    const video = document.createElement("video");
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = "none";
+    video.poster = media.poster;
+    video.src = media.src;
+    video.width = media.width;
+    video.height = media.height;
+    video.setAttribute("aria-label", title.textContent);
+    if (media.height > media.width) video.classList.add("portrait");
+    // A verified track can be configured without changing the player. Draft captions are not published.
+    if (media.captions) {
+      const track = document.createElement("track");
+      Object.assign(track, { kind: "captions", src: media.captions, srclang: "en", label: "English", default: true });
+      video.appendChild(track);
+    }
+    stage.appendChild(video);
+    note.textContent = media.note;
+    fallback.href = media.src;
+    fallback.textContent = "Open MP4 directly";
+    fallback.removeAttribute("target");
+    fallback.removeAttribute("rel");
+  } else {
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    iframe.title = media.title;
+    iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    stage.appendChild(iframe);
+    note.textContent = "Playback uses YouTube’s privacy-enhanced domain. Captions and a verified transcript for this existing film still need review.";
+    fallback.href = `https://youtu.be/${id}`;
+    fallback.textContent = "Open on YouTube ↗";
+    fallback.target = "_blank";
+    fallback.rel = "noopener noreferrer";
+  }
+  dialog.showModal();
   document.body.classList.add("dialog-open");
-  track(videoId === "XMQa-RB5fUU" ? "overview_play" : "product_exploration", {
-    view: videoId === "XMQa-RB5fUU" ? "overview_video" : "resource_video",
-  });
+  dialog.querySelector("[data-video-close]")?.focus();
 }
-
 document.querySelectorAll("[data-video-open]").forEach((trigger) => {
-  trigger.addEventListener("click", () => openVideo(trigger));
+  trigger.addEventListener("click", (event) => openVideo(event, trigger));
 });
-
-if (videoDialog) {
-  videoDialog.querySelector("[data-video-close]")?.addEventListener("click", closeVideo);
-  videoDialog.addEventListener("cancel", (event) => {
-    event.preventDefault();
-    closeVideo();
+if (dialog) {
+  dialog.querySelector("[data-video-close]")?.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target !== dialog) return;
+    const r = dialog.getBoundingClientRect();
+    if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close();
   });
-  videoDialog.addEventListener("click", (event) => {
-    if (event.target === videoDialog) closeVideo();
+  // Keep the tab cycle inside the modal, including browsers that expose browser chrome at boundaries.
+  dialog.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+    const first = dialog.querySelector("[data-video-close]");
+    const last = fallback;
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault(); last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault(); first?.focus();
+    }
   });
-  videoDialog.addEventListener("close", () => {
+  // Native dialog handles Escape; cleanup applies to every close path.
+  dialog.addEventListener("close", () => {
     clearVideo();
     document.body.classList.remove("dialog-open");
-    videoTrigger?.focus();
-    videoTrigger = null;
+    opener?.focus();
+    opener = null;
   });
 }
-
-const reviewForm = document.querySelector("[data-review-form]");
-const reviewUnavailable = document.querySelector("[data-review-unavailable]");
-const formAlert = reviewForm?.querySelector("[data-form-alert]");
-const formSubmit = reviewForm?.querySelector('button[type="submit"]');
-const enquiryAvailable = Boolean(siteConfig.enquiry.enabled && siteConfig.enquiry.endpoint);
-
-if (reviewForm && reviewUnavailable && enquiryAvailable) {
-  reviewForm.hidden = false;
-  reviewUnavailable.hidden = true;
-}
-
-function showFormAlert(message, state = "error") {
-  if (!formAlert) return;
-  formAlert.textContent = message;
-  formAlert.dataset.state = state;
-  formAlert.hidden = false;
-  formAlert.focus();
-}
-
-reviewForm?.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  formAlert.hidden = true;
-
-  if (!enquiryAvailable) {
-    showFormAlert("The guided-review service is not connected in this review build.");
-    return;
-  }
-
-  if (!reviewForm.reportValidity()) return;
-  const fields = new FormData(reviewForm);
-  if (fields.get("website")) return;
-
-  const payload = {
-    name: String(fields.get("name") || "").trim(),
-    email: String(fields.get("email") || "").trim(),
-    organisation: String(fields.get("organisation") || "").trim(),
-    question: String(fields.get("question") || "").trim(),
-    consent: fields.get("consent") === "on",
-  };
-
-  formSubmit.disabled = true;
-  formSubmit.textContent = "Sending request…";
-
-  try {
-    const response = await fetch(siteConfig.enquiry.endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok || result.saved !== true) throw new Error("Request not confirmed");
-
-    reviewForm.reset();
-    showFormAlert("Your request was saved. Mantiva360 can now respond using the details you supplied.", "success");
-    track("review_request_success");
-  } catch {
-    showFormAlert("The request was not confirmed. Your entries are still here. Please try again when the service is available.");
-  } finally {
-    formSubmit.disabled = false;
-    formSubmit.textContent = "Request a guided review";
-  }
-});

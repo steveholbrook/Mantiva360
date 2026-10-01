@@ -1,3 +1,15 @@
+## October 2026 performance redesign release items
+
+- [ ] Approve the branch and review its Firebase preview before any production deployment.
+- [ ] Replace or explicitly approve the 30-second promotional review cut and its placeholder inserts.
+- [ ] Verify local caption drafts against audio, timing, sound cues and essential visuals; review existing YouTube captions.
+- [ ] Review on physical iPad/iPhone Safari and with VoiceOver.
+- [ ] Confirm business privacy contact and the intended indexing state. Review pages currently remain noindex.
+- [ ] Test application access and all external YouTube films in the release environment.
+- [ ] Run `npm test`, `npm run validate`, `npm run test:browser` and inspect performance evidence.
+
+See [performance-redesign.md](performance-redesign.md). Existing checklist follows.
+
 # Mantiva360 website launch checklist
 
 Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an untested item into a pass.

@@ -1,3 +1,5 @@
+> October 2026 update: see [performance-redesign.md](performance-redesign.md) for the current positioning, QA and release status. The earlier review below is retained as historical provenance.
+
 # Mantiva360 marketing asset register
 
 Internal review record. Updated 17 September 2026 against base commit `a196500`.
@@ -57,3 +59,18 @@ No YouTube iframe is present in the initial HTML. Each poster contains the appro
 - No customer logo, testimonial, stock image or AI-generated product interface is published.
 - No patent notice is published. Exact approved wording and verifiable filing details were not supplied.
 - No promotional rendering is described as an exact capture. Desktop and mobile assets use separate layouts so interface text remains legible without exposing source-account detail.
+
+## October 2026 local films
+
+Both selected sources are 910 × 512, 30 fps, H.264/AAC, with no rotation or subtitle stream. Full source paths, draft-caption status and scope are documented in performance-redesign.md. Unselected 30-second duplicate remains in task uploads.
+
+| Film | Source bytes | Published bytes | Published SHA-256 |
+|---|---:|---:|---|
+| performance | 16,124,493 | 1,833,652 | bc9e220a81fe83a4ea4aa836318878394ae6e0740acf042eab25318fd7a197fb |
+| evolution | 27,791,233 | 4,284,897 | dbf28136a0d76eae3178d31caac96ae553a7ed5a24ec63656e56b30cbd2f6d92 |
+
+Semantic paths: `public/assets/video/mantiva360-performance-30s.mp4`, `public/assets/video/mantiva360-evolution-90s.mp4`. Poster frames at 3s and 41s are in `public/assets/images/video/`. FFmpeg settings: libx264, preset slow, CRF 23, yuv420p, AAC 96k, movflags +faststart. Full-video SSIM against the chosen source: 0.991874 short; 0.995001 evolution. Visual frame inspection preserved text and aspect ratio. Source uploads were not modified.
+
+The short film is labelled a promotional review cut. Neither film is asserted to have verified accessible captions. Drafts stay in docs/caption-drafts/. The player supports a future approved caption path via shared config.
+
+New social preview: `mantiva360-performance-social.png`, 1200 × 630, text-only performance positioning in the approved palette. It does not depict product UI. Original brand SVGs and genuine WebP captures remain unchanged.

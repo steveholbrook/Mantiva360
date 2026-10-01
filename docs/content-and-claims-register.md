@@ -1,3 +1,5 @@
+> October 2026 update: see [performance-redesign.md](performance-redesign.md) for the current positioning, QA and release status. The earlier review below is retained as historical provenance.
+
 # Mantiva360 content and claims register
 
 Internal review record. Verified 17 September 2026. This file is outside the Firebase `public/` directory and is not part of the published website.

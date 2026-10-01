@@ -16,6 +16,8 @@ const host = argumentValue("--host", "127.0.0.1");
 const port = Number(argumentValue("--port", "4173"));
 
 const contentTypes = new Map([
+  [".mp4", "video/mp4"],
+  [".vtt", "text/vtt; charset=utf-8"],
   [".css", "text/css; charset=utf-8"],
   [".html", "text/html; charset=utf-8"],
   [".js", "text/javascript; charset=utf-8"],
@@ -46,16 +48,34 @@ function resolveRequestPath(urlPath) {
   return path.join(publicDirectory, "404.html");
 }
 
+const firebase = JSON.parse(fs.readFileSync(path.resolve(scriptDirectory, "../firebase.json"), "utf8"));
+const securityHeaders = Object.fromEntries(firebase.hosting.headers[0].headers.map(({ key, value }) => [key, value]));
+// Match Firebase security policy locally; browsers ignore HTTPS upgrade on localhost.
 const server = http.createServer((request, response) => {
   try {
     const file = resolveRequestPath(request.url || "/");
     const notFound = file.endsWith(`${path.sep}404.html`) && request.url !== "/404.html";
-    response.writeHead(notFound ? 404 : 200, {
-      "Cache-Control": "no-store",
+    const size = fs.statSync(file).size;
+    const headers = { ...securityHeaders, "Cache-Control": "no-store",
       "Content-Type": contentTypes.get(path.extname(file)) || "application/octet-stream",
-      "X-Content-Type-Options": "nosniff",
-    });
-    fs.createReadStream(file).pipe(response);
+      "Accept-Ranges": "bytes" };
+    const range = request.headers.range;
+    let start = 0, end = size - 1, status = notFound ? 404 : 200;
+    if (range && !notFound) {
+      const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+      if (match) {
+        if (!match[1] && match[2]) start = Math.max(0, size - Number(match[2]));
+        else { start = Number(match[1]); end = match[2] ? Math.min(Number(match[2]), size - 1) : end; }
+      }
+      if (!match || (!match[1] && !match[2]) || start >= size || start > end) {
+        response.writeHead(416, { ...headers, "Content-Range": `bytes */${size}` });
+        response.end(); return;
+      }
+      status = 206; headers["Content-Range"] = `bytes ${start}-${end}/${size}`;
+    }
+    response.writeHead(status, { ...headers, "Content-Length": end - start + 1 });
+    if (request.method === "HEAD") response.end();
+    else fs.createReadStream(file, { start, end }).pipe(response);
   } catch {
     response.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
     response.end("Preview server error");

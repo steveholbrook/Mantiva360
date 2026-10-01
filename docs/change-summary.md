@@ -1,3 +1,5 @@
+> October 2026 update: see [performance-redesign.md](performance-redesign.md) for the current positioning, QA and release status. The earlier review below is retained as historical provenance.
+
 # Five buyer questions implementation summary
 
 Branch: `review/five-buyer-questions`

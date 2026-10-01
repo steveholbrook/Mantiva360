@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { siteConfig } from "../public/assets/js/site-config.js";
 import { fileURLToPath } from "node:url";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -110,12 +111,29 @@ export function validateSite() {
     "sap-delivery/index.html",
     "resources/index.html",
     "privacy/index.html",
+    "about/index.html",
     "404.html",
   ];
   requiredPages.forEach((page) => {
     if (!fs.existsSync(path.join(publicDirectory, page))) errors.push(`Missing required page: ${page}`);
   });
 
+  // Verify fragment destinations as well as files, including cross-page navigation.
+  for (const file of htmlFiles) {
+    const content = fs.readFileSync(file, "utf8");
+    for (const [, href] of content.matchAll(/<a\b[^>]*href="([^"]*#[^"]+)"/gi)) {
+      if (/^[a-z]+:/i.test(href)) continue;
+      const [pathname, id] = href.split("#");
+      const target = pathname ? path.join(publicDirectory, pathname, "index.html") : file;
+      if (fs.existsSync(target) && !fs.readFileSync(target, "utf8").includes(`id="${id}"`)) errors.push(`${file}: missing fragment ${href}`);
+    }
+  }
+  for (const [key, media] of Object.entries(siteConfig.videos)) {
+    if (media.type !== "local") continue;
+    for (const ref of [media.src, media.poster, media.captions].filter(Boolean)) {
+      if (!localTargetExists(ref)) errors.push(`${key}: missing media asset ${ref}`);
+    }
+  }
   const removedSources = ["cockpit-red-v1.webp", "delivery-plan-v1.webp"];
   removedSources.forEach((asset) => {
     if (fs.existsSync(path.join(publicDirectory, "assets/images", asset))) errors.push(`Deployable directory still contains retired source capture: ${asset}`);
@@ -148,9 +166,9 @@ export function validateSite() {
   if (/Website source/i.test(index)) errors.push("the source repository must not appear as buyer navigation");
 
   const homepageWords = visibleWordCount(index);
-  if (homepageWords < 1200 || homepageWords > 1500) errors.push(`homepage main copy is ${homepageWords} words; target is 1200 to 1500`);
+  if (homepageWords < 700 || homepageWords > 1500) errors.push(`homepage main copy is ${homepageWords} words; target is 700 to 1500 for the concise outcome-led narrative`);
 
-  ["/product", "/sap-delivery", "/resources", "/privacy"].forEach((route) => {
+  ["/product", "/sap-delivery", "/resources", "/privacy", "/about"].forEach((route) => {
     if (!sitemap.includes(`<loc>https://mantiva360.com${route}</loc>`)) errors.push(`sitemap missing ${route}`);
   });
 
