@@ -1,0 +1,27 @@
+
+> mantiva360-marketing@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ all routes, assets, anchors and structural safety checks pass (20.752036ms)
+✔ outcomes lead the homepage and offer connected next steps (0.477611ms)
+✔ financial examples distinguish exposure from validated results (0.551472ms)
+✔ current product and trust boundaries support the recovery narrative (0.227364ms)
+✔ all six Activate phases remain ordered and accurately distinguished (0.274429ms)
+✔ genuine captures and approved brand assets are preserved (0.291096ms)
+✔ review noindex and truthful launch SEO are prepared without inline scripts (0.403207ms)
+✔ the complete YouTube library retains click-to-load and direct fallbacks (0.437555ms)
+✔ local film source, poster, runtime, dimensions and loading remain explicit (0.581863ms)
+✔ no JavaScript keeps navigation, product information and media reachable (0.568221ms)
+✔ keyboard proof controls and reduced motion remain supported (0.249914ms)
+✔ security headers are exactly preserved (0.136117ms)
+✔ enquiries stay inactive and no tracking is introduced (0.646968ms)
+✔ evaluation checklist and established product deep links remain (0.255188ms)
+✔ primary palette meets normal-text contrast requirements (0.559026ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127.273377

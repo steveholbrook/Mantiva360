@@ -2,7 +2,11 @@
 
 Public marketing website source for **Mantiva360**, designed for `https://mantiva360.com` and Firebase Hosting. The separate product and demonstration destination is `https://mantiva360.app`.
 
-The site uses the approved Mantiva360 Option 7 production identity, a white-led Executive Confidence direction, genuine published product captures, three supplied YouTube videos and evidence-led SAP Activate positioning. The homepage answers five buyer questions: why change, why not keep the current tools, why Mantiva360, why trust it and why act now. The deeper Product and SAP delivery pages retain the approved Option 02 promotional renderings.
+The site positions Mantiva360 as **Project Performance Intelligence** for SAP delivery: More delivery. Less waste. The outcome-led narrative connects project economics, early intervention, recovery and verification, supported by trusted controls underneath.
+
+This remains a static HTML/CSS/JavaScript site. No framework, analytics or enquiry endpoint was added. Existing routes, brand assets, genuine product captures and three privacy-enhanced YouTube resources are retained. A dedicated `/about` route and two local films have been added.
+
+See [the October 2026 implementation and QA report](docs/performance-redesign.md) for current screenshots, SAP references, product evidence, media provenance, tests, known limitations and deployment notes. Earlier five-question design notes are historical.
 
 ## Important architecture correction
 
@@ -10,48 +14,29 @@ Firebase Hosting serves the website. Cloud Firestore is a database and must not 
 
 The repository intentionally contains no Firebase credentials, customer data, enquiry records, access tokens or product-application source. The Mantiva360 application remains separate.
 
-## Current status
+## Current status and local review
 
-| Area | Status |
-|---|---|
-| Homepage, Product, SAP delivery, Resources and privacy pages | Implemented; the review homepage uses the five-question buyer narrative and keeps the existing deep routes |
-| Responsive CSS and art direction | The homepage adds 540, 820 and 1050 pixel breakpoints and genuine mobile crops; managed preview, Safari and physical-device checks remain |
-| Supplied YouTube content | Click-to-load privacy-enhanced embeds; all three currently report captions unavailable |
-| Product visuals | Homepage uses the existing genuine WebP captures with responsive mobile crops; deeper pages retain the disclosed Option 02 promotional SVGs |
-| Firebase Hosting configuration | Ready for a selected Firebase project |
-| Guided-review route | Not promoted and no public form is rendered until a protected endpoint, approved owner and retrieval process are verified |
-| `mantiva360.com` live behaviour | Returned HTTP 200 with TLS during inspection; this review branch is not deployed there |
-| `www.mantiva360.com` redirect | Must be configured against the exact Firebase domain instructions |
-| `mantiva360.app` application access | Every Get started action links to this separate destination; the application will be configured separately |
+- Homepage, Product, SAP Delivery, Resources, About and Privacy share responsive styling, navigation and a user-triggered video dialog.
+- Local films are H.264/AAC MP4 with fast-start metadata, native controls and no initial media-body requests.
+- The supplied 30-second film is landscape and marked as a review cut. Caption verification and physical Safari review remain release items.
+- Review pages retain `noindex,nofollow`. Update indexing only as part of the approved release review.
+- All primary CTAs use `https://mantiva360.app/`; sign-in may be required. No booking or anonymous-access promise is made.
+- Enquiry configuration remains disabled. There is no active submission path or analytics.
 
-## Local preview
-
-Requirements: Node.js 22 or later and Python 3.
+Requirements: Node.js 22 or later. Browser tools are development-only dependencies.
 
 ```bash
+npm ci
 npm test
 npm run validate
+npx playwright install chromium
+npm run test:browser
 npm run dev
 ```
 
-Open `http://localhost:4173`.
+Open `http://localhost:4173`. The preview server applies the Firebase security headers, serves clean routes and supports MP4 byte ranges. `npm run audit:performance` runs mobile and desktop Lighthouse; `CHROMIUM_PATH` can select a locally installed Chromium binary.
 
-## Core configuration
-
-Edit `public/assets/js/site-config.js` for shared runtime destinations.
-
-```js
-demoUrl: "https://mantiva360.app/"
-overviewVideoId: "XMQa-RB5fUU"
-```
-
-The three supplied videos are configured once in the same file:
-
-- short overview: `XMQa-RB5fUU`
-- full product story: `QkCRdrASlAg`
-- SAP delivery: `wEgHPeHhb7I`
-
-Do not enable enquiry submission until its endpoint has passed persistence, access, spam, privacy and owner-retrieval checks. The page requires `{ "saved": true }` from the endpoint before it shows success.
+`public/assets/js/site-config.js` centralises the application destination and all five video definitions. Each media entry has an explicit type, title and runtime; local entries also have paths, dimensions and accessibility notes. Accurate caption tracks can be enabled with a `captions` path after the drafts in `docs/caption-drafts/` are reviewed.
 
 ## Firebase Hosting deployment
 
@@ -121,7 +106,7 @@ Do not change nameservers or remove an existing apex service without confirming 
 
 ## Guided-review route
 
-No public form or booking action is rendered while the endpoint is disabled. The one-decision evaluation checklist is available without collecting contact details, and the homepage states that the guided-review route is not open.
+No public form or booking action is rendered while the endpoint is disabled. The one-decision evaluation checklist is available without collecting contact details, and the homepage links directly to the separate application.
 
 Before enabling it, implement a same-origin, server-side Firebase Function or Cloud Run endpoint with:
 
@@ -141,12 +126,12 @@ See `docs/enquiry-service-decision.md` for the smallest suitable service design,
 
 ## Content boundaries
 
-- Mantiva360 is positioned as a project-control and assurance layer, not a rip-and-replace execution suite.
+- Mantiva360 leads with project economics and performance intelligence; trusted controls underpin the result.
 - SAP Activate phase alignment is described without claiming SAP endorsement or certification.
 - SAP Cloud ALM, Jira, Microsoft Project, finance and document platforms are referenced as toolchain categories. Native integrations are not claimed.
 - AI assists interpretation and navigation. Deterministic services calculate status and reconciliation.
 - Actual effort and cost do not automatically create earned progress.
-- Homepage product visuals are the existing published captures and preserve their recorded values, statuses and controls. Deeper-page Option 02 visuals remain disclosed promotional renderings based on inspected live screens.
+- Homepage product visuals are the existing published captures and preserve their recorded values, statuses and controls. Option 02 illustrations are retained in a labelled, optional Product-page section.
 - The four-step exception story does not promise one-click remediation; status changes only when the underlying governed records change and controls recalculate.
 
 See `docs/change-summary.md` for the implementation handoff, `docs/design-system.md` for tokens and components, `docs/content-and-claims-register.md` for the maintained claim register and `docs/media-manifest.md` for product-image and video provenance.
@@ -162,6 +147,8 @@ public/                   Firebase Hosting root
   sap-delivery/           SAP delivery route
   resources/              Video and evaluation resources route
   privacy/                Privacy route
+  about/                  Founder and purpose route
+  assets/video/           Optimised local MP4 films
 scripts/                  Static validation
 tests/                    Node-based content and safety tests
 docs/                     Launch, claims and quality handoff

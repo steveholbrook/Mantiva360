@@ -1,0 +1,5 @@
+
+> mantiva360-marketing@1.0.0 validate
+> node scripts/validate-site.mjs
+
+Validated 42 public files across 7 HTML pages. Homepage main copy: 1144 words.

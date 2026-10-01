@@ -8,9 +8,16 @@
     "dev": "node scripts/preview-server.mjs",
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-site.mjs",
-    "preview": "python3 -m http.server 4173 --directory public"
+    "preview": "node scripts/preview-server.mjs",
+    "test:browser": "playwright test",
+    "audit:performance": "node scripts/audit-performance.mjs"
   },
   "engines": {
     "node": ">=22"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "lighthouse": "^13.5.0"
   }
 }
