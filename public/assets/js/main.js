@@ -1,4 +1,4 @@
-import { siteConfig } from "./site-config.js";
+import { siteConfig, isPlayable } from "./site-config.js";
 
 // Progressive enhancement: navigation, proof and direct video links work without JS.
 document.documentElement.classList.add("enhanced");
@@ -61,6 +61,7 @@ const stage = dialog?.querySelector("[data-video-embed]");
 const title = dialog?.querySelector("[data-video-dialog-title]");
 const note = dialog?.querySelector("[data-video-note]");
 const fallback = dialog?.querySelector("[data-video-fallback]");
+const transcript = dialog?.querySelector("[data-video-transcript]");
 let opener;
 function clearVideo() {
   const video = stage?.querySelector("video");
@@ -70,10 +71,13 @@ function clearVideo() {
 function openVideo(event, trigger) {
   const id = trigger.dataset.videoOpen;
   const media = siteConfig.videos[id];
-  if (!media || !dialog?.showModal || !stage || !title || !note || !fallback) return;
+  if (!isPlayable(media)) { event.preventDefault(); return; }
+  if (!dialog?.showModal || !stage || !title || !note || !fallback) return;
   event.preventDefault();
   clearVideo();
+  document.querySelector("[data-hero-video]")?.pause();
   opener = trigger;
+  if (transcript) { transcript.hidden = !media.transcript; transcript.href = media.transcript || "/resources"; }
   title.textContent = `${media.title} · ${media.seconds} sec`;
   if (media.type === "local") {
     const video = document.createElement("video");
@@ -89,11 +93,12 @@ function openVideo(event, trigger) {
     // A verified track can be configured without changing the player. Draft captions are not published.
     if (media.captions) {
       const track = document.createElement("track");
-      Object.assign(track, { kind: "captions", src: media.captions, srclang: "en", label: "English", default: true });
+      Object.assign(track, { kind: "captions", src: media.captions, srclang: "en", label: "English", default: !media.captionsBurnedIn });
       video.appendChild(track);
     }
+    video.addEventListener("error", () => { note.textContent = "This film could not load. Read the descriptive transcript or try the direct MP4 link below."; });
     stage.appendChild(video);
-    note.textContent = media.note;
+    note.textContent = `${media.note} Captions are already visible in this film. Optional English track available through player controls.`;
     fallback.href = media.src;
     fallback.textContent = "Open MP4 directly";
     fallback.removeAttribute("target");
@@ -106,7 +111,7 @@ function openVideo(event, trigger) {
     iframe.allowFullscreen = true;
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
     stage.appendChild(iframe);
-    note.textContent = "Playback uses YouTube’s privacy-enhanced domain. Captions and a verified transcript for this existing film still need review.";
+    note.textContent = "Playback uses YouTube’s privacy-enhanced domain. If the player is unavailable, open the original YouTube link below. Captions and a verified transcript for this existing film still need review.";
     fallback.href = `https://youtu.be/${id}`;
     fallback.textContent = "Open on YouTube ↗";
     fallback.target = "_blank";
@@ -141,7 +146,54 @@ if (dialog) {
   dialog.addEventListener("close", () => {
     clearVideo();
     document.body.classList.remove("dialog-open");
-    opener?.focus();
+    // The close event is queued. Do not steal focus if the visitor has already
+    // moved to another control before it runs; native dialog usually restores it.
+    if (document.activeElement === document.body || dialog.contains(document.activeElement)) opener?.focus();
     opener = null;
   });
+}
+
+// Load the silent hero only when it is visible and visitor preferences permit it.
+// A policy change unloads its source; an explicit user pause is never undone by scrolling.
+const hero = document.querySelector('[data-hero-film]');
+const heroVideo = hero?.querySelector('[data-hero-video]');
+const heroToggle = hero?.querySelector('[data-hero-toggle]');
+if (heroVideo && heroToggle && isPlayable(siteConfig.videos.hero)) {
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const connection = navigator.connection;
+  let visible = false, userPaused = false, failed = false;
+  const blocked = () => motion.matches || Boolean(connection?.saveData);
+  function showState() {
+    heroToggle.textContent = heroVideo.paused ? 'Play motion' : 'Pause motion';
+    heroToggle.setAttribute('aria-pressed', String(!heroVideo.paused));
+  }
+  function unload() {
+    heroVideo.pause();
+    heroVideo.removeAttribute('src');
+    heroVideo.load();
+  }
+  function sync() {
+    heroToggle.hidden = blocked() || failed;
+    if (blocked()) { unload(); return; }
+    if (!visible || document.hidden || userPaused || dialog?.open || failed) { heroVideo.pause(); return; }
+    if (!heroVideo.getAttribute('src')) heroVideo.src = siteConfig.videos.hero.src;
+    heroVideo.muted = true;
+    heroVideo.play().catch(() => { userPaused = true; unload(); showState(); });
+  }
+  heroToggle.hidden = blocked();
+  heroToggle.addEventListener('click', () => {
+    if (!heroVideo.paused) { userPaused = true; heroVideo.pause(); }
+    else { userPaused = false; failed = false; sync(); }
+  });
+  heroVideo.addEventListener('play', showState);
+  heroVideo.addEventListener('pause', showState);
+  heroVideo.addEventListener('error', () => {
+    failed = true; unload(); heroToggle.hidden = true;
+  });
+  motion.addEventListener('change', sync);
+  connection?.addEventListener('change', sync);
+  document.addEventListener('visibilitychange', sync);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, {threshold: 0.25}).observe(hero);
+  }
 }

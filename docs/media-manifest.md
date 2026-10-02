@@ -82,3 +82,7 @@ Semantic paths: `public/assets/video/mantiva360-performance-30s.mp4`, `public/as
 The short film is labelled a promotional review cut. Neither film is asserted to have verified accessible captions. Drafts stay in docs/caption-drafts/. The player supports a future approved caption path via shared config.
 
 New social preview: `mantiva360-performance-social.png`, 1200 × 630, text-only performance positioning in the approved palette. It does not depict product UI. Original brand SVGs and genuine WebP captures remain unchanged.
+
+## Current video experience proposal
+
+See [video-experience.md](video-experience.md) for the new curated placements and release gates, and [video-register.json](video-register.json) for source identities, hashes and delivery mappings. The earlier Performance review cut has been withdrawn from public assets in this branch. Evolution is re-encoded from the original 1080p master. The historical tables above remain provenance, not the current public inventory.

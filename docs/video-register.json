@@ -1,0 +1,942 @@
+[
+  {
+    "filename": "Mantiva360_360_Cockpit_30s_1080p.mp4",
+    "canonical_story": "360_Cockpit",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /Mantiva360_360_Cockpit_30s_1080p.mp4",
+    "sha256": "cce9b41c10c82cc49a80823fa9f345d37cf7b1e3121f39e1abd547f2e0812525",
+    "bytes": 3613369,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "Burned-in on narrated masters; separate production SRT recovered for selected films",
+    "delivery_url": "https://mantiva360.com/assets/video/mantiva360-cockpit-fd0d8259975e.mp4",
+    "poster": "/assets/images/video/cockpit-fd0d8259975e.webp",
+    "full_listening_review": "pending",
+    "delivery_state": "PR candidate, not production deployed",
+    "caption_file": "/assets/video/mantiva360-cockpit-eaf242cd1f3c.en.vtt",
+    "delivery_sha256": "fd0d8259975ec7e402245913f7e43dd70970df713d2a6367f60819430b8ceac3",
+    "delivery_bytes": 2359408,
+    "library_file_id": "libfile_dbeebecc5dd8819192c6a8b3e598ec33",
+    "file_id": "file_0000000041c481f5af8c30dae1ade8b4",
+    "intended_placement": "Product and Resources"
+  },
+  {
+    "filename": "Mantiva360_Experience_to_Control_90s.mp4",
+    "canonical_story": "Experience_to_Control",
+    "status": "archive",
+    "source_location": "ChatGPT Library /Mantiva360_Experience_to_Control_90s.mp4",
+    "sha256": "db5219833917af3e8df1c0fc36762b67e99febe3d5ed45639d3f538ba46965f4",
+    "bytes": 6345873,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_2bb0d8a9b2508191a2e7bbdb648dc77c",
+    "file_id": "file_0000000096bc81f5a8b2b6fff0523080",
+    "intended_placement": "Source archive only"
+  },
+  {
+    "filename": "Mantiva360_Five_WHYs_60s_1080p.mp4",
+    "canonical_story": "Five_WHYs",
+    "status": "needs revision",
+    "source_location": "ChatGPT Library /Mantiva360_Five_WHYs_60s_1080p.mp4",
+    "sha256": "828e9d5185a90b37ce24b7400b92376bde8ab8a5ee0c9da3807d4c2a417b642b",
+    "bytes": 4898351,
+    "duration": 60.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "Burned-in on narrated masters; separate production SRT recovered for selected films",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_a2399321dd388191814c63d7ba2e49ea",
+    "file_id": "file_0000000050b881fda187de9add63f8af",
+    "intended_placement": "Homepage buyer overview if Professional Voice; otherwise archive"
+  },
+  {
+    "filename": "Mantiva360_Five_WHYs_60s_Professional_Voice_1080p.mp4",
+    "canonical_story": "Five_WHYs",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /Mantiva360_Five_WHYs_60s_Professional_Voice_1080p.mp4",
+    "sha256": "075e98086d60fb5131f779edb6d8b0d5314954e57833da31d1307511b09e167b",
+    "bytes": 4951291,
+    "duration": 60.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "Burned-in on narrated masters; separate production SRT recovered for selected films",
+    "delivery_url": "https://mantiva360.com/assets/video/mantiva360-buyer-8f99ea4c44ec.mp4",
+    "poster": "/assets/images/video/buyer-8f99ea4c44ec.webp",
+    "full_listening_review": "pending",
+    "delivery_state": "PR candidate, not production deployed",
+    "caption_file": "/assets/video/mantiva360-buyer-76958eaaef4e.en.vtt",
+    "delivery_sha256": "8f99ea4c44ec9e61495691bf2757691a3a9193a2a6619a1a99ab701779a64a2c",
+    "delivery_bytes": 3319821,
+    "library_file_id": "libfile_fe5781393ad08191ac3bde02b17a9f2e",
+    "file_id": "file_00000000d67c81f585577799ffed5f2d",
+    "intended_placement": "Homepage buyer overview if Professional Voice; otherwise archive"
+  },
+  {
+    "filename": "Mantiva360_GOLD2_SAP_Promo_90s.mp4",
+    "canonical_story": "GOLD2",
+    "status": "archive",
+    "source_location": "ChatGPT Library /Mantiva360_GOLD2_SAP_Promo_90s.mp4",
+    "sha256": "38909e3630be1032c0f8371966741eaf424fe48f183187418531f3dc5e5cd024",
+    "bytes": 6347579,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_b646411449548191b10fcc3d28e40133",
+    "file_id": "file_00000000106881f6889c97047b980e93",
+    "intended_placement": "Source archive only"
+  },
+  {
+    "filename": "Mantiva360_Hero_10s_Autoplay_720p.mp4",
+    "canonical_story": "Hero",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /Mantiva360_Hero_10s_Autoplay_720p.mp4",
+    "sha256": "fdca8603bed2bdd72b62ef05b1e968fb8853931beefa97252965f3926f87da69",
+    "bytes": 1084456,
+    "duration": 10.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_655c3d4794888191b693e09d6d7a2744",
+    "file_id": "file_000000009d3081f59ede4b378dc72b93",
+    "intended_placement": "Homepage silent hero; master and alternate crops archived"
+  },
+  {
+    "filename": "Mantiva360_Hero_10s_Master_1080p.mp4",
+    "canonical_story": "Hero",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /Mantiva360_Hero_10s_Master_1080p.mp4",
+    "sha256": "88e22315a6d7cfc33c7336cb852e0e0c02f3e57e585791c870b1f9a059131807",
+    "bytes": 6381624,
+    "duration": 10.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": "https://mantiva360.com/assets/video/mantiva360-hero-c897996f12ac.mp4",
+    "poster": "/assets/images/video/hero-c897996f12ac.webp",
+    "full_listening_review": "pending",
+    "delivery_state": "PR candidate, not production deployed",
+    "caption_file": null,
+    "delivery_sha256": "c897996f12ac1e76e76d400a42ea4736e182a497a90eba6bc72b290182658843",
+    "delivery_bytes": 1150884,
+    "library_file_id": "libfile_9422b6a03b508191a0f88e26c1b773c0",
+    "file_id": "file_0000000020e481f5855711b8868db45d",
+    "intended_placement": "Homepage silent hero; master and alternate crops archived"
+  },
+  {
+    "filename": "Mantiva360_Hero_10s_Responsive_3x2.mp4",
+    "canonical_story": "Hero",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /Mantiva360_Hero_10s_Responsive_3x2.mp4",
+    "sha256": "5558639728e001af91b7041c2751321e9820a2a7cce28584f234f215cb490017",
+    "bytes": 2205297,
+    "duration": 10.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1620,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_2424a65579948191bb824468a03a68ff",
+    "file_id": "file_0000000015c881f5aa0f6600b0d1c3de",
+    "intended_placement": "Homepage silent hero; master and alternate crops archived"
+  },
+  {
+    "filename": "Mantiva360_Hero_10s_Web_1080p.mp4",
+    "canonical_story": "Hero",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /Mantiva360_Hero_10s_Web_1080p.mp4",
+    "sha256": "229efdfd86cfe42cf0dae19b783fec86f83d2e8e0db0f3913f1445f4fa303b4e",
+    "bytes": 2704436,
+    "duration": 10.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_b2c5765f0c008191a0b872195e927301",
+    "file_id": "file_000000000a7481f595174fb0f9eb7452",
+    "intended_placement": "Homepage silent hero; master and alternate crops archived"
+  },
+  {
+    "filename": "Mantiva360_Professional_Promo_90s_1080p.mp4",
+    "canonical_story": "Professional_Promo",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /Mantiva360_Professional_Promo_90s_1080p.mp4",
+    "sha256": "0875d61bb667402d2b60729cce747526faf859c7c9e315719da34c6ab31a146c",
+    "bytes": 15965120,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "Burned-in on narrated masters; separate production SRT recovered for selected films",
+    "delivery_url": "https://mantiva360.com/assets/video/mantiva360-sap-5a2b9f9b380c.mp4",
+    "poster": "/assets/images/video/sap-5a2b9f9b380c.webp",
+    "full_listening_review": "pending",
+    "delivery_state": "PR candidate, not production deployed",
+    "caption_file": "/assets/video/mantiva360-sap-ccb33fcbe68d.en.vtt",
+    "delivery_sha256": "5a2b9f9b380c86f79ac61bdc968fba14083142b86f7667504a671fa28a1622e4",
+    "delivery_bytes": 9304366,
+    "library_file_id": "libfile_f9f839f8e6dc81918b5372357ebe2db2",
+    "file_id": "file_00000000725881f5bd3fb660be902d3e",
+    "intended_placement": "SAP Delivery and Resources"
+  },
+  {
+    "filename": "Mantiva360_SAP_Made_Simple_90s.mp4",
+    "canonical_story": "SAP_Made_Simple",
+    "status": "archive",
+    "source_location": "ChatGPT Library /Mantiva360_SAP_Made_Simple_90s.mp4",
+    "sha256": "0e99e59cbb4a128100abd1ae65d3ad68e7b9ef7c2cb379ce0f7449073b3bd09a",
+    "bytes": 8441047,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_a7ae999c11a881919680b1d9770b2e28",
+    "file_id": "file_000000001e8881f5bef09380d4b9e367",
+    "intended_placement": "Source archive only"
+  },
+  {
+    "filename": "Mantiva360_SAP_Promo_30s.mp4",
+    "canonical_story": "SAP_Promo",
+    "status": "archive",
+    "source_location": "ChatGPT Library /Mantiva360_SAP_Promo_30s.mp4",
+    "sha256": "55c3f9a3cdf5a806682c5580b9c04bbf7de83cb659e65b5d7ac1e05c686ea54c",
+    "bytes": 3230566,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_5d9678f6c6888191a9e6b0c8bfcd5e9a",
+    "file_id": "file_00000000c338822fb4f01ae2fa5b24f0",
+    "intended_placement": "Source archive only"
+  },
+  {
+    "filename": "Mantiva360_See_It_Early_30s_16x9_Captioned_REVIEW.mp4",
+    "canonical_story": "See_It_Early",
+    "status": "review-only",
+    "source_location": "ChatGPT Library /Mantiva360_See_It_Early_30s_16x9_Captioned_REVIEW.mp4",
+    "sha256": "1236033736bdfaee39ac4628e018555369ca2cad3713687bcf54b6ae9e458992",
+    "bytes": 9858779,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_c253c31621b88191b7fc99cc8b173bd4",
+    "file_id": "file_00000000357481fda82002af308ce27e",
+    "intended_placement": "Excluded pending three current product inserts"
+  },
+  {
+    "filename": "Mantiva360_See_It_Early_30s_16x9_Clean_REVIEW.mp4",
+    "canonical_story": "See_It_Early",
+    "status": "review-only",
+    "source_location": "ChatGPT Library /Mantiva360_See_It_Early_30s_16x9_Clean_REVIEW.mp4",
+    "sha256": "fe90c538dfa7ae2143cf19c571a18041558031c028b9aa0873ce2737e2a7b2cb",
+    "bytes": 10056513,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_13b5dcbe9c6c8191a7c3f90205b6a600",
+    "file_id": "file_0000000055bc81fda7a33e385a5efb2c",
+    "intended_placement": "Excluded pending three current product inserts"
+  },
+  {
+    "filename": "Mantiva360_See_It_Early_30s_9x16_Captioned_REVIEW.mp4",
+    "canonical_story": "See_It_Early",
+    "status": "review-only",
+    "source_location": "ChatGPT Library /Mantiva360_See_It_Early_30s_9x16_Captioned_REVIEW.mp4",
+    "sha256": "5157037d1e898b55b71066b8c86c7d6727af3b6ab069e63c9be82bc895c3a2f5",
+    "bytes": 7122698,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_b490a24580a48191aade1fa8cd837843",
+    "file_id": "file_000000003c0081fd8276090c706e0a77",
+    "intended_placement": "Excluded pending three current product inserts"
+  },
+  {
+    "filename": "Mantiva360_See_It_Early_30s_9x16_Clean_REVIEW.mp4",
+    "canonical_story": "See_It_Early",
+    "status": "review-only",
+    "source_location": "ChatGPT Library /Mantiva360_See_It_Early_30s_9x16_Clean_REVIEW.mp4",
+    "sha256": "ec2e4697acacc8158b65a0083a75e6ad78004282777e6411d63b56036eef5816",
+    "bytes": 6954251,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_8b847131358881919412bd4bef1a0ef1",
+    "file_id": "file_00000000322081fd9851b218902087ed",
+    "intended_placement": "Excluded pending three current product inserts"
+  },
+  {
+    "filename": "PTracker2_SAP_Made_Simple_90s.mp4",
+    "canonical_story": "SAP_Made_Simple",
+    "status": "archive",
+    "source_location": "ChatGPT Library /PTracker2_SAP_Made_Simple_90s.mp4",
+    "sha256": "40ca0b3a21bc12df0e6933d3ca1f3dff30f6c02f5002c8ccd4614e874f98929f",
+    "bytes": 8706224,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_19a82bb7377c8191a54cd6c5fbede5a3",
+    "file_id": "file_00000000fcec81fda684848f7b8b8913",
+    "intended_placement": "Source archive only"
+  },
+  {
+    "filename": "360690B5-E4EE-4C76-B9C9-66845C1C8F6D.mp4",
+    "canonical_story": "See_It_Early",
+    "status": "duplicate story export",
+    "source_location": "ChatGPT Library /mantiva360.com/360690B5-E4EE-4C76-B9C9-66845C1C8F6D.mp4",
+    "sha256": "63b36a16b93e9397a758ddecf0bc6fc8e6ded0a593af1b509b85a66e0530b463",
+    "bytes": 14826737,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 512,
+        "height": 910,
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_21a827638c608191bf476ab7b5a71b72",
+    "file_id": "file_0000000084f8820ba60e4cba02527d10",
+    "intended_placement": "Excluded pending three current product inserts"
+  },
+  {
+    "filename": "6C3244E7-9C7E-47E3-AF13-AB35BE6AC0A2(1).mp4",
+    "canonical_story": "Evolution",
+    "status": "duplicate story export",
+    "source_location": "ChatGPT Library /mantiva360.com/6C3244E7-9C7E-47E3-AF13-AB35BE6AC0A2(1).mp4",
+    "sha256": "a2dff8081c37160b530eafd9b2f9a93cda6834706581c5dc8a7e166e3fb92d50",
+    "bytes": 27791233,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 910,
+        "height": 512,
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "Burned-in on narrated masters; separate production SRT recovered for selected films",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_0ae448a6c0f8819180cf2b8aa726fed1",
+    "file_id": "file_0000000013d4820b9d4b2c2c4166877b",
+    "intended_placement": "About and Resources"
+  },
+  {
+    "filename": "6C3244E7-9C7E-47E3-AF13-AB35BE6AC0A2.mp4",
+    "canonical_story": "Evolution",
+    "status": "duplicate story export",
+    "source_location": "ChatGPT Library /mantiva360.com/6C3244E7-9C7E-47E3-AF13-AB35BE6AC0A2.mp4",
+    "sha256": "548f75108e80df51106ceef22227bac95b7098c1c7ed8a74e8dc0f4561cbcda0",
+    "bytes": 27863594,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 910,
+        "height": 512,
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "Burned-in on narrated masters; separate production SRT recovered for selected films",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_04e86ec8320881919ca296f042e46f61",
+    "file_id": "file_000000005cb4820ba9edb420833d867e",
+    "intended_placement": "About and Resources"
+  },
+  {
+    "filename": "7D4F44D8-7EE8-4A1C-82D7-98F30847E20A(1).mp4",
+    "canonical_story": "See_It_Early",
+    "status": "duplicate story export",
+    "source_location": "ChatGPT Library /mantiva360.com/7D4F44D8-7EE8-4A1C-82D7-98F30847E20A(1).mp4",
+    "sha256": "24f7401b07164d2ec2ec0aca4fb1fe6bcd7f07c3f7ce7a0912998ec4378d05b3",
+    "bytes": 16089365,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 910,
+        "height": 512,
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_68f226eeef5c8191ad6a30faef036ec8",
+    "file_id": "file_000000005730820baf54d638e29b7e6e",
+    "intended_placement": "Excluded pending three current product inserts"
+  },
+  {
+    "filename": "7D4F44D8-7EE8-4A1C-82D7-98F30847E20A.mp4",
+    "canonical_story": "See_It_Early",
+    "status": "duplicate story export",
+    "source_location": "ChatGPT Library /mantiva360.com/7D4F44D8-7EE8-4A1C-82D7-98F30847E20A.mp4",
+    "sha256": "c25e5df45baea3f493e4aa6d6b8121fc9cee353996519cd55dcf3d64934c330a",
+    "bytes": 16124493,
+    "duration": 30.0,
+    "streams": [
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 910,
+        "height": 512,
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_211ee5fda0bc81918db2bbc249a1888c",
+    "file_id": "file_000000008cac820b87a4534c7b0d051d",
+    "intended_placement": "Excluded pending three current product inserts"
+  },
+  {
+    "filename": "Mantiva360_Chaos_to_Clarity_10s_1080p.mp4",
+    "canonical_story": "Chaos_to_Clarity",
+    "status": "needs revision",
+    "source_location": "ChatGPT Library /mantiva360.com/Mantiva360_Chaos_to_Clarity_10s_1080p.mp4",
+    "sha256": "f2f76940d53cfd7b70b9d42744b9dcb10057e2dedd75452406d196e3a648c41f",
+    "bytes": 5573892,
+    "duration": 10.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_66391be689688191aeb7d45dfad7b79a",
+    "file_id": "file_00000000e090820b9d1b381a26488878",
+    "intended_placement": "Source archive only"
+  },
+  {
+    "filename": "Mantiva360_Evolution_90s_1080p.mp4",
+    "canonical_story": "Evolution",
+    "status": "approved-candidate",
+    "source_location": "ChatGPT Library /mantiva360.com/Mantiva360_Evolution_90s_1080p.mp4",
+    "sha256": "18c258bac5728639f63dfefc645048ba22f364f393710fc64bc09d80fcc5ccdb",
+    "bytes": 14263725,
+    "duration": 90.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "Burned-in on narrated masters; separate production SRT recovered for selected films",
+    "delivery_url": "https://mantiva360.com/assets/video/mantiva360-evolution-6aca3e670668.mp4",
+    "poster": "/assets/images/video/evolution-6aca3e670668.webp",
+    "full_listening_review": "pending",
+    "delivery_state": "PR candidate, not production deployed",
+    "caption_file": "/assets/video/mantiva360-evolution-38b98a6b7799.en.vtt",
+    "delivery_sha256": "6aca3e670668383de25bfcd36c3ee06792a5c9d07c94fd03e4a418086ddc2733",
+    "delivery_bytes": 9203397,
+    "library_file_id": "libfile_46cd26a32c9c8191b0e6d4c14fc9e2ae",
+    "file_id": "file_000000006c1481fd9fe4c9780291f832",
+    "intended_placement": "About and Resources"
+  },
+  {
+    "filename": "Mantiva360_Project_Status_Uncertainty_10s_1080p.mp4",
+    "canonical_story": "Project_Status_Uncertainty",
+    "status": "needs revision",
+    "source_location": "ChatGPT Library /mantiva360.com/Mantiva360_Project_Status_Uncertainty_10s_1080p.mp4",
+    "sha256": "fa724d456034e4a50668850c6c897760824f0b94c1fe07fbeb0774d98a525f9d",
+    "bytes": 1619806,
+    "duration": 10.0,
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "provenance": "See corresponding production notes; Runway confirmed for Hero and Evolution, otherwise do not infer generator",
+    "captions": "not independently audited",
+    "delivery_url": null,
+    "poster": null,
+    "full_listening_review": "pending",
+    "library_file_id": "libfile_3273179c21cc8191afc8ffd10a9badbb",
+    "file_id": "file_000000006064820bb6f213e83a461c98",
+    "intended_placement": "Source archive only"
+  },
+  {
+    "filename": "9A80B693-87A7-45FB-9ACE-17F15AA19DCB.mp4",
+    "library_file_id": "libfile_3968a91031c88191a9d6cb45e7dd6799",
+    "file_id": "file_00000000deac82308b6f83c3d2384a3a",
+    "source_location": "/App Development/9A80B693-87A7-45FB-9ACE-17F15AA19DCB.mp4",
+    "size_bytes": 20028799,
+    "canonical_story": "unidentified",
+    "status": "needs revision",
+    "duration": null,
+    "streams": null,
+    "sha256": null,
+    "poster": null,
+    "captions": null,
+    "delivery_url": null,
+    "intended_placement": "Not published",
+    "review_note": "Metadata found; bytes not reviewed in this implementation"
+  },
+  {
+    "filename": "PTracker2_SAP_Promo_90s_Preview.mp4",
+    "library_file_id": "libfile_023c66a7e6148191845c7b2a713f34b2",
+    "file_id": "file_00000000f5fc81f5a85739d773cf21a3",
+    "source_location": "/PTracker2_SAP_Promo_90s_Preview.mp4",
+    "size_bytes": 12501270,
+    "canonical_story": "PTracker predecessor",
+    "status": "archive",
+    "duration": null,
+    "streams": null,
+    "sha256": null,
+    "poster": null,
+    "captions": null,
+    "delivery_url": null,
+    "intended_placement": "Not published",
+    "review_note": "Metadata found; bytes not reviewed in this implementation"
+  },
+  {
+    "filename": "PTracker_Human_Voice_iPhone_Compatible_v3.mp4",
+    "library_file_id": "libfile_4dd8380e3910819180eba9326753cffb",
+    "file_id": "file_00000000885481fd903abef1ad0af965",
+    "source_location": "/PTracker_Human_Voice_iPhone_Compatible_v3.mp4",
+    "size_bytes": 6719298,
+    "canonical_story": "PTracker predecessor",
+    "status": "archive",
+    "duration": null,
+    "streams": null,
+    "sha256": null,
+    "poster": null,
+    "captions": null,
+    "delivery_url": null,
+    "intended_placement": "Not published",
+    "review_note": "Metadata found; bytes not reviewed in this implementation"
+  },
+  {
+    "filename": "PTracker_60-Second_Promotional_Video_v1.mp4",
+    "library_file_id": "libfile_10f739fa3bdc8191ac6d311e4c657d28",
+    "file_id": "file_000000004a9481fb9bb8f4ce751f8e6b",
+    "source_location": "/PTracker_60-Second_Promotional_Video_v1.mp4",
+    "size_bytes": 11027453,
+    "canonical_story": "PTracker predecessor",
+    "status": "archive",
+    "duration": null,
+    "streams": null,
+    "sha256": null,
+    "poster": null,
+    "captions": null,
+    "delivery_url": null,
+    "intended_placement": "Not published",
+    "review_note": "Metadata found; bytes not reviewed in this implementation"
+  },
+  {
+    "filename": "Mantiva360_Hero_10s_Autoplay_720p.webm",
+    "source_location": "/Mantiva360_Hero_10s_Autoplay_720p.webm",
+    "library_file_id": "libfile_7b75ed0d09948191938ed0742e1e0b25",
+    "file_id": "file_0000000078f081f5abdfcf61f922221a",
+    "bytes": 934443,
+    "canonical_story": "Hero",
+    "status": "archive",
+    "variant": "720p alternate codec",
+    "duration": 10,
+    "streams": null,
+    "sha256": null,
+    "poster": null,
+    "captions": "silent",
+    "delivery_url": null,
+    "intended_placement": "Source archive; MP4 used for delivery",
+    "review_note": "Metadata and production readme reviewed; not selected for this release"
+  },
+  {
+    "filename": "XMQa-RB5fUU",
+    "canonical_story": null,
+    "title": "Overview",
+    "variant": "YouTube legacy reference",
+    "status": "needs revision",
+    "source_location": "https://youtu.be/XMQa-RB5fUU",
+    "delivery_url": "https://youtu.be/XMQa-RB5fUU",
+    "duration": 31,
+    "duration_basis": "Prior repository configuration, not remeasured",
+    "streams": null,
+    "sha256": null,
+    "captions": null,
+    "poster": null,
+    "intended_placement": "Resources expandable existing references",
+    "review_note": "Not asserted to be a distinct story; full external content comparison and caption verification remain open"
+  },
+  {
+    "filename": "QkCRdrASlAg",
+    "canonical_story": null,
+    "title": "From issue to action",
+    "variant": "YouTube legacy reference",
+    "status": "needs revision",
+    "source_location": "https://youtu.be/QkCRdrASlAg",
+    "delivery_url": "https://youtu.be/QkCRdrASlAg",
+    "duration": 90,
+    "duration_basis": "Prior repository configuration, not remeasured",
+    "streams": null,
+    "sha256": null,
+    "captions": null,
+    "poster": null,
+    "intended_placement": "Resources expandable existing references",
+    "review_note": "Not asserted to be a distinct story; full external content comparison and caption verification remain open"
+  },
+  {
+    "filename": "wEgHPeHhb7I",
+    "canonical_story": null,
+    "title": "SAP delivery",
+    "variant": "YouTube legacy reference",
+    "status": "needs revision",
+    "source_location": "https://youtu.be/wEgHPeHhb7I",
+    "delivery_url": "https://youtu.be/wEgHPeHhb7I",
+    "duration": 30,
+    "duration_basis": "Prior repository configuration, not remeasured",
+    "streams": null,
+    "sha256": null,
+    "captions": null,
+    "poster": null,
+    "intended_placement": "Resources expandable existing references",
+    "review_note": "Not asserted to be a distinct story; full external content comparison and caption verification remain open"
+  }
+]

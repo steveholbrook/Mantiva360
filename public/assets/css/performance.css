@@ -14,3 +14,17 @@
 @media(max-width:900px){.two-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}.three-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}}
 
 @media(max-width:360px){.page-hero h1{font-size:2.1rem}}
+
+/* Curated films keep native framing and reserve their space before loading. */
+.hero-film { margin:0; position:relative; border:1px solid var(--line,#dce5e9); border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 20px 50px #0b22391a; }
+.hero-film video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#eef3f5; }
+.hero-film figcaption { padding:18px 22px; color:#526575; font-size:.85rem; }
+.hero-film figcaption a { display:block; color:#087878; margin-top:6px; }
+.hero-control { position:absolute; top:12px; right:12px; border:1px solid #fff; border-radius:24px; padding:10px 16px; color:#fff; background:#0b2239; min-height:44px; cursor:pointer; font:inherit; font-size:.8rem; }
+.hero-control[hidden] { display:none; }
+.transcript-list article { border-top:1px solid #dce5e9; padding:24px 0; scroll-margin-top:110px; }
+.transcript-list details { max-width:78ch; }
+summary { cursor:pointer; color:#087878; padding:12px 0; font-weight:650; }
+.film-copy p { font-size:1rem; }
+.dialog-support a[hidden] { display:none; }
+@media(max-width:540px) { .hero-control { top:8px; right:8px; padding:8px 12px; } }
