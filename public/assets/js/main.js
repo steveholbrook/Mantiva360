@@ -146,7 +146,9 @@ if (dialog) {
   dialog.addEventListener("close", () => {
     clearVideo();
     document.body.classList.remove("dialog-open");
-    opener?.focus();
+    // The close event is queued. Do not steal focus if the visitor has already
+    // moved to another control before it runs; native dialog usually restores it.
+    if (document.activeElement === document.body || dialog.contains(document.activeElement)) opener?.focus();
     opener = null;
   });
 }
