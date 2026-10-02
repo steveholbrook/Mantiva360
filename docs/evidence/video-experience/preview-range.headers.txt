@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+date: Fri, 02 Oct 2026 00:19:43 GMT
+
+HTTP/2 206 
+cache-control: public, max-age=3600, stale-while-revalidate=86400
+content-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+content-type: video/mp4
+etag: "c01ecf00215381c4ee4b0705e825bbad8a872caef38b312a736386dc0a6c457c"
+last-modified: Fri, 02 Oct 2026 00:17:11 GMT
+permissions-policy: accelerometer=(), autoplay=(self "https://www.youtube-nocookie.com"), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()
+referrer-policy: strict-origin-when-cross-origin
+strict-transport-security: max-age=31556926; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-robots-tag: noindex
+accept-ranges: bytes
+content-range: bytes 100000-101023/2359408
+date: Fri, 02 Oct 2026 00:19:43 GMT
+x-served-by: cache-dfw-kdfw8210089-DFW
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1790900384.634766,VS0,VE281
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 1024
+

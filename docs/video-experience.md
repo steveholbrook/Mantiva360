@@ -8,7 +8,7 @@ The website now gives each film a distinct buyer purpose: establish context, exa
 
 PR 14 is merged. Its main-branch configuration includes the Performance and Evolution local films. A fresh HTTP fetch of the live `assets/js/site-config.js` still returned the earlier three-YouTube configuration. The captured configuration is in `evidence/video-experience/live-config-before.txt`. This is an observed deployment difference, not a claim about every CDN location.
 
-A signed-out HTTP request to mantiva360.app returned the application shell. It does not establish anonymous project access. The website retains the sign-in qualification; there is no invented booking or enquiry endpoint. No authenticated demo project or current continuous resource/scenario/report recording was supplied in this task. No application data was modified.
+A signed-out cloud Chrome visit to mantiva360.app on 2 October displayed Sign in, Google/email options, and “No project data is visible until an Admin grants access.” No anonymous demo access was established. The website retains the sign-in qualification; there is no invented booking or enquiry endpoint. No authenticated demo project or current continuous resource/scenario/report recording was supplied in this task. No application data was modified.
 
 ## Placement map
 
@@ -64,7 +64,7 @@ Only `approved-candidate`, `approved` and explicitly retained `legacy-reference`
 
 ## Durable delivery and rollback
 
-All new public URLs are relative, same-origin asset paths with content hashes. There are no temporary generation links, signed download URLs or preview URLs in media configuration. Security headers and Firebase hosting architecture are unchanged. Existing one-hour asset caching with stale-while-revalidate remains; changed bytes receive new filenames. Production range/cache responses still require verification on an authorised release, because local preview responses are not CDN evidence.
+All new public URLs are relative, same-origin asset paths with content hashes. There are no temporary generation links, signed download URLs or preview URLs in media configuration. Security headers and Firebase hosting architecture are unchanged. Existing one-hour asset caching with stale-while-revalidate remains; changed bytes receive new filenames. Preview CDN transport results are recorded in the verification evidence. Production responses still require verification on an authorised release.
 
 The complete source archive stays outside public delivery. The register ties each selected master to its compressed export, caption path, poster and measured hash. Keep old hashed assets when revising an already deployed release until the prior cache window expires. For this unreleased branch the superseded PR-14 low-resolution files and unfinished film are removed from the deployment payload.
 
@@ -92,7 +92,7 @@ Before recording, verify each depicted workflow and match the final words to the
 
 The unchanged baseline passed 15 unit/static tests and structural validation. The revised branch passes those gates with updated media expectations. Added browser scenarios cover motion preferences, Save-Data, deliberate pause, autoplay rejection, caption cues, seeking, failed media, and lifecycle rejection, alongside existing responsive, keyboard, touch and axe checks.
 
-The managed local environment prohibits a browser process's required socket. Local browser and Lighthouse attempts therefore did not measure the site. Use the PR's GitHub quality workflow for actual browser results, screenshots and same-run before/after Lighthouse diagnostics. Physical iPhone/iPad Safari and VoiceOver remain separate release checks. The temporary local WebKit installation could not establish physical Safari conformance.
+The managed local environment prohibits a browser process's required socket. Local browser and Lighthouse attempts therefore did not measure the site. The GitHub quality workflow at commit `f932de4` passed all 26 browser scenarios, with 0 skipped or flaky tests, plus 15 unit/static tests and validation. It generated the committed screenshots and same-run before/after Lighthouse diagnostics. See `evidence/video-experience/verification.md` for measurements and limits. Physical iPhone/iPad Safari and VoiceOver remain separate release checks. The temporary local WebKit installation could not establish physical Safari conformance.
 
 No new tracking provider is installed. Suggested future events are video start, 25/50/75/100 percent milestones, transcript opening, relevant CTA click and server-confirmed enquiry. Do not equate a click with a qualified lead or booked meeting.
 
