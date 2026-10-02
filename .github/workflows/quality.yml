@@ -21,10 +21,29 @@ jobs:
       - run: npm run validate
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
+      - name: Measure current media experience
+        run: |
+          export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+          EVIDENCE_DIR=docs/evidence/video-experience/after npm run audit:performance
+      - name: Capture and measure PR base
+        if: github.event_name == 'pull_request' && github.head_ref == 'feat/durable-video-experience'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --depth=1 origin "$BASE_SHA"
+          git worktree add --detach "$RUNNER_TEMP/mantiva-video-baseline" "$BASE_SHA"
+          ln -s "$GITHUB_WORKSPACE/node_modules" "$RUNNER_TEMP/mantiva-video-baseline/node_modules"
+          export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+          cd "$RUNNER_TEMP/mantiva-video-baseline"
+          npm run audit:performance
+          npx playwright test -g 'review screenshots'
+          mkdir -p "$GITHUB_WORKSPACE/docs/evidence/video-experience/before"
+          cp docs/evidence/performance-redesign/lighthouse-*.json "$GITHUB_WORKSPACE/docs/evidence/video-experience/before/"
+          cp -r test-results/review "$GITHUB_WORKSPACE/docs/evidence/video-experience/before/screenshots"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: website-browser-evidence
           path: |
             test-results/
-            docs/evidence/performance-redesign/browser-results.json
+            docs/evidence/video-experience/

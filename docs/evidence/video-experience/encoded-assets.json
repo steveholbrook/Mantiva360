@@ -1,0 +1,62 @@
+[
+  {
+    "key": "buyer",
+    "source": "Mantiva360_Five_WHYs_60s_Professional_Voice_1080p.mp4",
+    "src": "/assets/video/mantiva360-buyer-8f99ea4c44ec.mp4",
+    "poster": "/assets/images/video/buyer-8f99ea4c44ec.webp",
+    "captions": "/assets/video/mantiva360-buyer-76958eaaef4e.en.vtt",
+    "sha256": "8f99ea4c44ec9e61495691bf2757691a3a9193a2a6619a1a99ab701779a64a2c",
+    "bytes": 3319821,
+    "duration": 60.01,
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "key": "cockpit",
+    "source": "Mantiva360_360_Cockpit_30s_1080p.mp4",
+    "src": "/assets/video/mantiva360-cockpit-fd0d8259975e.mp4",
+    "poster": "/assets/images/video/cockpit-fd0d8259975e.webp",
+    "captions": "/assets/video/mantiva360-cockpit-eaf242cd1f3c.en.vtt",
+    "sha256": "fd0d8259975ec7e402245913f7e43dd70970df713d2a6367f60819430b8ceac3",
+    "bytes": 2359408,
+    "duration": 30.016,
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "key": "sap",
+    "source": "Mantiva360_Professional_Promo_90s_1080p.mp4",
+    "src": "/assets/video/mantiva360-sap-5a2b9f9b380c.mp4",
+    "poster": "/assets/images/video/sap-5a2b9f9b380c.webp",
+    "captions": "/assets/video/mantiva360-sap-ccb33fcbe68d.en.vtt",
+    "sha256": "5a2b9f9b380c86f79ac61bdc968fba14083142b86f7667504a671fa28a1622e4",
+    "bytes": 9304366,
+    "duration": 90.0,
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "key": "evolution",
+    "source": "Mantiva360_Evolution_90s_1080p.mp4",
+    "src": "/assets/video/mantiva360-evolution-6aca3e670668.mp4",
+    "poster": "/assets/images/video/evolution-6aca3e670668.webp",
+    "captions": "/assets/video/mantiva360-evolution-38b98a6b7799.en.vtt",
+    "sha256": "6aca3e670668383de25bfcd36c3ee06792a5c9d07c94fd03e4a418086ddc2733",
+    "bytes": 9203397,
+    "duration": 90.005,
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "key": "hero",
+    "source": "Mantiva360_Hero_10s_Master_1080p.mp4",
+    "src": "/assets/video/mantiva360-hero-c897996f12ac.mp4",
+    "poster": "/assets/images/video/hero-c897996f12ac.webp",
+    "captions": null,
+    "sha256": "c897996f12ac1e76e76d400a42ea4736e182a497a90eba6bc72b290182658843",
+    "bytes": 1150884,
+    "duration": 10.0,
+    "width": 1280,
+    "height": 720
+  }
+]

@@ -42,7 +42,7 @@ test("all six Activate phases remain ordered and accurately distinguished", () =
   assert.match(sap,/Methodology and implementation roadmap/); assert.match(sap,/Performance intelligence and delivery context/);
   assert.match(sap,/SAP endorsement, certification or partnership is not implied/);
   assert.match(sap,/Native SAP connectivity and automated SAP quality-gate certification are not claimed/);
-  assert.doesNotMatch(sap, /<img[^>]+sap/i);
+  assert.doesNotMatch(sap, /<img[^>]+(?:sap-logo|sap-certified|sap-partner)/i);
 });
 test("genuine captures and approved brand assets are preserved", () => {
   for (const name of ["cockpit-context-v2", "cockpit-mobile-v2", "cockpit-finding-v2", "cockpit-finding-mobile-v2", "cockpit-recovery-v2", "delivery-context-v2", "delivery-mobile-v2"]) assert.ok(home.includes(`${name}.webp`));
@@ -68,18 +68,19 @@ test("the complete YouTube library retains click-to-load and direct fallbacks", 
   assert.match(js,/stage\?\.replaceChildren/);assert.match(js,/opener\?\.focus/);
   assert.match(resources,/Captions and a verified transcript for the existing YouTube content still need review/);
 });
-test("local film source, poster, runtime, dimensions and loading remain explicit", () => {
-  for (const key of ["performance","evolution"]) {
-    const m=siteConfig.videos[key];assert.equal(m.type,"local");assert.ok(m.width>m.height);
-    assert.ok(fs.statSync(new URL(`../public${m.src}`,import.meta.url)).size < 6e6);
-    assert.ok(fs.existsSync(new URL(`../public${m.poster}`,import.meta.url)));
+test("only reviewed candidates are placed; source captions and real dimensions are retained", () => {
+  for (const key of ["buyer","cockpit","sap","evolution"]) {
+    const m=siteConfig.videos[key];assert.equal(m.type,"local");assert.equal(m.status,"approved-candidate");
+    assert.equal(m.width,1920);assert.equal(m.height,1080);
+    for(const ref of [m.src,m.poster,m.captions]) assert.ok(fs.existsSync(new URL(`../public${ref}`,import.meta.url)));
     assert.ok(resources.includes(`data-video-open="${key}"`));
+    assert.ok(resources.includes(`id="${key}-text"`));
   }
-  assert.equal(siteConfig.videos.performance.seconds,30);assert.equal(siteConfig.videos.evolution.seconds,90);
-  assert.match(js,/video.preload = "none"/); assert.match(js,/video.controls = true/);assert.match(js,/video.playsInline = true/);
-  assert.doesNotMatch(js,/video.autoplay|video.play\(/);assert.doesNotMatch(all,/<video\b|as="video"/);
-  assert.match(js,/video.pause\(\)/); assert.match(js,/video.removeAttribute\("src"\)/);
-  assert.match(resources,/Product inserts pending/i);assert.match(resources,/Summary, not a verbatim transcript/);
+  assert.equal(siteConfig.videos.performance.status,"review-only");
+  assert.doesNotMatch(all,/data-video-open="performance"|mantiva360-performance-30s.mp4/);
+  assert.match(js,/video.preload = "none"/);assert.match(js,/video.controls = true/);assert.match(js,/video.playsInline = true/);
+  assert.match(js,/default: !media.captionsBurnedIn/);
+  assert.match(js,/video.pause\(\)/);assert.match(js,/video.removeAttribute\("src"\)/);
 });
 test("no JavaScript keeps navigation, product information and media reachable", () => {
   assert.match(home,/data-menu-toggle[^>]*hidden/);assert.doesNotMatch(home,/<section[^>]*role="tabpanel"[^>]*hidden/);

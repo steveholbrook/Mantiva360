@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { siteConfig } from "../public/assets/js/site-config.js";
+import { siteConfig, isPlayable } from "../public/assets/js/site-config.js";
 import { fileURLToPath } from "node:url";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -62,6 +62,10 @@ export function validateSite() {
       const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
       if (!canonical) errors.push(`${relative}: missing canonical URL`);
       if (canonical && canonical !== "https://mantiva360.com/" && canonical.endsWith("/")) errors.push(`${relative}: canonical conflicts with trailingSlash=false`);
+    }
+
+    for (const [, key] of html.matchAll(/data-video-open="([^"]+)"/g)) {
+      if (!isPlayable(siteConfig.videos[key])) errors.push(`${relative}: unreviewed or missing video ${key}`);
     }
 
     const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
