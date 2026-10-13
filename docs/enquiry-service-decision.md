@@ -1,6 +1,10 @@
-# Guided-review enquiry service decision
+# Email contact route and future enquiry service
 
-The current website must keep `enquiry.enabled` set to `false`. No approved backend, monitored lead owner, retention period or public privacy contact is configured. The review homepage therefore renders no enquiry form or booking-style call to action.
+The user supplied `sales@mantiva360.com` on 13 October 2026 as the public destination for all website sales leads and contact. The website now exposes normal HTML `mailto:` links for sales, demo requests, general enquiries and privacy questions. Demo and privacy subjects identify the purpose while retaining the same recipient. Visitors can also copy the visible address into webmail.
+
+Opening an email link does not send a message, submit a form or confirm a booking. The visitor sends the email through their email application. Website link checks do not verify external mailbox delivery or the owner response process; no test message has been sent.
+
+Keep `enquiry.enabled` set to `false`: no server-side form handler is configured. The email route operates independently of this flag. The implementation below applies only to a future on-site form.
 
 ## Smallest suitable implementation
 
@@ -22,9 +26,9 @@ Use one same-origin HTTPS endpoint behind Firebase Hosting, implemented as a sec
 |---|---|
 | Hosting owner | Which Firebase or Google Cloud project owns the marketing endpoint and data? |
 | Lead owner | Which monitored role or team is accountable for retrieving and responding to saved requests? |
-| Notification route | Which verified non-personal mailbox or workflow receives alerts, and how are failures monitored? |
+| Notification route | Use `sales@mantiva360.com` as the recipient; verify delivery and define how failures are monitored. |
 | Retention | How long are enquiry records retained, and who approves deletion exceptions? |
-| Privacy contact | Which verified public business contact handles access, correction and deletion requests? |
+| Privacy contact | Public website contact is `sales@mantiva360.com`; define the internal owner for access, correction and deletion requests. |
 | Abuse controls | Which rate-limit and bot-control service is approved for the public form? |
 | Access | Which identities can read, export or delete enquiries, and how often is access reviewed? |
 | Region | Which storage and processing region is approved and can be stated publicly? |
