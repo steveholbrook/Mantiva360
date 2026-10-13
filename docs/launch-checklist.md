@@ -4,7 +4,7 @@
 - [ ] Replace or explicitly approve the 30-second promotional review cut and its placeholder inserts.
 - [ ] Verify local caption drafts against audio, timing, sound cues and essential visuals; review existing YouTube captions.
 - [ ] Review on physical iPad/iPhone Safari and with VoiceOver.
-- [ ] Confirm business privacy contact and the intended indexing state. Review pages currently remain noindex.
+- [ ] Confirm external delivery to `sales@mantiva360.com`, the published sales and privacy contact, and the intended indexing state. Review pages currently remain noindex.
 - [ ] Test application access and all external YouTube films in the release environment.
 - [ ] Run `npm test`, `npm run validate`, `npm run test:browser` and inspect performance evidence.
 
@@ -32,7 +32,10 @@ Record **Pass**, **Fail** or **Not verified** with evidence. Do not convert an u
 - [ ] Nearby copy accurately describes sign-in and access requirements.
 - [ ] The video action is distinct from demo access.
 - [ ] Product, SAP delivery and Resources routes resolve without a redirect loop and match their canonical URLs.
-- [ ] No booking CTA or public form appears while the guided-review endpoint is disabled.
+- [ ] Contact navigation reaches `/#contact`; the visible email address and all email links use `sales@mantiva360.com`.
+- [ ] Demo enquiry links open the email application with the correct recipient and demo subject, without claiming that a message has been sent or a meeting booked.
+- [ ] Confirm external email receipt and the owner response process for `sales@mantiva360.com`.
+- [ ] No public form appears while the guided-review endpoint is disabled. Email enquiry links work independently of that endpoint.
 - [ ] Once a route is approved, the guided-review form stores a test enquiry and only then shows success.
 - [ ] The owner can retrieve and action that test enquiry.
 

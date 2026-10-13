@@ -21,7 +21,8 @@ The repository intentionally contains no Firebase credentials, customer data, en
 - The supplied 30-second film is landscape and marked as a review cut. Caption verification and physical Safari review remain release items.
 - Review pages retain `noindex,nofollow`. Update indexing only as part of the approved release review.
 - All primary CTAs use `https://mantiva360.app/`; sign-in may be required. No booking or anonymous-access promise is made.
-- Enquiry configuration remains disabled. There is no active submission path or analytics.
+- Sales, demo requests, general enquiries and privacy questions use `sales@mantiva360.com`. Contact links open the visitor's email application; the visitor sends the message.
+- The on-site enquiry form remains disabled. There is no website submission endpoint or analytics.
 
 Requirements: Node.js 22 or later. Browser tools are development-only dependencies.
 
@@ -104,9 +105,17 @@ After the Firebase review URL passes acceptance:
 
 Do not change nameservers or remove an existing apex service without confirming what it currently hosts.
 
-## Guided-review route
+## Sales and contact route
 
-No public form or booking action is rendered while the endpoint is disabled. The one-decision evaluation checklist is available without collecting contact details, and the homepage links directly to the separate application.
+The public destination for all website contact is `sales@mantiva360.com`. It appears in the homepage hero, the Contact section, every shared footer, the Privacy page, the 404 page and the downloadable evaluation checklist. Navigation links lead to `/#contact`. Marketing-page demo enquiry buttons use `mailto:sales@mantiva360.com?subject=Mantiva360%20demo%20enquiry`; privacy links use the same recipient with a privacy subject.
+
+These are ordinary HTML email links and work without JavaScript. They open the visitor's email application and do not submit or send anything automatically. The visible address can also be copied into webmail. Existing application-access links continue to open `https://mantiva360.app/`.
+
+Mailbox receipt and response handling are separate from website link validation. Before release, confirm that the configured mailbox receives external mail. No test email has been sent as part of the website change.
+
+## Future on-site enquiry form
+
+No public form is rendered while the endpoint is disabled. Email enquiry links are available independently of that endpoint. They do not confirm a booking or display a submission-success message. The one-decision evaluation checklist is available without collecting contact details.
 
 Before enabling it, implement a same-origin, server-side Firebase Function or Cloud Run endpoint with:
 
