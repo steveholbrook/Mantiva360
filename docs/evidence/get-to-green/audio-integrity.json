@@ -1,0 +1,20 @@
+{
+  "Mantiva360_Recovery_45s_AUDIO_CORRECTED.mp4": {
+    "fullDecodeExitCode": 0,
+    "audio": [
+      "[Parsed_volumedetect_0 @ 0x55fcd7b7c7c0] mean_volume: -19.6 dB",
+      "[Parsed_volumedetect_0 @ 0x55fcd7b7c7c0] max_volume: -1.9 dB"
+    ]
+  },
+  "Mantiva360_Recovery_70s_WINDOWS_v3.mp4": {
+    "fullDecodeExitCode": 0,
+    "audio": [
+      "[silencedetect @ 0x560d600efe40] silence_start: 3.55494",
+      "[silencedetect @ 0x560d600efe40] silence_end: 4.75156 | silence_duration: 1.19663",
+      "[silencedetect @ 0x560d600efe40] silence_start: 68.883",
+      "[Parsed_volumedetect_0 @ 0x560d6014c740] mean_volume: -21.8 dB",
+      "[Parsed_volumedetect_0 @ 0x560d6014c740] max_volume: -0.6 dB",
+      "[silencedetect @ 0x560d600efe40] silence_end: 70.016 | silence_duration: 1.133"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "recovery": {
+    "src": "/assets/video/mantiva360-recovery-bc9d7d121b3d.mp4",
+    "poster": "/assets/images/video/recovery-bc9d7d121b3d.webp",
+    "bytes": 5783716,
+    "sha256": "bc9d7d121b3df461f8070200d9d22496b9631acaf030f64bc9d2c25a02fc05f3",
+    "seconds": 45,
+    "title": "From Red to Recovery",
+    "sourceFilename": "Mantiva360_Recovery_45s_AUDIO_CORRECTED.mp4",
+    "sourceBytes": 5783716,
+    "sourceSha256": "bc9d7d121b3df461f8070200d9d22496b9631acaf030f64bc9d2c25a02fc05f3",
+    "audioPacketsUnchanged": true,
+    "sourceAudioMD5": "MD5=d59017ad209d6aead207dde5d513b7b4",
+    "webAudioMD5": "MD5=d59017ad209d6aead207dde5d513b7b4",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "sample_rate": null,
+        "channels": null,
+        "duration": "45.000000"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "profile": "LC",
+        "width": null,
+        "height": null,
+        "pix_fmt": null,
+        "sample_rate": "48000",
+        "channels": 2,
+        "duration": "45.000000"
+      }
+    ],
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0
+      },
+      {
+        "type": "moov",
+        "offset": 32
+      },
+      {
+        "type": "free",
+        "offset": 32272
+      },
+      {
+        "type": "mdat",
+        "offset": 32280
+      }
+    ]
+  },
+  "recovery-cost": {
+    "src": "/assets/video/mantiva360-recovery-cost-90b5a23937c7.mp4",
+    "poster": "/assets/images/video/recovery-cost-90b5a23937c7.webp",
+    "bytes": 8722291,
+    "sha256": "90b5a23937c7d569a4a6416e81ddabaf6d6f03e6e26c58f1325452ab72926130",
+    "seconds": 70,
+    "title": "What Will Recovery Really Cost?",
+    "sourceFilename": "Mantiva360_Recovery_70s_WINDOWS_v3.mp4",
+    "sourceBytes": 14746164,
+    "sourceSha256": "d9fc3dc1a34eba60cd90ab14f78793e94a41b3573e9adf3927b2903f0147bc67",
+    "audioPacketsUnchanged": true,
+    "sourceAudioMD5": "MD5=981374fdb9c0fecc257c07adc380846a",
+    "webAudioMD5": "MD5=981374fdb9c0fecc257c07adc380846a",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "sample_rate": null,
+        "channels": null,
+        "duration": "70.000000"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "profile": "LC",
+        "width": null,
+        "height": null,
+        "pix_fmt": null,
+        "sample_rate": "48000",
+        "channels": 2,
+        "duration": "70.000000"
+      }
+    ],
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0
+      },
+      {
+        "type": "moov",
+        "offset": 32
+      },
+      {
+        "type": "free",
+        "offset": 49664
+      },
+      {
+        "type": "mdat",
+        "offset": 49672
+      }
+    ],
+    "ssimComparison": "0.999291 (31.493031) U:0.998718 (28.920545) V:0.998619 (28.599436) All:0.999083 (30.378625)"
+  }
+}
