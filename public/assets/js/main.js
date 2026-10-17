@@ -1,4 +1,4 @@
-import { siteConfig, isPlayable } from "./site-config.js";
+import { siteConfig, isPlayable } from "./site-config.js?v=20261017-recovery1";
 
 // Progressive enhancement: navigation, proof and direct video links work without JS.
 document.documentElement.classList.add("enhanced");
@@ -11,7 +11,7 @@ function closeMenu({ restoreFocus = false } = {}) {
   if (restoreFocus) menuToggle?.focus();
 }
 if (menuToggle && navigation) {
-  const narrow = window.matchMedia("(max-width: 900px)");
+  const narrow = window.matchMedia("(max-width: 1100px)");
   function syncMenu() { menuToggle.hidden = !narrow.matches; closeMenu(); }
   syncMenu();
   narrow.addEventListener("change", syncMenu);
@@ -77,7 +77,7 @@ function openVideo(event, trigger) {
   clearVideo();
   document.querySelector("[data-hero-video]")?.pause();
   opener = trigger;
-  if (transcript) { transcript.hidden = !media.transcript; transcript.href = media.transcript || "/resources"; }
+  if (transcript) { transcript.textContent = id.startsWith("recovery") ? "Read film description" : "Read descriptive transcript"; transcript.hidden = !media.transcript; transcript.href = media.transcript || "/resources"; }
   title.textContent = `${media.title} · ${media.seconds} sec`;
   if (media.type === "local") {
     const video = document.createElement("video");
@@ -98,7 +98,7 @@ function openVideo(event, trigger) {
     }
     video.addEventListener("error", () => { note.textContent = "This film could not load. Read the descriptive transcript or try the direct MP4 link below."; });
     stage.appendChild(video);
-    note.textContent = `${media.note} Captions are already visible in this film. Optional English track available through player controls.`;
+    note.textContent = `${media.note} ${media.captionsBurnedIn ? "Captions appear within this film." : ""}${media.captions ? " Optional English track available through player controls." : ""}`;
     fallback.href = media.src;
     fallback.textContent = "Open MP4 directly";
     fallback.removeAttribute("target");
