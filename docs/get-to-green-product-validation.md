@@ -1,6 +1,6 @@
 # Get to Green product-claim validation
 
-Reviewed 17 October 2026. Application reference: `steveholbrook/ptracker3`, main commit `a659d3de53a89cae96b0b2a2e63c0fac6f6c1b8a`. The application repository was read only. No application business logic, data or permissions were changed.
+Reviewed 17 October 2026. Application reference: `steveholbrook/ptracker3`, [main commit a659d3d](https://github.com/steveholbrook/ptracker3/tree/a659d3de53a89cae96b0b2a2e63c0fac6f6c1b8a). The application repository was read only. No application business logic, data or permissions were changed.
 
 These are implementation checks, not a certification of the current staging deployment. Direct inspection of `https://test.mantiva360.app/` reached its sign-in screen. No authenticated recovery case was opened or modified. Live navigation, project-specific availability, permissions and recovery execution therefore remain unverified. Existing approved marketing captures and the supplied demonstration films are used without rewriting their financial values or status.
 

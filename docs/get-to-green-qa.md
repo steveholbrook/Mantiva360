@@ -27,9 +27,37 @@ Hashes, streams, fast-start atom order and audio equality are recorded in [media
 
 `npm test`, `npm run validate` and `git diff --check` pass for the implementation. A dedicated Playwright suite covers six new-page widths (320, 390, 768, 820, 1024 and 1440 px), actual image loading, expanded-disclosure axe WCAG 2.2 AA analysis, deferred downloads, native keyboard playback of both films, duration, seeking, close/stop/focus restoration, navigation/history, the demonstration destination, no-JavaScript reflow, 200% text and reduced motion. The existing 26 browser checks remain in the full regression suite.
 
-An earlier local run passed the existing 26 browser checks and the new page checks after correcting 200% text overflow. Workspace maintenance subsequently removed the checkout and browser runtime. Final source and the optimised film have therefore been submitted to the repository's CI browser suite and Lighthouse workflow for a fresh authoritative run. Local browser installation currently fails with a truncated download; a launch failure is an infrastructure failure, not a page-test result. Final CI evidence and metrics will be appended when available.
+Final validation ran against application code in marketing commit `41d79768cfb69d8a6283a08b5f0e7dbd9925f6e5` in [Website quality run 39001803018](https://github.com/steveholbrook/Mantiva360/actions/runs/39001803018). All 38 browser checks passed, with no skips, unexpected results or flaky results. Axe found zero automated WCAG 2.2 AA violations with the recovery disclosures expanded. The existing static suite passed all 15 tests and route/asset validation passed. Browser metadata, native playback, seeking and close behaviour passed for both integrated films.
 
-The performance workflow measures this route on Lighthouse mobile and desktop profiles. Synthetic LCP, CLS and total blocking time will be reported from actual output. INP requires representative interaction/field data and will not be claimed from a Lighthouse load audit. Local/CDN deployment performance and physical device behaviour may differ.
+The isolated Firebase review channel also passed. The actual hosted preview was opened and visually inspected: [Get to Green review page](https://mantiva360-marketing--pr17-feature-get-to-green-elpsuuep.web.app/get-to-green). This is a temporary PR preview, not a production release.
+
+## Performance results
+
+Lighthouse measured `/get-to-green` in the GitHub Ubuntu runner using its local server, Chrome and simulated network/CPU throttling. These are single lab runs, not production field percentiles.
+
+| Measurement | Mobile | Desktop |
+| --- | --- | --- |
+| Performance score | 99 | 100 |
+| Largest Contentful Paint | 1.81 seconds | 0.45 seconds |
+| Cumulative Layout Shift | 0 | 0 |
+| Total Blocking Time | 0 ms | 0 ms |
+| Accessibility score | 100 | 100 |
+| Best Practices score | 100 | 100 |
+| SEO score | 69 | 69 |
+| Initial transferred bytes | 125,456 | 179,377 |
+
+Mobile used the Lighthouse default mobile profile, simulated 150 ms RTT, 1,638.4 Kbps throughput and 4× CPU slowdown. Desktop used a 1440 × 1000 viewport, simulated 40 ms RTT, 10,240 Kbps throughput and 1× CPU slowdown. Full settings, timestamps, browser environment and findings are retained in the JSON evidence.
+
+LCP and CLS meet the requested thresholds in these lab conditions. INP was not measured. Zero total blocking time does not establish an INP result. The SEO score is reduced by the intentional review `noindex,nofollow` policy, which must be considered in the approved production release. Shared CSS, image delivery and render-blocking requests have small remaining optimisation opportunities; no performance target is asserted for an unmeasured production deployment.
+
+## Review captures and raw results
+
+- [Desktop page](evidence/get-to-green/desktop-full.png), [desktop hero](evidence/get-to-green/desktop-hero.png) and [four-stage framework](evidence/get-to-green/desktop-framework.png).
+- [Tablet page](evidence/get-to-green/tablet-full.png) and [tablet hero](evidence/get-to-green/tablet-hero.png).
+- [Mobile page](evidence/get-to-green/mobile-full.png) and [mobile hero](evidence/get-to-green/mobile-hero.png).
+- [Browser summary](evidence/get-to-green/browser-summary.json), [full successful browser results](evidence/get-to-green/browser-results.json), [axe results](evidence/get-to-green/axe.json), [mobile Lighthouse](evidence/get-to-green/lighthouse-mobile.json) and [desktop Lighthouse](evidence/get-to-green/lighthouse-desktop.json).
+
+Desktop, tablet and mobile captures were visually reviewed alongside layout assertions. Images, stage connections, comparison rows, financial cards, film posters, CTAs and footer remain within their viewports. The 200% text check verifies reflow independently of the standard screenshots.
 
 ## Release limitations
 
