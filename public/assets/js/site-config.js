@@ -2,6 +2,36 @@ export const siteConfig = Object.freeze({
   demoUrl: "https://mantiva360.app/",
   overviewVideoId: "buyer",
   videos: Object.freeze({
+  "recovery": {
+  "type": "local",
+  "status": "approved-candidate",
+  "title": "From Red to Recovery",
+  "seconds": 45,
+  "src": "/assets/video/mantiva360-recovery-bc9d7d121b3d.mp4",
+  "poster": "/assets/images/video/recovery-bc9d7d121b3d.webp",
+  "width": 1920,
+  "height": 1080,
+  "transcript": "/get-to-green#recovery-film-description",
+  "captionsBurnedIn": true,
+  "captionStatus": "supplied-burned-in",
+  "reviewStatus": "supplied-review-cut; release-content-review-required",
+  "note": "Supplied demonstration film. Missing inputs remain visible. Forecasts and modelled options do not establish approved expenditure or achieved savings."
+},
+  "recovery-cost": {
+  "type": "local",
+  "status": "approved-candidate",
+  "title": "What Will Recovery Really Cost?",
+  "seconds": 70,
+  "src": "/assets/video/mantiva360-recovery-cost-90b5a23937c7.mp4",
+  "poster": "/assets/images/video/recovery-cost-90b5a23937c7.webp",
+  "width": 1920,
+  "height": 1080,
+  "transcript": "/get-to-green#recovery-cost-film-description",
+  "captionsBurnedIn": true,
+  "captionStatus": "supplied-burned-in",
+  "reviewStatus": "supplied-review-cut; release-content-review-required",
+  "note": "Supplied demonstration film. Missing inputs remain visible. Forecasts and modelled options do not establish approved expenditure or achieved savings."
+},
   "buyer": {
     "type": "local",
     "status": "approved-candidate",

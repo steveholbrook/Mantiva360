@@ -112,6 +112,7 @@ export function validateSite() {
   const requiredPages = [
     "index.html",
     "product/index.html",
+    "get-to-green/index.html",
     "sap-delivery/index.html",
     "resources/index.html",
     "privacy/index.html",
@@ -172,7 +173,7 @@ export function validateSite() {
   const homepageWords = visibleWordCount(index);
   if (homepageWords < 700 || homepageWords > 1500) errors.push(`homepage main copy is ${homepageWords} words; target is 700 to 1500 for the concise outcome-led narrative`);
 
-  ["/product", "/sap-delivery", "/resources", "/privacy", "/about"].forEach((route) => {
+  ["/product", "/get-to-green", "/sap-delivery", "/resources", "/privacy", "/about"].forEach((route) => {
     if (!sitemap.includes(`<loc>https://mantiva360.com${route}</loc>`)) errors.push(`sitemap missing ${route}`);
   });
 

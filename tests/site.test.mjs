@@ -13,7 +13,7 @@ const css = read("public/assets/css/performance.css");
 const firebase = JSON.parse(read("firebase.json"));
 
 test("all routes, assets, anchors and structural safety checks pass", () => {
-  const result = validateSite(); assert.deepEqual(result.errors, []); assert.equal(result.htmlCount, 7);
+  const result = validateSite(); assert.deepEqual(result.errors, []); assert.equal(result.htmlCount, 8);
 });
 test("outcomes lead the homepage and offer connected next steps", () => {
   assert.match(home, /More delivery\.<br><span>Less waste\./);

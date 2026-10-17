@@ -25,6 +25,10 @@ jobs:
         run: |
           export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           EVIDENCE_DIR=docs/evidence/video-experience/after npm run audit:performance
+      - name: Measure Get to Green page
+        run: |
+          export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+          AUDIT_PATH=/get-to-green EVIDENCE_DIR=docs/evidence/get-to-green npm run audit:performance
       - name: Capture and measure PR base
         if: github.event_name == 'pull_request' && github.head_ref == 'feat/durable-video-experience'
         env:
@@ -47,3 +51,4 @@ jobs:
           path: |
             test-results/
             docs/evidence/video-experience/
+            docs/evidence/get-to-green/

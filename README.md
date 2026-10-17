@@ -168,3 +168,7 @@ firebase.json             Hosting and security-header configuration
 ## Rollback
 
 Firebase Hosting keeps release history and supports rollback. Before changing DNS or the live channel, retain the last approved release ID and confirm who is authorised to roll back.
+
+## Get to Green
+
+The `/get-to-green` page connects project distress, financial exposure, governed response and verification. See [the product-claim matrix](docs/get-to-green-product-validation.md) and [implementation/QA report](docs/get-to-green-qa.md). Run the existing browser suite for page captures and set `AUDIT_PATH=/get-to-green` with `npm run audit:performance` to measure this route. Existing review indexing and production approval requirements remain in force.
